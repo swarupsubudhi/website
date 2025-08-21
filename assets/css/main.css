@@ -186,7 +186,7 @@ h6 {
 }
 
 .header .social-links a {
-  font-size: 16px;
+  font-size: 15px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -269,7 +269,7 @@ h6 {
   color: var(--nav-color);
   padding: 15px 10px;
   font-family: var(--nav-font);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
   display: flex;
   align-items: center;
@@ -367,7 +367,7 @@ h6 {
 .footer {
   color: var(--default-color);
   background-color: var(--background-color);
-  font-size: 14px;
+  font-size: 12px;
   padding: 40px 0;
   position: relative;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
@@ -379,7 +379,7 @@ h6 {
 
 .footer .credits {
   margin-top: 4px;
-  font-size: 13px;
+  font-size: 12px;
   text-align: center;
 }
 

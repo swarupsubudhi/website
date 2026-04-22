@@ -30,6 +30,12 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <!-- Portfolio Cards CSS -->
+  <link href="assets/css/portfolio.css" rel="stylesheet">
+
+  <!-- Experience Timeline & Contact CSS -->
+  <link href="assets/css/experience.css" rel="stylesheet">
+
   <!-- =======================================================
   * Template Name: iPortfolio
   * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
@@ -68,7 +74,7 @@
       <ul>
         <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
         <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> CV/ Resume</a></li>
+        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Experience</a></li>
         <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Projects</a></li>
         <li><a href="#testimonials"><i class="bi bi-hdd-stack navicon"></i> Testimonials</a></li>
         <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
@@ -81,6 +87,15 @@
         </li>
       </ul>
     </nav>
+
+    <div class="sidebar-cv-links">
+      <a href="files/Resume_SwarupSubudhi_2026.pdf" target="_blank" class="cv-dl-btn">
+        <i class="bi bi-file-earmark-arrow-down"></i> Résumé
+      </a>
+      <a href="files/CV_SwarupSubudhi_2026.pdf" target="_blank" class="cv-dl-btn">
+        <i class="bi bi-file-earmark-arrow-down"></i> Full CV
+      </a>
+    </div>
   </header>
 
   <main class="main">
@@ -195,177 +210,71 @@
       </div>
 
     </section><!-- /Stats Section -->
-	
-    <!-- Skills Section -->
-    <section id="skills" class="skills section light-background">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-        <p></p>
-      </div><!-- End Section Title -->
-	  
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-		  <div class="row">
-			  <div class="col-lg-6 skills-list" style="padding-left:10%">
-				<h6>Machine/ Product Design</h6>
-				<ul>
-					<li><strong>CAD:</strong> SolidWorks, Pro-E</li>
-					<li><strong>CAE/FEA:</strong> ANSYS Mechanical, Workbench, Icepak, Abaqus CAE</li>
-					<li><strong>CFD:</strong> Fluent, COMSOL</li>
-					<li><strong>CAM:</strong> Autodesk 360, Solidworks CAM, nScryptPro, Slicer (Hyrel, CraftPro)</li>
-					<li><strong>Fabrication:</strong> Laser Tooling, 3D Printing, Subtractive Machining, Mold Development</li>
-					<li><strong>Metrology:</strong> GD&T, SEM, Laser Microscopy, Optical Microscopy, Surface Profiling</li>
-					<li><strong>Control:</strong> Arduino, MATLAB GUI, Sensors, Optimization algorithms</li>
-					<li><strong>Integration:</strong> Prototyping, Circuit Design, Systems Integration, Testing Matrix Development</li>
-					<li><strong>Professional Tools:</strong> DFA/DFM, BOM, PLM, Six-Sigma, DoE, PSR, PFMEA, NPI Process</li>
-				</ul>
-				<h6>Other</h6>
-				<ul>
-					<li><strong>Workplace Tools:</strong>  Microsoft Office, PowerBI</li>
-					<li><strong>Design Tools:</strong> Photoshop, Illustrator</li>
-				</ul>
-			  </div>
-			  <div class="col-lg-6 skills-list" style="padding-left:10%">
-			  	<h6>Computation & Analysis</h6>
-			  	<ul>
-					<li><strong>Software:</strong> Matlab & SimuLink (Optimization & Image Processing), VSCode/Jupyter, Wolfram Mathematica, R-Studio</li>
-					<li><strong>Dev Languages:</strong> Python, C, C++, R, HTML5, CSS3, JavaScript, Arduino IDE</li>
-				</ul>
-			  	<h6>Testing & Analysis</h6>
-			  	<ul>
-					<li><strong>Material Characterisation:</strong> CTE, DMA (Stress Tests), DSC, TGA</li>
-					<li><strong>Rheology Characterisation:</strong> Density, Viscosity, Surface Tension, zeta-Potential, Size Distribution</li>
-					<li><strong>Accelerated Testing:</strong> Thermal Cycling, Temp-Humidity Bias, Vibration Loading, Deformational Loading</li>
-					<li><strong>Failure Analysis:</strong> Acceleration Factors, Failure Mechanisms/Models, Physics of Failure</li>
-					<li><strong>Statistical Analysis:</strong> Gauge R&R, ANOVA, Chi-square tests, SPC(Cpk) tests</li>
-				</ul>
-			  </div>
-	  	</div>
-	  </div>				
-
-    </section><!-- /Skills Section -->
-
-    <!-- Resume Section -->
+    <!-- Experience Section -->
     <section id="resume" class="resume section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>CV/ Resume</h2>
-        <!--<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>-->
-		<div class="container">
-		<br>
-		<p>For a downloadable CV or resume, click ---<a target="_blank" href="files/Resume_SwarupSubudhi_2026.pdf"><span class="resume-button">Resume</span></a>---<a target="_blank" href="files/CV_SwarupSubudhi_2026.pdf"><span class="resume-button">Detailed CV</span></a>---</p>
-      </div>
-	  </div><!-- End Section Title -->
+        <h2>Experience</h2>
+        <p>Download:&nbsp;
+          <a href="files/Resume_SwarupSubudhi_2026.pdf" target="_blank" class="cv-inline-link">Résumé</a>
+          &nbsp;·&nbsp;
+          <a href="files/CV_SwarupSubudhi_2026.pdf" target="_blank" class="cv-inline-link">Detailed CV</a>
+        </p>
+      </div><!-- End Section Title -->
 
-      <div class="container" style="background-color:#c4dbe6">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="tl-wrap">
 
-        <div class="row scroll-row">
-
-          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100" style="margin-left: 10%; background-color:#f8fdff">
-
-            <!--<div class="resume-item">
-              <h4>Swarup K Subudhi</h4>
-              <p><em>Mechanical Engineer with 4+ years of experince in projects on Printed Electronics & Reliability as a Research Assistant at UMD; and 4+ years of experience in NPI & Manufacturing in Automotive Industry.</em></p>
-			  <p>College Park, MD<br>(240) 906-9435<br>swarup.subudhi@outlook.com</p>
-            </div><!-- Edn Resume Item -->
-
-			<div class="resume-item">
-				<h5><b>Ph.D., Mechanical Engineering</b>, <i>2022-present</i></h5>
-				<p><em>University of Maryland, College Park, MD, USA</em></p>
-				<p><b>Dissertation:</b> Magnetic Films & Drops: And their Interactions with Other Viscous Mediums</p>
-				<p><b>Courses:</b> Mechanical Fundamentals of Electronic Components, Composite Materials, Interfacial Fluid Mechanics, Modelling Material Behavior, Probabilistic PoF & Accelerated Testing, etc.</p>
-				<ul>
-					<li>Experimental demonstration of magnetohydrodynamic phenomena in viscous fluid medium, including de-encapuslation or extraction of super-paramagnetic nanoparticles (MNPs) from an MNP-laden droplet, transfer of MNPs and associated cargo to another droplet without loss</li>
-					<li>Droplet and point tracking using CV2 models and image processing methods</li>
-					<li>Techniques for estimating volume of in-motion millimeter-level aggregates from high frame-rate videos</li>
-					<li>Fabrication of soft-magnetic-nanocomposites (made from biocomaptible polymers and super-paramagnetic nanoparticles; applications in RF shielding, EMF shielding, magnetic damping fillers, etc.</li>
-					<li>Knowledge of interfacial fluid mechanics and wetting dynamics</li>
-					<li>Knowledge of magnetic manipulation, theoretical background on magnetic forces</li>
-				</ul>
-			
-				<div class="resume-item">
-					<h5><b>Graduate Research Assistant</b>, <i>2022-present</i></h5></span>
-					<ul class="indent">
-						<li><b>Development of Three-Dimensional High-Energy X-Ray Photoelectric Polarimeter Assembly Using Additive Manufacturing Technology</b>, Jan 2024 – present</li>
-							<ul>
-							<li>Fine-line printing (extrusion printing) of nanoflake silver to create high-density printed interconnects</li>
-							<li>High-precision printed electronics with a tolerance of +/-10um</li>
-							<li>Innovation in printing techniques to achieve tighter tolerances with the use of various electronics hardware and systems engineering</li>
-							<li>Feasibility studies and vibration testing of printed specimens for launch</li>
-							<li>Knowledge of ink rheology, printability, and functional aspects</li>
-							</ul>
-						<li><b>Thermal Cycling Reliability of Printed Electronics</b>, June 2023 – Dec 2023</li>
-							<ul>
-							<li>Finite Element Modelling of printed specimens subjected to Thermal Cycling (-40C to 140C)</li>
-							<li>Depicting occurence of failures in multi-layered geometries due to inelastic strains and strain accumulation</li>
-							<li>Understanding of hardening, creep effects on sintered silver specimens</li>
-							</ul>
-						<li><b>Reliability Validation and Sustainment of Direct-Write Printed RF Devices</b>, Jan 2022 – May 2023</li>
-							<ul>
-							<li>Extrusion printed conductive components in RF electronics such as Metal-in-Semiconductor (MIS) Capacitors & Coplanar Waveguides</li>
-							<li>Creative manipulation of print head trajectory to achieve functional prints on irregular surfaces</li>
-							<li>Testing of RF properties (Reflection coefficients & efficiency) of printed specimens (MIS Caps, waveguides & inductors)</li>
-							</ul>
-					</ul>
-				</div>
-				  
-				<div class="resume-item">
-					<h5><b>M.S., Mechanical Engineering</b>, <i>2021</i></h5>
-					<p class="indent"><em>University of Maryland, College Park, MD, USA</em></p>
-					<p class="indent">Graduate Teaching Assistant I (Jan 2021 – Dec 2021)<br> Courses: Fluid Mechanics ENME331, Mechanics I ENES102</p>
-				</div>
-			</div>
-
-			<div class="resume-item">
-				<h5><b>Senior Manager, Manufacturing (Transmissions)</b>, <i>2019-20</i></h5>
-                <p class="indent"><em>Tata Motors Ltd. CVBU, Jamshedpur</em></p>
-                <ul class="indent">
-                	<li>Led six-sigma projects on Commercial Vehicle Gearbox warranty failures</li>
-						<ul>
-						<li>Achieved 50% IPTV/EPV Reduction in Bearing Failures for 6MIS vehicles (until last avl. data update)</li>
-						<li>Achieved 40-60% IPTV/EPV Reduction in G1150 Gearbox Synchronizing Parts failures for 6MIS vehicles (until last avl. data update)</li>
-						<li>Realized Savings of INR 4.53 Cr annually for LKP2518 family of tipper trucks using Value Engineering</li>
-						</ul>
-					<li>Achieved 100% adherence to production demand for Gearboxes (G600/750, G1150)</li>
-					<li>Improved Operational Line Efficiency of Gearbox Assembly Line by optimizing takt time & introduccing process quality checks towards a zero-failure target</li>
-                	<li>Implemented low-cost ANDON analysis to capture assembly line losses through IoT-based automation; devised subsequent action plans for determined causes of losses using Ishikawa and other problem-solving tools</li>
-                </ul>
-            </div><!-- End Resume Item -->
-			
-			<div class="resume-item">
-                <h5><b>Assistant Manager, NPI (Transmissions)</b>, <i>2016-19</i></h5>
-                <p class="indent"><em>Tata Motors Ltd. CVBU, Jamshedpur</em></p>
-                <ul class="indent">
-                	<li>Launched an Auxiliary Gearbox (AGB) for TATA Kestrel 8x8 (or WhAP); a successful exercise in NPI work process</li>
-					<li>Achieved 100% adherence to production demands for new GBs and AGBs for 6X6 and 8X8 Trucks & Defense Vehicles</li>
-                	<li>Achieved 100% adherence to production & manufacturing change management for launch of new gearboxes (as per market requirements)</li>
-					<li>Knowledge of NPI process, DFA/DFM, part development, proto-stages, testing, change management, etc.</li>
-                </ul>
-			</div>
-				
-            <div class="resume-item">
-                <h5><b>Bachelors of Technology, Mechanical Engineering</b>, <i>2016</i></h5>
-                <p class="indent"><em>National Institute of Technology, Rourkela, Odisha, India</em></p>
-                <p class="indent"><b>Major:</b> Mechanical Engineering, <b>Minor:</b> Mathematics <br> <b>Courses:</b> Kinematis & Dynamics of Machinery, Machine Design I & II, Tool Design, Digital Logic Design, Materials Technology</p>
-				<ul>
-					<li>Fabricated a manipulator assembly based on 5-bar linkage for reconfigurable machining; Integrated machine control with MATLAB GUI for user-freindly control, optimization and visualization (advisor: Dr. J. Srinivas)</li>
-					<li>Statistical modelling and optimization of MRR (material removal rate) and taper angle in reverse EDM (electro-discharge machining) using response-surface methodology (working with Dr. S. Gangopadhay</li>
-					<li>Two-zone mathematical modelling of performance and combustion formation in a direct-injection diesel IC engine operating on carbon black-water-diesel slurry (working with Dr. S. Murugan</li>
-					<li>Designed and facricated an electric karting vehicle based on design constraints; FEA analysis on Structural deformation at given payload; and working model validation (working as mechanical designer in a team)</li>
-				</ul>
-            </div><!-- End Resume Item -->
-
+          <!-- 1 · UMD (LEFT) — PhD + GRA + MS combined -->
+          <div class="tl-entry tl-left">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <span class="tl-date">2021 – Present</span>
+              <div class="tl-title">Graduate Researcher &amp; Ph.D. Candidate, Mechanical Engineering</div>
+              <div class="tl-org">University of Maryland, College Park, MD, USA</div>
+              <p class="tl-desc">M.S. (2021) through Ph.D. (2022–present) — research in magnetic films &amp; ferrofluid drops, soft-magnetic nanocomposite fabrication, and printed electronics reliability.</p>
+            </div>
           </div>
 
-        </div>
+          <!-- 2 · Senior Manager (RIGHT) -->
+          <div class="tl-entry tl-right">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <span class="tl-date">2019 – 2020</span>
+              <div class="tl-title">Senior Manager, Manufacturing (Transmissions)</div>
+              <div class="tl-org">Tata Motors Ltd. CVBU, Jamshedpur, India</div>
+              <p class="tl-desc">Six Sigma programmes on gearbox warranty failures — 50% IPTV reduction in bearing failures and ₹4.53 Cr annual savings via value engineering.</p>
+            </div>
+          </div>
 
+          <!-- 3 · Asst Manager NPI (LEFT) -->
+          <div class="tl-entry tl-left">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <span class="tl-date">2016 – 2019</span>
+              <div class="tl-title">Assistant Manager, NPI (Transmissions)</div>
+              <div class="tl-org">Tata Motors Ltd. CVBU, Jamshedpur, India</div>
+              <p class="tl-desc">New product introduction of auxiliary gearbox for TATA Kestrel 8×8 WhAP; 100% schedule adherence across 6×6 and 8×8 defense platforms.</p>
+            </div>
+          </div>
+
+          <!-- 4 · B.Tech (RIGHT) -->
+          <div class="tl-entry tl-right">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <span class="tl-date">2012 – 2016</span>
+              <div class="tl-title">B.Tech, Mechanical Engineering</div>
+              <div class="tl-org">National Institute of Technology, Rourkela, India</div>
+              <p class="tl-desc">Major in Mechanical Engineering, Minor in Mathematics. Final project: 5-bar linkage reconfigurable manipulator with MATLAB GUI control.</p>
+            </div>
+          </div>
+
+        </div><!-- /tl-wrap -->
       </div>
 
-      
-
-    </section><!-- /Resume Section -->
+    </section><!-- /Experience Section -->
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio section semi-dark-background">
@@ -373,13 +282,9 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2 style="color:#fff">Projects</h2>
-        <p style="color:#fff">Here are my top research, technical and professional (from my automotive job) projects. I will keep updating with my new projects as soon as they get published.</p>
-		<p style="color:#fff"><strong>Project Counter:</strong><br>
-			Projects published on website: 07<br>
-			Projects pending to be published on website: 05<br>
-			Ongoing projects: 02<br>
-		</p>
-	  </div><!-- End Section Title -->
+        <p style="color:#fff">Here are my top research, technical and professional (from my automotive job) projects. I will keep updating with my new projects as soon as they get published.
+		<br>***Project details pages are under construction.</p>
+      </div><!-- End Section Title -->
 
       <div class="container">
 
@@ -390,91 +295,220 @@
             <li data-filter=".filter-app">Research</li>
             <li data-filter=".filter-product">Professional</li>
             <li data-filter=".filter-branding">Engineering</li>
-            <!--<li data-filter=".filter-books">FUN</li>-->
           </ul><!-- End Portfolio Filters -->
 
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-            <div class="col-lg-3 col-md-4 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/pd-2-img-0.jpg" class="img-fluid" alt="P2">
-                <div class="portfolio-info">
-                  <h4>Printed Electronics</h4>
-                  <p>Additively Manufactured High Density Electronics</p>
-                  <!--<a href="assets/img/portfolio/pd-2-img-0.jpg" title="App 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>-->
-                  <a href="projects/project-details-02.html" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            <!-- ── Project 02: Printed Electronics ────────────────── -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="project-card">
+                <div class="project-card-img">
+                  <img src="assets/img/portfolio/pd-2-img-0.jpg" alt="Printed Electronics">
+                  <span class="project-category-badge badge-research">Research</span>
+                </div>
+                <div class="project-card-body">
+                  <div class="project-card-meta">
+                    <span class="project-year">2024 – present</span>
+                    <span class="project-status status-active">Active</span>
+                  </div>
+                  <h4 class="project-card-title">Printed Electronics for Space Instrumentation</h4>
+                  <p class="project-card-desc">Fine-line extrusion printing of nano-silver interconnects for a 3D high-energy X-ray photoelectric polarimeter assembly, targeting ±10 µm feature tolerances.</p>
+                  <div class="project-card-skills">
+                    <span class="project-skill-tag">Extrusion Printing</span>
+                    <span class="project-skill-tag">Nanomaterials</span>
+                    <span class="project-skill-tag">HDI</span>
+					<span class="project-skill-tag">Prototyping</span>
+                    <span class="project-skill-tag">Vibration Testing</span>
+                    <span class="project-skill-tag">Systems Eng.</span>				
+                  </div>
+                </div>
+                <div class="project-card-footer">
+                  <span class="project-affiliation">UMD-GSFC</span>
+                  <a href="projects/project-details-02.html" target="_blank" class="project-details-btn">
+                    View Details <i class="bi bi-arrow-right"></i>
+                  </a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-3 col-md-4 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/pd-3-img-0.jpg" class="img-fluid" alt="P3">
-                <div class="portfolio-info">
-                  <h4>Reliability Studies</h4>
-                  <p>THB Study on CNT-GO HUmidity Sensors</p>
-                  <a href="assets/img/portfolio/pd-3-img-0.jpg" title="App 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="projects/project-details-03.html" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            <!-- ── Project 03: Reliability Studies ───────────────── -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="project-card">
+                <div class="project-card-img">
+                  <img src="assets/img/portfolio/pd-3-img-0.jpg" alt="Reliability Studies">
+                  <span class="project-category-badge badge-research">Research</span>
+                </div>
+                <div class="project-card-body">
+                  <div class="project-card-meta">
+                    <span class="project-year">2023 – 2024</span>
+                    <span class="project-status status-complete">Complete</span>
+                  </div>
+                  <h4 class="project-card-title">Thermal Cycling Reliability of Printed Electronics</h4>
+                  <p class="project-card-desc">FEA-based reliability modelling of printed multilayer specimens under harsh thermal cycling (−40 °C to +140 °C), capturing creep and strain accumulation in sintered silver.</p>
+                  <div class="project-card-skills">
+                    <span class="project-skill-tag">FEA</span>
+                    <span class="project-skill-tag">Thermal Cycling</span>
+                    <span class="project-skill-tag">Creep Modelling</span>
+                    <span class="project-skill-tag">Failure Analysis</span>
+                  </div>
+                </div>
+                <div class="project-card-footer">
+                  <span class="project-affiliation">UMD</span>
+                  <a href="projects/project-details-03.html" target="_blank" class="project-details-btn">
+                    View Details <i class="bi bi-arrow-right"></i>
+                  </a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-3 col-md-4 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/pd-4-img-0.jpg" class="img-fluid" alt="P4">
-                <div class="portfolio-info">
-                  <h4>Magnetic Drops</h4>
-                  <p>Research on Magnetic Drops</p>
-                  <!--<a href="assets/img/portfolio/pd-4-img-0.jpg" title="App 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>-->
-                  <a href="projects/project-details-04.html" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            <!-- ── Project 04: Magnetic Drops ─────────────────────── -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="project-card">
+                <div class="project-card-img">
+                  <img src="assets/img/portfolio/pd-4-img-0.jpg" alt="Magnetic Drops">
+                  <span class="project-category-badge badge-research">Research</span>
+                </div>
+                <div class="project-card-body">
+                  <div class="project-card-meta">
+                    <span class="project-year">2022 – present</span>
+                    <span class="project-status status-active">Active</span>
+                  </div>
+                  <h4 class="project-card-title">Magnetohydrodynamics of Ferrofluid Droplets</h4>
+                  <p class="project-card-desc">Experimental study of field-driven de-encapsulation, MNP extraction, and lossless cargo transfer between ferrofluid droplets in viscous media.</p>
+                  <div class="project-card-skills">
+                    <span class="project-skill-tag">Fluid Mechanics</span>
+                    <span class="project-skill-tag">Image Processing/OpenCV</span>
+                    <span class="project-skill-tag">Ferrofluids</span>
+                    <span class="project-skill-tag">Nanomaterials</span>
+                  </div>
+                </div>
+                <div class="project-card-footer">
+                  <span class="project-affiliation">UMD SMIEL</span>
+                  <a href="projects/project-details-04.html" target="_blank" class="project-details-btn">
+                    View Details <i class="bi bi-arrow-right"></i>
+                  </a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-3 col-md-4 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/pd-5-img-0.jpg" class="img-fluid" alt="P5">
-                <div class="portfolio-info">
-                  <h4>Soft Magnetic Elastomers</h4>
-                  <p>Research on Soft Magnetic Elastomers</p>
-                  <!--<a href="assets/img/portfolio/pd-5-img-0.jpg" title="App 4" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>-->
-                  <a href="projects/project-details-05.html" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            <!-- ── Project 05: Soft Magnetic Elastomers ───────────── -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="project-card">
+                <div class="project-card-img">
+                  <img src="assets/img/portfolio/pd-5-img-0.jpg" alt="Soft Magnetic Elastomers">
+                  <span class="project-category-badge badge-research">Research</span>
+                </div>
+                <div class="project-card-body">
+                  <div class="project-card-meta">
+                    <span class="project-year">2022 – present</span>
+                    <span class="project-status status-active">Active</span>
+                  </div>
+                  <h4 class="project-card-title">Soft Magnetic Nanocomposite Films</h4>
+                  <p class="project-card-desc">Fabrication and characterisation of biocompatible polymer–MNP composite films with tunable magnetic permeability for EMI shielding and magnetic damping applications.</p>
+                  <div class="project-card-skills">
+                    <span class="project-skill-tag">Nanocomposite Fab.</span>
+                    <span class="project-skill-tag">Mechanical Testing</span>
+                    <span class="project-skill-tag">Rheology</span>
+                    <span class="project-skill-tag">SEM</span>
+                    <span class="project-skill-tag">DMA</span>
+                  </div>
+                </div>
+                <div class="project-card-footer">
+                  <span class="project-affiliation">SMIEL | Takeuchi Lab</span>
+                  <a href="projects/project-details-05.html" target="_blank" class="project-details-btn">
+                    View Details <i class="bi bi-arrow-right"></i>
+                  </a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-3 col-md-4 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/pd-6-img-0.jpg" class="img-fluid" alt="P6">
-                <div class="portfolio-info">
-                  <h4>Six Sigma Projects</h4>
-                  <p>Warranty Reduction on Gearbox Failures</p>
-                  <!--<a href="assets/img/portfolio/pd-6-img-0.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>-->
-                  <a href="projects/project-details-06.html" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            <!-- ── Project 06: Six Sigma ───────────────────────────── -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="project-card">
+                <div class="project-card-img">
+                  <img src="assets/img/portfolio/pd-6-img-0.jpg" alt="Six Sigma Projects">
+                  <span class="project-category-badge badge-professional">Professional</span>
+                </div>
+                <div class="project-card-body">
+                  <div class="project-card-meta">
+                    <span class="project-year">2019 – 2020</span>
+                    <span class="project-status status-complete">Complete</span>
+                  </div>
+                  <h4 class="project-card-title">Six Sigma: Gearbox Warranty Failure Reduction</h4>
+                  <p class="project-card-desc">Led Six Sigma programmes cutting bearing and synchroniser failures by 40–50% in commercial vehicle gearboxes, delivering ₹4.53 Cr in annual savings.</p>
+                  <div class="project-card-skills">
+                    <span class="project-skill-tag">Six Sigma</span>
+                    <span class="project-skill-tag">ANOVA</span>
+                    <span class="project-skill-tag">PFMEA</span>
+                    <span class="project-skill-tag">DoE</span>
+                    <span class="project-skill-tag">SPC</span>
+                  </div>
+                </div>
+                <div class="project-card-footer">
+                  <span class="project-affiliation">Tata Motors CVBU</span>
+                  <a href="projects/project-details-06.html" target="_blank" class="project-details-btn">
+                    View Details <i class="bi bi-arrow-right"></i>
+                  </a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-3 col-md-4 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/pd-7-img-0.jpg" class="img-fluid" alt="P7">
-                <div class="portfolio-info">
-                  <h4>Cost Optimization</h4>
-                  <p>Case Study on Hydraulic Tipping Kits</p>
-                  <!--<a href="assets/img/portfolio/pd-7-img-0.jpg" title="Product 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>-->
-                  <a href="projects/project-details-07.html" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            <!-- ── Project 07: Cost Optimization – Hydraulic Kits ─── -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="project-card">
+                <div class="project-card-img">
+                  <img src="assets/img/portfolio/pd-7-img-0.jpg" alt="Cost Optimization – Hydraulic Tipping Kits">
+                  <span class="project-category-badge badge-professional">Professional</span>
+                </div>
+                <div class="project-card-body">
+                  <div class="project-card-meta">
+                    <span class="project-year">2016 – 2019</span>
+                    <span class="project-status status-complete">Complete</span>
+                  </div>
+                  <h4 class="project-card-title">Cost Optimisation: Hydraulic Tipping Kits</h4>
+                  <p class="project-card-desc">Value engineering case study on hydraulic tipping kit assemblies for the LKP2518 tipper truck family, achieving measurable cost and warranty improvements.</p>
+                  <div class="project-card-skills">
+                    <span class="project-skill-tag">Value Engineering</span>
+                    <span class="project-skill-tag">DFA / DFM</span>
+                    <span class="project-skill-tag">BOM Optimisation</span>
+                    <span class="project-skill-tag">Ishikawa</span>
+                  </div>
+                </div>
+                <div class="project-card-footer">
+                  <span class="project-affiliation">Tata Motors CVBU</span>
+                  <a href="projects/project-details-07.html" target="_blank" class="project-details-btn">
+                    View Details <i class="bi bi-arrow-right"></i>
+                  </a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-3 col-md-4 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/pd-8-img-0.jpg" class="img-fluid" alt="P8">
-                <div class="portfolio-info">
-                  <h4>Cost Optimization</h4>
-                  <p>Case Study on G1150 Synchronizing Parts</p>
-                  <!--<a href="assets/img/portfolio/pd-8-img-0.jpg" title="Product 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>-->
-                  <a href="projects/project-details-08.html" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            <!-- ── Project 08: Cost Optimization – G1150 ──────────── -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="project-card">
+                <div class="project-card-img">
+                  <img src="assets/img/portfolio/pd-8-img-0.jpg" alt="Cost Optimization – G1150 Synchronizing Parts">
+                  <span class="project-category-badge badge-professional">Professional</span>
+                </div>
+                <div class="project-card-body">
+                  <div class="project-card-meta">
+                    <span class="project-year">2016 – 2019</span>
+                    <span class="project-status status-complete">Complete</span>
+                  </div>
+                  <h4 class="project-card-title">Cost Optimisation: G1150 Synchronising Parts</h4>
+                  <p class="project-card-desc">Systematic failure analysis and cost reduction on G1150 gearbox synchronising parts, achieving a 40–60% IPTV/EPV reduction across the 6MIS vehicle platform.</p>
+                  <div class="project-card-skills">
+                    <span class="project-skill-tag">Failure Analysis</span>
+                    <span class="project-skill-tag">Six Sigma</span>
+                    <span class="project-skill-tag">SPC (Cpk)</span>
+                    <span class="project-skill-tag">PFMEA</span>
+                  </div>
+                </div>
+                <div class="project-card-footer">
+                  <span class="project-affiliation">Tata Motors CVBU</span>
+                  <a href="projects/project-details-08.html" target="_blank" class="project-details-btn">
+                    View Details <i class="bi bi-arrow-right"></i>
+                  </a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
@@ -493,17 +527,16 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
-        <p>Feel free to contact for research collaborations, and simply to ask questions about my research or technical projects.
-				Reach out to me on swarupks@umd.edu if you're interested in hiring me.</p>
-	  </div><!-- End Section Title -->
+        <p>Feel free to reach out for research collaborations or questions about my projects. For hiring inquiries use the outlook address.</p>
+      </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row gy-4">
+        <div class="row gy-0 gx-0 align-items-stretch">
 
-          <div class="col-lg-5">
+          <div class="col-lg-5 d-flex">
+            <div class="info-wrap w-100">
 
-            <div class="info-wrap">
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
                 <i class="bi bi-geo-alt flex-shrink-0"></i>
                 <div>
@@ -512,18 +545,18 @@
                 </div>
               </div><!-- End Info Item -->
 
-			  <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
                 <i class="bi bi-envelope flex-shrink-0"></i>
                 <div>
-                  <h3>Research Queries?</h3>
+                  <h3>Research Queries</h3>
                   <p>swarupks@umd.edu</p>
                 </div>
               </div><!-- End Info Item -->
 
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                <i class="bi bi-envelope flex-shrink-0"></i>
+                <i class="bi bi-person-lines-fill flex-shrink-0"></i>
                 <div>
-                  <h3>Hire Me</h3>
+                  <h3>Hiring Inquiries</h3>
                   <p>swarup.subudhi@outlook.com</p>
                 </div>
               </div><!-- End Info Item -->
@@ -531,39 +564,28 @@
             </div>
           </div>
 
-          <div class="col-lg-7">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
+          <div class="col-lg-7 d-flex">
+            <form action="forms/contact.php" method="post" class="php-email-form w-100" data-aos="fade-up" data-aos-delay="200">
+              <div class="contact-form-fields">
 
-                <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                <div class="contact-form-row-2">
+                  <input type="text"  name="name"    id="name-field"    class="form-control" placeholder="Your Name"  required>
+                  <input type="email" name="email"   id="email-field"   class="form-control" placeholder="Your Email" required>
                 </div>
 
-                <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required="">
-                </div>
+                <input type="text" name="subject" id="subject-field" class="form-control" placeholder="Subject" required>
 
-                <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Message</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
+                <textarea name="message" id="message-field" class="form-control" placeholder="Your Message" required></textarea>
 
               </div>
+
+              <div class="col-md-12 text-center">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <button type="submit">Send Message</button>
+              </div>
+
             </form>
           </div><!-- End Contact Form -->
 

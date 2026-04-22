@@ -1,0 +1,229 @@
+/*--------------------------------------------------------------
+# Portfolio Section – Enhanced Project Cards
+# This file overrides/extends the portfolio styles in main.css.
+# Drop it in assets/css/ and link it AFTER main.css in index.html.
+--------------------------------------------------------------*/
+
+/* ── Filter bar: keep existing styles, just tighten spacing ── */
+.portfolio .portfolio-filters {
+  margin-bottom: 32px;
+}
+
+/* ── Card wrapper ─────────────────────────────────────────── */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #1a2738;
+  border: 1px solid rgba(20, 157, 221, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  height: 100%;
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(20, 157, 221, 0.55);
+  box-shadow: 0 14px 42px rgba(20, 157, 221, 0.12);
+}
+
+/* ── Card image area ──────────────────────────────────────── */
+.project-card-img {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: #0f1a26;
+}
+
+.project-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-card-img img {
+  transform: scale(1.06);
+}
+
+/* ── Category badge (overlaid on image) ───────────────────── */
+.project-category-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+.badge-research {
+  background: rgba(20, 157, 221, 0.18);
+  color: #67d4ff;
+  border: 1px solid rgba(20, 157, 221, 0.4);
+}
+
+.badge-professional {
+  background: rgba(63, 185, 80, 0.18);
+  color: #6dde85;
+  border: 1px solid rgba(63, 185, 80, 0.4);
+}
+
+.badge-engineering {
+  background: rgba(248, 135, 60, 0.18);
+  color: #ffa872;
+  border: 1px solid rgba(248, 135, 60, 0.4);
+}
+
+/* ── Card body ────────────────────────────────────────────── */
+.project-card-body {
+  padding: 18px 20px 14px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Year + status row */
+.project-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 9px;
+}
+
+.project-year {
+  font-size: 11px;
+  color: #7a92a8;
+  font-family: 'Google Sans Code', monospace, sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.project-status {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.status-active {
+  background: rgba(63, 185, 80, 0.15);
+  color: #6dde85;
+  border: 1px solid rgba(63, 185, 80, 0.3);
+}
+
+.status-complete {
+  background: rgba(160, 160, 170, 0.12);
+  color: #a0a8b0;
+  border: 1px solid rgba(160, 160, 170, 0.25);
+}
+
+/* Title */
+.project-card-title {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: #e8f0f8 !important;
+  margin-bottom: 8px !important;
+  line-height: 1.35 !important;
+}
+
+/* Short description */
+.project-card-desc {
+  font-size: 13px;
+  color: #8a9db5;
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 14px;
+}
+
+/* Skills tags */
+.project-card-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.project-skill-tag {
+  font-size: 10.5px;
+  font-family: 'Google Sans Code', monospace, sans-serif;
+  color: #7a92a8;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 3px 8px;
+  border-radius: 3px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.project-card:hover .project-skill-tag {
+  color: #b0cce0;
+  border-color: rgba(20, 157, 221, 0.3);
+}
+
+/* ── Card footer ──────────────────────────────────────────── */
+.project-card-footer {
+  padding: 12px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.project-affiliation {
+  font-size: 11.5px;
+  color: #5e7a92;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.project-details-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-color);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.project-details-btn i {
+  font-size: 13px;
+  transition: transform 0.2s ease;
+}
+
+.project-card:hover .project-details-btn {
+  color: #67d4ff;
+}
+
+.project-card:hover .project-details-btn i {
+  transform: translateX(3px);
+}
+
+/* ── Isotope item spacing ─────────────────────────────────── */
+.portfolio .isotope-container {
+  --bs-gutter-y: 1.5rem;
+}
+
+/* ── Widen cards to 3-col on large screens ────────────────── */
+@media (min-width: 992px) {
+  .portfolio-item.col-lg-4 {
+    width: 33.3333%;
+  }
+}
+
+@media (max-width: 576px) {
+  .project-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}

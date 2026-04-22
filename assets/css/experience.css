@@ -1,0 +1,257 @@
+/*--------------------------------------------------------------
+# experience.css
+# Styles for: Experience timeline, Contact section (equal-height
+# form), and sidebar CV download buttons.
+# Linked after main.css in index.html — overrides are intentional.
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Sidebar — CV / Resume download buttons
+--------------------------------------------------------------*/
+.sidebar-cv-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 20px 20px;
+  border-top: 1px solid color-mix(in srgb, var(--nav-color), transparent 80%);
+  margin-top: 8px;
+}
+
+.cv-dl-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 55%);
+  border-radius: 4px;
+  color: var(--nav-color);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.cv-dl-btn i {
+  font-size: 15px;
+  color: var(--accent-color);
+  transition: color 0.25s ease;
+}
+
+.cv-dl-btn:hover {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #fff;
+}
+
+.cv-dl-btn:hover i {
+  color: #fff;
+}
+
+
+/*--------------------------------------------------------------
+# Experience Section — inline CV download links (in section title)
+--------------------------------------------------------------*/
+.cv-inline-link {
+  color: var(--accent-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cv-inline-link:hover {
+  text-decoration: underline;
+}
+
+
+/*--------------------------------------------------------------
+# Experience Timeline
+--------------------------------------------------------------*/
+
+/* Wrapper — holds the centred spine */
+.tl-wrap {
+  position: relative;
+  padding: 8px 0 4px;
+}
+
+/* Centre spine (desktop) */
+.tl-wrap::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background: color-mix(in srgb, var(--accent-color), transparent 72%);
+}
+
+/* ── Each timeline entry ──────────────────────────── */
+.tl-entry {
+  display: flex;
+  width: 100%;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.tl-entry:last-child {
+  margin-bottom: 0;
+}
+
+/* Left entry: content sits left of the spine */
+.tl-entry.tl-left {
+  justify-content: flex-start;
+  padding-right: calc(50% + 28px);
+}
+
+/* Right entry: content sits right of the spine */
+.tl-entry.tl-right {
+  justify-content: flex-end;
+  padding-left: calc(50% + 28px);
+}
+
+/* ── Dot on the spine ─────────────────────────────── */
+.tl-dot {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  border: 2px solid var(--background-color);
+  box-shadow: 0 0 0 2px var(--accent-color);
+  z-index: 1;
+}
+
+/* ── Content card ─────────────────────────────────── */
+.tl-content {
+  background: var(--surface-color);
+  border-radius: 6px;
+  padding: 14px 18px 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  width: 100%;
+}
+
+.tl-content:hover {
+  border-color: color-mix(in srgb, var(--accent-color), transparent 55%);
+  box-shadow: 0 4px 18px rgba(20, 157, 221, 0.09);
+}
+
+.tl-date {
+  display: block;
+  font-size: 10.5px;
+  font-family: 'Google Sans Code', monospace, sans-serif;
+  color: var(--accent-color);
+  letter-spacing: 0.07em;
+  margin-bottom: 5px;
+}
+
+.tl-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--heading-color);
+  line-height: 1.35;
+  margin-bottom: 3px;
+}
+
+.tl-org {
+  font-size: 12.5px;
+  color: color-mix(in srgb, var(--default-color), transparent 38%);
+  font-style: italic;
+  margin-bottom: 6px;
+}
+
+.tl-desc {
+  font-size: 12.5px;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Tablet & mobile: single left-aligned list ────── */
+@media (max-width: 991px) {
+  .tl-wrap::before {
+    left: 7px;
+    transform: none;
+  }
+
+  .tl-entry.tl-left,
+  .tl-entry.tl-right {
+    justify-content: flex-start;
+    padding-left: 34px;
+    padding-right: 0;
+  }
+
+  .tl-dot {
+    left: 7px;
+    transform: translateX(-50%);
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Contact Section — equal-height columns, placeholder-only form
+--------------------------------------------------------------*/
+
+/* Make both columns the same height */
+.contact .row.align-items-stretch {
+  align-items: stretch !important;
+}
+
+/* Override main.css: info-wrap fills full column height */
+.contact .info-wrap {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Override main.css: form fills full column height */
+.contact .php-email-form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fields area grows to fill available space */
+.contact-form-fields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 0;
+}
+
+/* Two-col row for Name + Email */
+.contact-form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* Textarea grows to fill remaining height */
+.contact .php-email-form textarea {
+  flex: 1;
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Remove labels (placeholders do the job) */
+.contact .php-email-form label {
+  display: none;
+}
+
+/* Tighten submit button spacing */
+.contact .php-email-form .col-md-12.text-center {
+  margin-top: 14px;
+  padding: 0;
+}
+
+@media (max-width: 575px) {
+  .contact-form-row-2 {
+    grid-template-columns: 1fr;
+  }
+}

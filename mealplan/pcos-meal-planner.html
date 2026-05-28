@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nourish · PCOS Meal Planner · Bangalore</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FDF8F2;--surface:#FFFCF8;--surface2:#F5EDE4;
+  --primary:#B85C38;--primary-light:#F5EBE4;--primary-mid:#D4795A;
+  --sage:#4A7A5A;--sage-light:#E6F0E9;
+  --fish:#1A5EA0;--fish-light:#DBE9F6;
+  --brown:#1C1208;--muted:#6B5A4A;--light:#9B8B7A;
+  --border:#EAE0D8;--border-strong:#C9B9A8;
+  --display:'Cormorant Garamond',Georgia,serif;
+  --body:'Outfit',system-ui,sans-serif;
+  --r4:4px;--r8:8px;--r12:12px;--r16:16px;--r24:24px;--r32:32px;
+  --shadow-sm:0 1px 4px rgba(28,18,8,.07);
+  --shadow-md:0 4px 20px rgba(28,18,8,.10);
+  --shadow-lg:0 12px 48px rgba(28,18,8,.14);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--brown);line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:3px}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:200;background:rgba(253,248,242,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 32px}
+.nav-logo{font-family:var(--display);font-size:20px;font-weight:600;color:var(--primary);letter-spacing:-.02em}
+.nav-logo span{color:var(--muted);font-weight:400}
+.nav-links{display:flex;gap:28px}
+.nav-links a{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;transition:color .15s;letter-spacing:.01em}
+.nav-links a:hover{color:var(--primary)}
+.nav-ham{display:none;background:none;border:1.5px solid var(--border-strong);border-radius:var(--r8);padding:7px 12px;cursor:pointer;font-size:14px;color:var(--muted);font-family:var(--body)}
+.mob-drawer{display:none;background:var(--surface);border-bottom:1px solid var(--border);padding:8px 0}
+.mob-drawer.open{display:block}
+.mob-drawer a{display:block;padding:12px 32px;font-size:14px;font-weight:500;color:var(--brown);text-decoration:none;border-bottom:1px solid var(--border)}
+.mob-drawer a:last-child{border-bottom:none}
+.mob-drawer a:hover{background:var(--primary-light);color:var(--primary)}
+
+/* ── HERO ── */
+.hero{background:var(--surface);border-bottom:1px solid var(--border);padding:80px 32px 64px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-40px;right:-60px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(184,92,56,.08) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-40px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(74,122,90,.06) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 360px;gap:60px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--primary-light);color:var(--primary);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:18px}
+.hero h1{font-family:var(--display);font-size:clamp(36px,5vw,58px);font-weight:600;line-height:1.1;letter-spacing:-.03em;margin-bottom:16px}
+.hero h1 em{color:var(--primary);font-style:italic}
+.hero-sub{font-size:15px;color:var(--muted);max-width:480px;line-height:1.75;font-weight:300;margin-bottom:32px}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+.hero-stats{background:var(--bg);border:1px solid var(--border);border-radius:var(--r16);padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);overflow:hidden}
+.hero-stat{background:var(--bg);padding:18px 20px;text-align:center}
+.stat-num{font-family:var(--display);font-size:26px;font-weight:600;color:var(--primary);display:block;line-height:1}
+.stat-lbl{font-size:11px;color:var(--light);display:block;margin-top:4px;letter-spacing:.02em}
+
+/* ── BTNS ── */
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 20px;border-radius:var(--r8);font-family:var(--body);font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;border:1.5px solid transparent;text-decoration:none;white-space:nowrap}
+.btn-primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+.btn-primary:hover{background:#9E4C2C;border-color:#9E4C2C;transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+.btn-ghost{background:transparent;border-color:var(--border-strong);color:var(--muted)}
+.btn-ghost:hover{border-color:var(--primary);color:var(--primary);background:var(--primary-light)}
+.btn-sage{background:var(--sage);color:#fff;border-color:var(--sage)}
+.btn-sage:hover{background:#3A6A4A}
+.btn-sm{padding:5px 12px;font-size:12px;border-radius:var(--r4)}
+
+/* ── CONTAINER ── */
+.wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+.section{padding:72px 0}
+.section-alt{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.sec-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--primary);margin-bottom:8px}
+.sec-title{font-family:var(--display);font-size:clamp(26px,3.5vw,36px);font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
+.sec-sub{font-size:14px;color:var(--muted);max-width:580px;line-height:1.7;font-weight:300}
+
+/* ── PLAN SECTION ── */
+.plan-controls{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.fish-legend{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--light);background:var(--fish-light);border:1px solid #BDD4EE;border-radius:20px;padding:4px 12px;color:var(--fish)}
+
+/* ── DESKTOP GRID ── */
+.plan-wrap{border:1px solid var(--border);border-radius:var(--r16);overflow:hidden;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.plan-grid{display:grid;grid-template-columns:96px repeat(7,1fr);min-width:820px;background:var(--border);gap:1px}
+.pg-cell{background:var(--surface);padding:10px 10px;min-height:24px}
+.pg-corner,.pg-row-lbl{background:var(--bg)}
+.pg-day-hdr{background:var(--bg);text-align:center;padding:12px 8px}
+.pg-day-hdr.fish{background:var(--fish-light)}
+.pg-day-name{font-size:13px;font-weight:600;color:var(--brown)}
+.pg-day-hdr.fish .pg-day-name{color:var(--fish)}
+.pg-fish-tag{font-size:10px;color:var(--fish);margin-top:2px}
+.pg-row-lbl{display:flex;align-items:center;padding:10px 12px}
+.pg-row-lbl-text{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--light)}
+.pg-total-row{background:var(--bg)!important;font-size:12px;font-weight:600;color:var(--muted);text-align:center;display:flex;align-items:center;justify-content:center}
+
+.meal-slot{cursor:pointer;position:relative;transition:background .12s;min-height:96px}
+.meal-slot:hover{background:#FDFAF7}
+.meal-slot.drag-over{background:var(--sage-light);outline:2px solid var(--sage);outline-offset:-2px}
+.meal-slot.drag-bad{background:#FFF0EE;outline:2px solid #E53935;outline-offset:-2px}
+.ms-name{font-size:12px;font-weight:600;line-height:1.35;color:var(--brown);margin-bottom:3px;padding-right:20px}
+.ms-cal{font-size:10px;color:var(--light);margin-bottom:5px}
+.ms-badges{display:flex;flex-wrap:wrap;gap:3px}
+.ms-badge{font-size:9px;padding:1px 5px;border-radius:10px;background:var(--primary-light);color:var(--primary);font-weight:500}
+.ms-badge.fish{background:var(--fish-light);color:var(--fish)}
+.ms-reset{position:absolute;top:6px;right:6px;background:none;border:none;cursor:pointer;font-size:13px;color:var(--border-strong);opacity:0;transition:opacity .15s;line-height:1;padding:2px}
+.meal-slot:hover .ms-reset{opacity:1}
+.ms-reset:hover{color:var(--primary)}
+
+/* ── MOBILE PLAN ── */
+.mob-plan{display:none}
+.day-scroll{display:flex;overflow-x:auto;gap:6px;padding-bottom:4px;margin-bottom:16px;scrollbar-width:none}
+.day-scroll::-webkit-scrollbar{display:none}
+.day-btn{flex-shrink:0;padding:7px 16px;border-radius:20px;border:1.5px solid var(--border);font-size:13px;font-weight:500;cursor:pointer;background:var(--surface);color:var(--muted);transition:all .15s;white-space:nowrap;font-family:var(--body)}
+.day-btn.on{background:var(--primary);border-color:var(--primary);color:#fff}
+.day-btn.fish-day{border-color:var(--fish);color:var(--fish)}
+.day-btn.fish-day.on{background:var(--fish);border-color:var(--fish);color:#fff}
+.mob-meal{background:var(--surface);border:1px solid var(--border);border-radius:var(--r16);padding:16px;display:flex;gap:14px;margin-bottom:10px}
+.mob-icon{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.mob-type{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--light);margin-bottom:3px}
+.mob-name{font-size:15px;font-weight:600;margin-bottom:3px;line-height:1.3}
+.mob-cal{font-size:12px;color:var(--light);margin-bottom:10px}
+.mob-day-total{text-align:right;font-size:13px;font-weight:600;color:var(--muted);padding:8px 0 0}
+
+/* ── RECIPE POOL ── */
+.pool-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.pf-btn{padding:7px 18px;border-radius:20px;border:1.5px solid var(--border);font-size:13px;font-weight:500;cursor:pointer;background:transparent;color:var(--muted);transition:all .15s;font-family:var(--body)}
+.pf-btn:hover{border-color:var(--primary);color:var(--primary)}
+.pf-btn.on{background:var(--primary);border-color:var(--primary);color:#fff}
+.pf-btn.fish-flt.on{background:var(--fish);border-color:var(--fish)}
+.pool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:14px}
+.pool-card{background:var(--bg);border:1.5px solid var(--border);border-radius:var(--r16);padding:16px;cursor:grab;transition:all .18s;position:relative;user-select:none}
+.pool-card:hover{border-color:var(--primary-mid);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.pool-card:active{cursor:grabbing;transform:scale(.98)}
+.pool-card.is-dragging{opacity:.4;transform:rotate(2deg) scale(.97)}
+.pc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px}
+.pc-type{font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:10px}
+.pc-type.breakfast{background:#FFF3E0;color:#BF5F00}
+.pc-type.snack{background:var(--sage-light);color:#1B5E20}
+.pc-type.dinner{background:#EDE7F6;color:#311B92}
+.pc-fish{font-size:10px;font-weight:600;background:var(--fish-light);color:var(--fish);padding:3px 8px;border-radius:10px}
+.pc-name{font-size:14px;font-weight:600;line-height:1.35;margin-bottom:5px}
+.pc-meta{display:flex;gap:12px;font-size:11px;color:var(--light);margin-bottom:9px}
+.pc-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px}
+.pc-tag{font-size:10px;padding:2px 7px;border-radius:10px;background:var(--primary-light);color:var(--primary);font-weight:500}
+.pc-actions{display:flex;gap:6px}
+.drag-grip{position:absolute;top:12px;right:12px;color:var(--border-strong);font-size:13px;cursor:grab;opacity:.6}
+.drag-hint{position:absolute;bottom:6px;right:8px;font-size:10px;color:var(--border-strong);opacity:.6}
+
+/* ── TIPS ── */
+.tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.tip-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r16);padding:24px;transition:all .15s}
+.tip-card:hover{border-color:var(--border-strong);box-shadow:var(--shadow-sm);transform:translateY(-1px)}
+.tip-icon{font-size:28px;margin-bottom:12px}
+.tip-title{font-size:15px;font-weight:600;margin-bottom:7px;color:var(--brown)}
+.tip-body{font-size:13px;color:var(--muted);line-height:1.7;font-weight:300}
+
+/* ── NUTRITION ── */
+.nutri-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin-bottom:24px}
+.nutri-day{background:var(--surface);border:1px solid var(--border);border-radius:var(--r12);padding:14px 10px;text-align:center;transition:box-shadow .15s}
+.nutri-day:hover{box-shadow:var(--shadow-sm)}
+.nutri-day.fish{border-color:var(--fish);background:var(--fish-light)}
+.nd-name{font-size:11px;font-weight:600;color:var(--light);margin-bottom:6px;letter-spacing:.02em}
+.nutri-day.fish .nd-name{color:var(--fish)}
+.nd-cal{font-family:var(--display);font-size:22px;font-weight:600;color:var(--primary);line-height:1}
+.nd-unit{font-size:10px;color:var(--light);margin-top:2px}
+.nd-bar{height:5px;border-radius:3px;background:var(--border);margin-top:10px;overflow:hidden}
+.nd-fill{height:100%;border-radius:3px;background:var(--primary);transition:width .4s ease}
+.nutri-day.fish .nd-fill{background:var(--fish)}
+.nutri-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.nutri-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r12);padding:16px;text-align:center}
+.nc-val{font-family:var(--display);font-size:20px;font-weight:600;display:block;margin-bottom:4px}
+.nc-lbl{font-size:11px;color:var(--light)}
+
+/* ── MODAL ── */
+.overlay{display:none;position:fixed;inset:0;background:rgba(28,18,8,.55);z-index:500;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
+.overlay.open{display:flex}
+.modal{background:var(--surface);border-radius:var(--r24);padding:32px;max-width:580px;width:100%;max-height:88vh;overflow-y:auto;position:relative;box-shadow:var(--shadow-lg);animation:slideUp .2s ease}
+.modal-sm{max-width:380px}
+@keyframes slideUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.modal-x{position:absolute;top:18px;right:18px;background:var(--bg);border:1px solid var(--border);cursor:pointer;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--muted);transition:all .15s;font-family:var(--body)}
+.modal-x:hover{background:var(--primary-light);color:var(--primary);border-color:var(--primary)}
+.m-type-row{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+.modal h3{font-family:var(--display);font-size:26px;font-weight:600;line-height:1.15;margin-bottom:8px;letter-spacing:-.02em}
+.m-meta{display:flex;gap:16px;font-size:13px;color:var(--muted);margin-bottom:8px}
+.m-desc{font-size:14px;color:var(--muted);margin-bottom:22px;line-height:1.7;font-weight:300}
+.m-sec{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--light);margin-bottom:10px;margin-top:20px}
+.m-ings{display:grid;grid-template-columns:1fr 1fr;gap:6px 16px;margin-bottom:16px}
+.m-ing{font-size:13px;color:var(--muted);display:flex;align-items:flex-start;gap:8px;line-height:1.4;font-weight:300}
+.m-ing-dot{color:var(--primary);margin-top:2px;flex-shrink:0}
+.m-step{display:flex;gap:12px;margin-bottom:12px}
+.m-step-n{min-width:26px;height:26px;border-radius:50%;background:var(--primary-light);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;flex-shrink:0;margin-top:1px}
+.m-step-t{font-size:13px;color:var(--muted);line-height:1.65;font-weight:300}
+.form-grp{margin-bottom:16px}
+.form-grp label{display:block;font-size:12px;font-weight:500;color:var(--muted);margin-bottom:6px}
+.form-grp select{width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:var(--r8);font-family:var(--body);font-size:14px;background:var(--surface);color:var(--brown);cursor:pointer;outline:none;transition:border-color .15s}
+.form-grp select:focus{border-color:var(--primary)}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(12px);background:var(--brown);color:#FDF8F2;padding:11px 24px;border-radius:24px;font-size:13px;font-weight:500;z-index:1000;opacity:0;transition:opacity .22s,transform .22s;pointer-events:none;white-space:nowrap;font-family:var(--body)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ── FOOTER ── */
+footer{background:var(--brown);color:rgba(253,248,242,.55);padding:56px 32px}
+.foot-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap}
+.foot-logo{font-family:var(--display);font-size:22px;color:var(--bg);margin-bottom:10px}
+.foot-copy{font-size:13px;line-height:1.75;max-width:380px;font-weight:300}
+.foot-note{font-size:11px;margin-top:12px;opacity:.6;line-height:1.6}
+.foot-nav a{display:block;font-size:13px;color:rgba(253,248,242,.55);text-decoration:none;margin-bottom:8px;transition:color .15s}
+.foot-nav a:hover{color:var(--bg)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-stats{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--border);border-radius:var(--r16);overflow:hidden;background:var(--border)}
+  .hero-stat{flex:1;min-width:120px;background:var(--bg)}
+  .hero::before,.hero::after{display:none}
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  .nav-ham{display:block}
+  .wrap{padding:0 20px}
+  .section{padding:52px 0}
+  .hero{padding:52px 20px 44px}
+}
+@media(max-width:768px){
+  .plan-wrap{display:none!important}
+  .mob-plan{display:block}
+  .nutri-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:520px){
+  .hero{padding:36px 16px 32px}
+  .modal{padding:24px 18px;border-radius:var(--r16)}
+  .m-ings{grid-template-columns:1fr}
+  .nutri-grid{grid-template-columns:repeat(3,1fr)}
+  .wrap{padding:0 16px}
+  .section{padding:40px 0}
+  .foot-inner{flex-direction:column;gap:24px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Nourish<span> · PCOS</span></div>
+  <div class="nav-links">
+    <a href="#plan">Meal Plan</a>
+    <a href="#pool">Recipe Pool</a>
+    <a href="#tips">PCOS Tips</a>
+    <a href="#nutrition">Nutrition</a>
+  </div>
+  <button class="nav-ham" onclick="toggleDrawer()" aria-label="Menu">☰ Menu</button>
+</nav>
+<div class="mob-drawer" id="mob-drawer">
+  <a href="#plan" onclick="toggleDrawer()">Meal Plan</a>
+  <a href="#pool" onclick="toggleDrawer()">Recipe Pool</a>
+  <a href="#tips" onclick="toggleDrawer()">PCOS Tips</a>
+  <a href="#nutrition" onclick="toggleDrawer()">Nutrition</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">🌿 Bangalore, India</div>
+      <h1>Your <em>PCOS</em><br>Meal Planner</h1>
+      <p class="hero-sub">A 7-day, science-backed meal plan for managing PCOS and healthy weight loss — built around fresh local ingredients available across Bangalore. Swap meals from the recipe pool to suit your week.</p>
+      <div class="hero-actions">
+        <a href="#plan" class="btn btn-primary">View Meal Plan</a>
+        <a href="#pool" class="btn btn-ghost">Browse Recipes</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="stat-num">~880</span><span class="stat-lbl">avg kcal / day</span></div>
+      <div class="hero-stat"><span class="stat-num">3×</span><span class="stat-lbl">fish weekly</span></div>
+      <div class="hero-stat"><span class="stat-num">36</span><span class="stat-lbl">recipes in pool</span></div>
+      <div class="hero-stat"><span class="stat-num">Low GI</span><span class="stat-lbl">every meal</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- MEAL PLAN -->
+<section id="plan" class="section">
+<div class="wrap">
+  <div class="sec-label">Your schedule</div>
+  <div class="sec-title">7-day meal plan</div>
+  <p class="sec-sub" style="margin-bottom:28px">Drag any recipe from the pool below into a meal slot to swap it. Click any card to view the full recipe. Fish days are Tuesday, Thursday &amp; Saturday.</p>
+  <div class="plan-controls">
+    <button class="btn btn-ghost" onclick="resetWeek()">↩ Reset to defaults</button>
+    <div class="fish-legend">🐟 Fish days: Tue · Thu · Sat</div>
+  </div>
+  <!-- Desktop grid -->
+  <div class="plan-wrap">
+    <div class="plan-grid" id="plan-grid"></div>
+  </div>
+  <!-- Mobile plan -->
+  <div class="mob-plan">
+    <div class="day-scroll" id="day-scroll"></div>
+    <div id="mob-meals"></div>
+    <div class="mob-day-total" id="mob-total"></div>
+  </div>
+</div>
+</section>
+
+<!-- RECIPE POOL -->
+<div id="pool" class="section-alt">
+<div class="section wrap">
+  <div class="sec-label">Browse &amp; swap</div>
+  <div class="sec-title">Recipe pool</div>
+  <p class="sec-sub" style="margin-bottom:28px">All 36 recipes at a glance. On desktop: drag a card into any compatible meal slot above. On mobile: tap "+ Plan" to choose a day and slot.</p>
+  <div class="pool-filters" id="pool-filters"></div>
+  <div class="pool-grid" id="pool-grid"></div>
+</div>
+</div>
+
+<!-- PCOS TIPS -->
+<section id="tips" class="section">
+<div class="wrap">
+  <div class="sec-label">Nutrition science</div>
+  <div class="sec-title">PCOS nutrition guide</div>
+  <p class="sec-sub" style="margin-bottom:36px">The principles behind this meal plan — for managing symptoms, balancing hormones and supporting healthy weight loss.</p>
+  <div class="tips-grid" id="tips-grid"></div>
+</div>
+</section>
+
+<!-- NUTRITION -->
+<section id="nutrition" class="section section-alt">
+<div class="wrap">
+  <div class="sec-label">At a glance</div>
+  <div class="sec-title">Weekly nutrition overview</div>
+  <p class="sec-sub" style="margin-bottom:32px">Calorie totals update automatically as you swap meals from the pool.</p>
+  <div class="nutri-grid" id="nutri-grid"></div>
+  <div class="nutri-cards" id="nutri-cards"></div>
+  <p style="font-size:12px;color:var(--light);margin-top:20px;line-height:1.7">⚠️ Calorie counts are estimates. Green tea, jeera water, lemon water and plain coconut water between meals are encouraged and not counted here. Consult a registered dietitian for a personalised calorie target.</p>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div>
+      <div class="foot-logo">Nourish · PCOS</div>
+      <p class="foot-copy">A 7-day PCOS meal planner using ingredients available across Bangalore — from KR Market and local vendors to Namdhari's and Foodhall.</p>
+      <p class="foot-note">This is a general wellness guide, not medical advice. Always consult your gynaecologist, endocrinologist, or a registered dietitian before making significant dietary changes.</p>
+    </div>
+    <div class="foot-nav">
+      <a href="#plan">Meal Plan</a>
+      <a href="#pool">Recipe Pool</a>
+      <a href="#tips">PCOS Tips</a>
+      <a href="#nutrition">Nutrition</a>
+    </div>
+  </div>
+</footer>
+
+<!-- RECIPE MODAL -->
+<div class="overlay" id="rec-modal" onclick="closeM('rec-modal',event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="modal-x" onclick="closeM('rec-modal')">✕</button>
+    <div id="rec-body"></div>
+  </div>
+</div>
+
+<!-- ADD-TO-PLAN MODAL -->
+<div class="overlay" id="atp-modal" onclick="closeM('atp-modal',event)">
+  <div class="modal modal-sm" onclick="event.stopPropagation()">
+    <button class="modal-x" onclick="closeM('atp-modal')">✕</button>
+    <h3 style="margin-bottom:6px">Add to plan</h3>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:22px;font-weight:300" id="atp-rname"></p>
+    <div class="form-grp">
+      <label>Day</label>
+      <select id="atp-day">
+        <option value="monday">Monday</option>
+        <option value="tuesday">Tuesday 🐟</option>
+        <option value="wednesday">Wednesday</option>
+        <option value="thursday">Thursday 🐟</option>
+        <option value="friday">Friday</option>
+        <option value="saturday">Saturday 🐟</option>
+        <option value="sunday">Sunday</option>
+      </select>
+    </div>
+    <div class="form-grp">
+      <label>Meal slot</label>
+      <select id="atp-slot">
+        <option value="breakfast">Breakfast</option>
+        <option value="snack">Snack</option>
+        <option value="dinner">Dinner</option>
+      </select>
+    </div>
+    <button class="btn btn-primary" onclick="confirmAtp()" style="width:100%;justify-content:center;margin-top:8px">✓ Add to plan</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ─────────────────────────────────────
+// DATA
+// ─────────────────────────────────────
+const RECIPES = [
+// BREAKFAST (12)
+{id:'moong-cheela',name:'Moong dal cheela',type:'breakfast',cal:300,time:'20 min',fish:false,tags:['High protein','Low GI'],
+desc:'Savory green moong crepes with fresh mint-coriander chutney.',
+ing:['1 cup green moong dal (soaked 4 hrs)','1 small onion, finely chopped','1 green chilli','¼ tsp cumin seeds','¼ tsp turmeric','1 tsp oil','Salt to taste'],
+steps:['Blend soaked moong with green chilli and a splash of water into a thick, smooth batter.','Add chopped onion, cumin seeds, turmeric and salt. Mix well.','Heat a non-stick pan on medium. Pour a ladle of batter and spread thin.','Drizzle oil around edges. Cook 2–3 min per side until golden and crisp.','Serve hot with mint-coriander chutney.']},
+
+{id:'ragi-porridge',name:'Ragi porridge with flaxseeds',type:'breakfast',cal:280,time:'15 min',fish:false,tags:['Low GI','Omega-3'],
+desc:'Nourishing finger millet porridge with ground flaxseeds and fresh banana slices.',
+ing:['3 tbsp ragi (finger millet) flour','1 tbsp ground flaxseeds','1 banana, sliced','1 tsp jaggery (optional)','½ tsp cardamom powder','2 cups water'],
+steps:['Mix ragi flour in ¼ cup cold water to a smooth lump-free paste.','Bring remaining 1¾ cups water to a boil. Slowly stir in ragi paste.','Reduce heat; cook 6–8 min stirring constantly until thick and cooked.','Add cardamom and jaggery if using. Remove from heat.','Stir in flaxseeds and top with banana slices. Serve warm.']},
+
+{id:'oats-upma',name:'Vegetable oats upma',type:'breakfast',cal:300,time:'20 min',fish:false,tags:['High fiber','Low GI'],
+desc:'Rolled oats cooked upma-style with mustard tempering and fresh vegetables.',
+ing:['½ cup rolled oats','¼ cup carrot, diced','¼ cup green peas','1 small onion, chopped','1 green chilli','½ tsp mustard seeds','¼ tsp turmeric','8–10 curry leaves','1 tsp oil','Salt + lemon'],
+steps:['Dry roast oats in a pan 3 min on medium heat. Set aside.','Heat oil; add mustard seeds. When they splutter, add curry leaves and chilli.','Add onion and sauté 2–3 min. Add veggies and turmeric; cook 4 min.','Add 1 cup water and salt. Bring to boil.','Add roasted oats; stir and cook 3–4 min until thick. Squeeze lemon. Serve.']},
+
+{id:'sprouted-moong',name:'Sprouted moong salad',type:'breakfast',cal:220,time:'5 min',fish:false,tags:['High protein','Raw','Low GI'],
+desc:'Sprouted green moong tossed with fresh vegetables and a tangy lemon-spice dressing.',
+ing:['1 cup sprouted green moong','1 cucumber, diced','1 tomato, diced','½ onion, finely chopped','½ tsp chaat masala','½ tsp roasted cumin powder','Lemon juice to taste','Rock salt','Fresh coriander'],
+steps:['Rinse sprouted moong under cold water. Drain well.','Combine with cucumber, tomato and onion in a bowl.','Add chaat masala, cumin powder, rock salt and lemon juice.','Toss gently. Adjust seasoning.','Garnish with fresh coriander. Serve immediately.']},
+
+{id:'besan-cheela',name:'Besan cheela with spinach',type:'breakfast',cal:300,time:'20 min',fish:false,tags:['High protein','Iron-rich'],
+desc:'Chickpea flour pancakes packed with sautéed spinach and onion, served with green chutney.',
+ing:['¾ cup besan (chickpea flour)','1 cup spinach, finely chopped','1 small onion, chopped','1 green chilli, minced','¼ tsp ajwain (carom seeds)','¼ tsp turmeric','1 tsp oil','Salt to taste'],
+steps:['Whisk besan with enough water to make a smooth pourable batter.','Add spinach, onion, chilli, ajwain, turmeric and salt. Mix well.','Heat a non-stick pan on medium heat.','Pour a ladle of batter; spread into a thin circle. Drizzle oil on edges.','Cook 2–3 min per side until golden. Serve with green chutney.']},
+
+{id:'oats-ragi-idli',name:'Oats-ragi idli + sambar',type:'breakfast',cal:320,time:'20 min',fish:false,tags:['High fiber','Gut-friendly'],
+desc:'Soft steamed oats-ragi idlis with a vegetable-packed sambar.',
+ing:['1 cup oats, blended to flour','½ cup ragi flour','¾ cup curd (or water for dairy-free)','1 tsp eno fruit salt','Salt to taste','For sambar: toor dal, mixed veggies, sambar powder, mustard seeds, curry leaves'],
+steps:['Mix oat flour, ragi flour, curd and salt into a thick batter. Rest 10 min.','Add eno and fold gently. Do not overmix.','Grease idli moulds, fill ¾ and steam for 12–15 min.','For sambar: pressure cook toor dal and veggies with sambar powder.','Temper with mustard seeds and curry leaves. Serve with idlis.']},
+
+{id:'quinoa-upma',name:'Quinoa vegetable upma',type:'breakfast',cal:300,time:'25 min',fish:false,tags:['Complete protein','Low GI'],
+desc:'Protein-packed quinoa cooked upma-style with seasonal vegetables and a zesty tempering.',
+ing:['½ cup quinoa, rinsed well','1 cup water','1 small onion, chopped','1 carrot, diced small','¼ cup green peas','½ tsp mustard seeds','½ tsp cumin seeds','8 curry leaves','1 tsp oil','Salt + lemon'],
+steps:['Cook rinsed quinoa in 1 cup water on low heat 15 min. Fluff with a fork.','Heat oil; add mustard and cumin seeds until they splutter.','Add curry leaves and onion; sauté until translucent.','Add carrot, peas and salt. Cook 4–5 min.','Fold in cooked quinoa. Squeeze lemon and serve.']},
+
+{id:'jowar-dosa',name:'Jowar dosa + coconut chutney',type:'breakfast',cal:280,time:'25 min',fish:false,tags:['Gluten-free','Low GI'],
+desc:'Crispy sorghum flour dosas served with a fresh coconut-coriander chutney.',
+ing:['1 cup jowar (sorghum) flour','2 tbsp rice flour','1 tsp cumin seeds','Salt to taste','Water to thin','For chutney: ¼ cup grated coconut, coriander, green chilli, lemon, salt'],
+steps:['Combine jowar flour, rice flour, cumin and salt. Add water to make a thin batter.','Rest 5 min. Stir well before using.','Heat a non-stick pan on medium. Pour batter and spread thin.','Drizzle oil around edges. Cook until crispy; flip once.','Blend chutney ingredients with a splash of water. Serve with dosas.']},
+
+{id:'peanut-poha',name:'Peanut & vegetable poha',type:'breakfast',cal:290,time:'15 min',fish:false,tags:['Iron-rich','Quick'],
+desc:'Flattened rice with roasted peanuts, vegetables and a turmeric-lime dressing.',
+ing:['1 cup thin poha (flattened rice)','2 tbsp raw peanuts','1 small onion, chopped','1 small potato, diced fine','½ tsp mustard seeds','½ tsp turmeric','8 curry leaves','1 tsp oil','Lemon juice, salt, coriander'],
+steps:['Rinse poha briefly in water. Drain and let sit 5 min to soften.','Heat oil; add mustard seeds. Add curry leaves, onion and potato.','Cook 5–7 min until potato is tender. Add peanuts and turmeric.','Fold in softened poha gently. Season with salt. Cook 2 min.','Squeeze lemon and garnish with coriander. Serve immediately.']},
+
+{id:'daliya-upma',name:'Vegetable daliya upma',type:'breakfast',cal:300,time:'25 min',fish:false,tags:['High fiber','Low GI'],
+desc:'Broken wheat slow-cooked with mixed vegetables — fiber-rich and deeply comforting.',
+ing:['½ cup daliya (broken wheat)','1 small onion, chopped','1 carrot, diced','¼ cup green peas','2 tbsp peanuts','½ tsp mustard seeds','¼ tsp turmeric','1 tsp oil','Salt, lemon, coriander'],
+steps:['Dry roast daliya on medium heat until fragrant, about 3 min. Set aside.','Heat oil; add mustard seeds. Add onion and sauté 2 min.','Add carrot, peas, peanuts and turmeric. Cook 4 min.','Pour in 1½ cups water and salt. Bring to boil.','Add roasted daliya; cover and cook on low 10–12 min until soft. Squeeze lemon.']},
+
+{id:'banana-pancakes',name:'Banana oat pancakes',type:'breakfast',cal:310,time:'20 min',fish:false,tags:['No added sugar','High fiber'],
+desc:'Two-ingredient banana-oat pancakes that are naturally sweet, filling and wholesome.',
+ing:['1 ripe banana','½ cup rolled oats, blended to flour','1 egg (optional, for binding)','¼ tsp cinnamon','Pinch of salt','½ tsp oil for cooking'],
+steps:['Mash banana thoroughly until completely smooth.','Add oat flour, cinnamon and salt. Mix into a thick batter.','Heat a non-stick pan on low-medium. Add a tiny drop of oil.','Spoon 3 tbsp per pancake. Cook 2–3 min per side until set.','Serve with sliced seasonal fruit or a drizzle of honey.']},
+
+{id:'chia-pudding',name:'Mango chia seed pudding',type:'breakfast',cal:260,time:'5 min (+ overnight)',fish:false,tags:['Omega-3','Antioxidant'],
+desc:'Creamy chia pudding set overnight with light coconut milk, topped with ripe mango.',
+ing:['3 tbsp chia seeds','1 cup light coconut milk or oat milk','½ ripe mango, diced','1 tsp honey','¼ tsp cardamom','Pinch of cinnamon'],
+steps:['Stir chia seeds into coconut milk with honey and cardamom.','Whisk briskly for 2 min to prevent clumping.','Cover and refrigerate overnight or at least 4 hours.','In the morning, stir — it should be thick and creamy.','Top with fresh mango and serve cold.']},
+
+// SNACK (12)
+{id:'roasted-chana',name:'Roasted chana + seasonal fruit',type:'snack',cal:150,time:'0 min',fish:false,tags:['Fiber rich','Protein'],
+desc:'A simple, satisfying pairing of roasted Bengal gram with a whole seasonal fruit.',
+ing:['¼ cup roasted chana (Bengal gram)','1 seasonal fruit (banana, guava or apple)','Pinch of rock salt (optional)'],
+steps:['Measure out roasted chana into a small bowl.','Season with a pinch of rock salt if desired.','Wash and cut your seasonal fruit.','Eat together as a balanced protein + fiber snack.']},
+
+{id:'roasted-makhana',name:'Roasted makhana',type:'snack',cal:100,time:'5 min',fish:false,tags:['Low calorie','Calcium-rich'],
+desc:'Fox nut seeds roasted with a touch of ghee, turmeric and rock salt until irresistibly crispy.',
+ing:['1 cup makhana (fox nuts / lotus seeds)','½ tsp ghee','¼ tsp turmeric','¼ tsp rock salt','Optional: black pepper, chilli powder'],
+steps:['Heat ghee in a pan on low-medium heat.','Add makhana and toss to coat evenly.','Roast 5–7 min, stirring constantly, until puffed and crispy.','Add turmeric, salt and pepper. Toss. Remove from heat.','Cool before eating. Store in an airtight jar.']},
+
+{id:'cucumber-hummus',name:'Cucumber & carrot with hummus',type:'snack',cal:130,time:'5 min',fish:false,tags:['Anti-inflammatory','Fiber rich'],
+desc:'Crisp vegetable sticks with creamy hummus — a balanced plant-protein afternoon snack.',
+ing:['½ cucumber, cut into sticks','1 carrot, cut into sticks','2 tbsp hummus (store-bought or homemade)','Smoked paprika to garnish'],
+steps:['Wash and cut vegetables into finger-length sticks.','Place hummus in a small dipping bowl. Dust with paprika.','Arrange sticks and serve immediately.','Can prep veggies the night before — keep in cold water in fridge.']},
+
+{id:'mixed-nuts',name:'Mixed nuts',type:'snack',cal:150,time:'0 min',fish:false,tags:['Healthy fats','Omega-3'],
+desc:'A measured handful of walnuts, almonds and pumpkin seeds — hormone-healthy fats.',
+ing:['6 almonds (soaked overnight, peeled)','4 walnuts','1 tbsp pumpkin seeds','2 dates (optional, for sweetness)'],
+steps:['Soak almonds overnight for better digestibility. Peel before eating.','Eat walnuts and pumpkin seeds as they are.','Combine all in a small bowl.','Eat with dates if you want natural sweetness.']},
+
+{id:'chaas',name:'Chaas (buttermilk)',type:'snack',cal:70,time:'2 min',fish:false,tags:['Probiotic','Low calorie'],
+desc:'Thin, spiced buttermilk with cumin and ginger — cooling, gut-friendly and refreshing.',
+ing:['½ cup curd (dahi)','1 cup cold water','¼ tsp roasted cumin powder','½ tsp fresh ginger, grated','Rock salt to taste','Fresh mint or coriander'],
+steps:['Whisk curd with cold water until smooth and frothy.','Add cumin powder, ginger and rock salt.','Stir well and adjust seasoning.','Pour into a glass and garnish with mint. Serve chilled.']},
+
+{id:'chia-fruit',name:'Fruit salad with chia seeds',type:'snack',cal:140,time:'5 min',fish:false,tags:['Antioxidant','Omega-3'],
+desc:'Bright seasonal fruit with chia seeds and a chaat-lemon dressing.',
+ing:['½ cup papaya or watermelon, diced','¼ cup pomegranate seeds','1 guava, diced','1 tsp chia seeds','½ tsp lemon juice','Pinch of chaat masala'],
+steps:['Dice all fruit into bite-sized pieces.','Combine with pomegranate seeds in a bowl.','Sprinkle chia seeds, lemon juice and chaat masala.','Toss gently and serve immediately or refrigerate up to 2 hours.']},
+
+{id:'boiled-egg-fruit',name:'Boiled egg + seasonal fruit',type:'snack',cal:120,time:'10 min',fish:false,tags:['Protein','Fiber'],
+desc:'One boiled egg with a seasonal fruit — simple, balanced and surprisingly filling.',
+ing:['1 large egg','1 seasonal fruit (apple, pear or guava)','Rock salt + cracked pepper'],
+steps:['Place egg in cold water. Bring to a boil; cook 7–8 min.','Transfer to cold water. Peel when cool.','Season egg with rock salt and pepper.','Wash and slice your fruit. Eat together.']},
+
+{id:'murmura-chaat',name:'Murmura chaat',type:'snack',cal:130,time:'5 min',fish:false,tags:['Low calorie','Quick'],
+desc:'Puffed rice tossed with vegetables and tamarind — a healthy bhel-style snack.',
+ing:['1 cup murmura (puffed rice)','½ tomato, finely diced','¼ onion, finely chopped','1 green chilli, minced','¼ tsp chaat masala','1 tsp tamarind chutney','Lemon juice + coriander'],
+steps:['Mix tomato, onion and chilli in a bowl.','Add chaat masala and tamarind chutney. Stir.','Just before serving, add murmura and toss quickly.','Squeeze lemon and garnish with coriander.','Eat immediately while still crispy.']},
+
+{id:'edamame',name:'Steamed edamame with salt',type:'snack',cal:120,time:'10 min',fish:false,tags:['High protein','Plant-based'],
+desc:'Lightly salted edamame — high-protein and available frozen at Bangalore supermarkets.',
+ing:['1 cup frozen edamame (in pod)','Rock salt to taste','Optional: lemon juice, chilli flakes'],
+steps:['Steam frozen edamame for 5–6 min until bright green and tender.','Or microwave with 2 tbsp water for 3–4 min.','Drain. Season with rock salt.','Add lemon and chilli flakes. Pop beans from pods to eat.']},
+
+{id:'apple-almond',name:'Apple with almond butter',type:'snack',cal:150,time:'2 min',fish:false,tags:['Healthy fats','Fiber'],
+desc:'Apple slices dipped in unsweetened almond butter — clean fats meet natural fiber.',
+ing:['1 medium apple','1 tbsp unsweetened almond butter'],
+steps:['Wash the apple and cut into thin slices. Remove the core.','Place almond butter in a dipping bowl.','Dip apple slices and enjoy.','Find almond butter at Foodhall, Namdhari\'s or online.']},
+
+{id:'roasted-seeds',name:'Roasted seeds mix',type:'snack',cal:130,time:'8 min',fish:false,tags:['Omega-3','Mineral-rich'],
+desc:'Pumpkin, sunflower and flaxseeds dry-roasted with cumin and rock salt.',
+ing:['2 tbsp pumpkin seeds','2 tbsp sunflower seeds','1 tbsp flaxseeds','½ tsp cumin seeds','¼ tsp rock salt','Pinch of chilli powder'],
+steps:['Heat a dry pan on medium. No oil needed.','Add pumpkin and sunflower seeds. Roast 3–4 min, stirring.','Add flaxseeds and cumin. Roast 2 min more.','Season with salt and chilli. Toss and cool.','Store in an airtight jar. Eat by the tablespoon.']},
+
+{id:'green-smoothie',name:'Green smoothie bowl',type:'snack',cal:160,time:'5 min',fish:false,tags:['Antioxidant','Iron-rich'],
+desc:'A thick cold smoothie bowl of spinach, banana and seeds — more filling than a drink.',
+ing:['1 cup fresh spinach','1 frozen banana','¼ cup light coconut milk or oat milk','1 tsp chia seeds','1 tbsp pumpkin seeds','Ice cubes'],
+steps:['Blend spinach, frozen banana and coconut milk until completely smooth.','Add ice cubes and blend again until very thick.','Pour into a bowl (thicker than a drinkable smoothie).','Top with chia seeds and pumpkin seeds. Eat with a spoon immediately.']},
+
+// DINNER (12)
+{id:'rajma-jowar',name:'Rajma curry + jowar roti',type:'dinner',cal:430,time:'30 min',fish:false,tags:['High protein','Fiber rich'],
+desc:'Red kidney beans in a spiced tomato-onion gravy with jowar flatbreads.',
+ing:['1 cup rajma (soaked overnight)','2 tomatoes, pureed','1 onion, chopped','1 tsp ginger-garlic paste','1 tsp coriander powder','½ tsp cumin seeds','½ tsp garam masala','1 tsp oil','Jowar flour + warm water + salt for rotis'],
+steps:['Pressure cook soaked rajma with salt until tender (4–5 whistles).','Heat oil; add cumin seeds, then onion. Sauté until golden.','Add ginger-garlic paste; cook 2 min. Add tomato puree and spices; cook 8 min.','Add cooked rajma with cooking liquid. Simmer 10 min until thick.','For roti: knead jowar flour with warm water. Roll thick; cook on dry tawa.']},
+
+{id:'bangda-grilled',name:'Grilled bangda + stir-fried vegetables',type:'dinner',cal:480,time:'25 min',fish:true,tags:['Omega-3','Anti-inflammatory'],
+desc:'Turmeric-marinated mackerel pan-grilled until charred, with sautéed seasonal vegetables.',
+ing:['2 whole bangda (mackerel), cleaned and scored','1 tsp turmeric','1 tsp red chilli powder','½ tsp coriander powder','2 tsp lemon juice','½ tsp oil','Salt to taste','For vegetables: 1 cup mixed veg, cumin, salt, oil'],
+steps:['Score fish with diagonal cuts. Mix spices with lemon juice and oil into a paste.','Rub marinade all over fish and into the cuts. Rest 10 min.','Heat a grill pan or non-stick on medium-high.','Grill fish 5–6 min per side until cooked through and lightly charred.','Sauté vegetables with cumin and salt. Serve alongside fish with lemon.']},
+
+{id:'tofu-bhurji',name:'Tofu bhurji + jowar roti',type:'dinner',cal:420,time:'25 min',fish:false,tags:['High protein','Dairy-free'],
+desc:'Crumbled firm tofu stir-fried with onion, tomato and warming spices.',
+ing:['200g firm tofu, crumbled','1 onion, chopped','2 tomatoes, chopped','1 capsicum, chopped','1 tsp cumin seeds','½ tsp turmeric','½ tsp garam masala','1 tsp oil','Salt + coriander leaves'],
+steps:['Heat oil; add cumin seeds. Once they splutter, add onion. Sauté golden.','Add tomatoes and cook until pulpy, about 5 min.','Add capsicum, turmeric, garam masala and salt. Stir 2 min.','Crumble tofu into the pan. Mix well; cook 5–7 min.','Garnish with coriander. Serve hot with 2 jowar rotis.']},
+
+{id:'tilapia-coconut',name:'Tilapia coconut curry + brown rice',type:'dinner',cal:470,time:'30 min',fish:true,tags:['Omega-3','Anti-inflammatory'],
+desc:'Tender tilapia fillets in a light coconut milk curry with ginger and curry leaves.',
+ing:['250g tilapia fillets','½ cup light coconut milk','2 tomatoes, chopped','1 onion, chopped','1 tsp ginger-garlic paste','½ tsp turmeric','1 tsp coriander powder','8–10 curry leaves','1 tsp oil','Salt to taste'],
+steps:['Heat oil; add curry leaves then onion. Sauté 3–4 min golden.','Add ginger-garlic paste; cook 1 min. Add tomatoes; cook 5 min.','Add turmeric and coriander powder. Stir 1 min.','Pour in coconut milk and ½ cup water. Add salt. Simmer 5 min.','Slide in tilapia. Cook 8–10 min until fish flakes easily.']},
+
+{id:'chana-quinoa',name:'Chana masala + quinoa',type:'dinner',cal:450,time:'30 min',fish:false,tags:['High protein','High fiber'],
+desc:'Bold spiced chickpea curry with protein-rich quinoa instead of rice.',
+ing:['1 cup chickpeas (soaked overnight or canned)','2 tomatoes, pureed','1 onion, chopped','1 tsp ginger-garlic paste','1 tsp chana masala powder','½ tsp cumin seeds','½ tsp amchur (dry mango powder)','1 tsp oil','½ cup quinoa (rinsed)'],
+steps:['Cook quinoa in 1 cup water on low for 15 min. Fluff with fork.','Pressure cook soaked chickpeas; or rinse canned ones.','Heat oil; add cumin seeds. Add onion; sauté dark golden.','Add ginger-garlic paste, tomato puree and spices; cook 8 min.','Add chickpeas; simmer 10 min. Serve over quinoa.']},
+
+{id:'sardine-curry',name:'Sardine / salmon curry + jowar roti',type:'dinner',cal:480,time:'30 min',fish:true,tags:['Omega-3','Anti-inflammatory'],
+desc:'Omega-3-rich sardines or salmon in a light tomato-onion gravy with jowar rotis.',
+ing:['250g sardines or salmon fillets','2 tomatoes, chopped','1 onion, chopped','1 tsp ginger-garlic paste','½ tsp turmeric','1 tsp coriander powder','½ tsp red chilli powder','1 tsp oil','Salt + coriander leaves'],
+steps:['Heat oil; add onion. Sauté until golden brown.','Add ginger-garlic paste; cook 2 min. Add tomatoes and spices.','Cook masala 8 min until oil separates.','Add ½ cup water; bring to simmer. Gently place fish in gravy.','Cook 8–10 min until fish is done. Serve with jowar roti and side salad.']},
+
+{id:'paneer-dal',name:'Paneer tikka + dal palak',type:'dinner',cal:480,time:'30 min',fish:false,tags:['High protein','Iron-rich'],
+desc:'Lightly marinated grilled paneer with spinach-lentil dal and cucumber salad.',
+ing:['150g paneer, cubed','½ cup masoor dal','2 cups fresh spinach','1 onion, chopped','2 tomatoes, chopped','Marinade: 2 tbsp curd, ½ tsp each chilli, cumin, turmeric, salt','1 tsp oil'],
+steps:['Marinate paneer in tikka mixture 10 min. Grill on hot pan 2–3 min per side.','Pressure cook masoor dal until soft and mushy.','Sauté onion and tomato with spices. Add cooked dal and blanched spinach.','Simmer dal palak 5 min until vibrant and creamy.','Serve grilled paneer with dal palak and a fresh cucumber salad.']},
+
+{id:'palak-dal',name:'Palak dal + jowar roti',type:'dinner',cal:380,time:'25 min',fish:false,tags:['Iron-rich','High fiber'],
+desc:'A simple, nourishing spinach-lentil dal — weeknight comfort at its best.',
+ing:['½ cup moong dal (split yellow)','2 cups fresh spinach, roughly chopped','1 onion, chopped','1 tomato, chopped','½ tsp cumin seeds','½ tsp turmeric','¼ tsp garam masala','1 tsp oil','Salt + lemon'],
+steps:['Pressure cook moong dal with turmeric and water (3 whistles).','Heat oil; add cumin seeds. Add onion; sauté golden.','Add tomato; cook 4 min. Add garam masala and salt.','Add cooked dal and spinach. Simmer 5–7 min until spinach wilts.','Squeeze lemon and serve with 2 jowar rotis.']},
+
+{id:'pomfret-grilled',name:'Grilled pomfret + fresh salad',type:'dinner',cal:420,time:'20 min',fish:true,tags:['Omega-3','Low calorie'],
+desc:'Pomfret (paplet) marinated in coastal spices and grilled until smoky and charred.',
+ing:['2 small pomfret, cleaned and scored','1 tsp turmeric','1 tsp red chilli powder','1 tsp coriander powder','2 tsp lemon juice','½ tsp oil','Salt','For salad: cucumber, tomato, onion, lemon, salt'],
+steps:['Score fish. Mix marinade and rub all over. Rest 10 min.','Heat grill pan or non-stick on medium-high.','Grill 4–5 min per side until charred and cooked through.','Make salad: dice cucumber, tomato and onion with lemon and salt.','Serve fish with fresh salad and extra lemon wedges.']},
+
+{id:'lobia-curry',name:'Lobia curry + jowar roti',type:'dinner',cal:410,time:'30 min',fish:false,tags:['High protein','Iron-rich'],
+desc:'Black-eyed peas in a light onion-tomato gravy — an underrated legume excellent for PCOS.',
+ing:['1 cup lobia (black-eyed peas, soaked 4 hrs)','2 tomatoes, chopped','1 onion, chopped','1 tsp ginger-garlic paste','½ tsp coriander powder','½ tsp cumin seeds','¼ tsp turmeric','1 tsp oil','Salt + coriander leaves'],
+steps:['Pressure cook soaked lobia with salt until tender (3–4 whistles).','Heat oil; add cumin seeds. Add onion; sauté golden.','Add ginger-garlic paste and tomatoes; cook 6–8 min.','Add spices and cooked lobia with liquid.','Simmer 8 min. Garnish with coriander. Serve with 2 jowar rotis.']},
+
+{id:'soya-quinoa',name:'Soya chunks masala + quinoa',type:'dinner',cal:430,time:'25 min',fish:false,tags:['High protein','Plant-based'],
+desc:'Soya chunks in a spiced tomato gravy with quinoa — one of the highest plant-protein meals.',
+ing:['1 cup soya chunks (nutri nuggets)','2 tomatoes, pureed','1 onion, chopped','1 tsp ginger-garlic paste','½ tsp coriander powder','½ tsp garam masala','¼ tsp turmeric','1 tsp oil','½ cup quinoa (rinsed)'],
+steps:['Soak soya chunks in hot water 10 min. Squeeze out excess water.','Cook quinoa in 1 cup water for 15 min. Fluff and set aside.','Heat oil; sauté onion until golden. Add ginger-garlic paste.','Add tomato puree and spices; cook 5 min. Add soya chunks.','Simmer 8 min until flavors meld. Serve over quinoa.']},
+
+{id:'rohu-curry',name:'Rohu fish curry + jowar roti',type:'dinner',cal:450,time:'30 min',fish:true,tags:['Omega-3','Local catch'],
+desc:'Rohu (Indian carp) in a tangy mustard-tomato gravy — widely available at Bangalore markets.',
+ing:['250g rohu fillets','2 tomatoes, chopped','1 onion, chopped','1 tsp mustard seeds','½ tsp turmeric','1 tsp coriander powder','½ tsp red chilli powder','1 tsp oil','Salt + lemon + coriander'],
+steps:['Rub rohu with turmeric and salt. Pan-fry lightly 2 min per side. Set aside.','Heat oil; add mustard seeds. When they pop, add onion. Sauté golden.','Add tomatoes and spices; cook 8 min until oil separates.','Add ½ cup water; bring to simmer. Add fried rohu.','Cook 8–10 min on low. Garnish with coriander. Serve with jowar roti.']}
+];
+
+const TIPS = [
+  {icon:'🌾',t:'Choose low-GI carbs',b:'Jowar, bajra, ragi, oats and brown rice over white rice or maida. Low-GI foods digest slowly, preventing rapid blood sugar spikes that worsen insulin resistance — the root driver of most PCOS symptoms.'},
+  {icon:'🐟',t:'Omega-3 three times weekly',b:'Fatty fish like mackerel (bangda), sardines, tilapia and salmon reduce systemic inflammation and can lower elevated androgen levels. This plan includes fish on Tuesday, Thursday and Saturday.'},
+  {icon:'🌿',t:'Prioritize plant proteins',b:'Moong dal, chana, rajma, lobia, tofu and sprouted legumes provide high protein with fiber. They digest slowly, keeping blood sugar and insulin stable for hours after eating.'},
+  {icon:'🥛',t:'Limit dairy strategically',b:'Dairy can elevate IGF-1 and androgens in PCOS-prone individuals. This plan limits dairy to chaas on Friday (probiotic) and small amounts of paneer on Sunday.'},
+  {icon:'⏰',t:'Eat within a time window',b:'Try to eat all 3 meals within a 10–12 hour window (e.g. 8am–7pm). Time-restricted eating improves insulin sensitivity in PCOS without requiring extreme calorie restriction.'},
+  {icon:'🧡',t:'Anti-inflammatory spices daily',b:'Turmeric, ginger, cinnamon, fenugreek seeds (methi) and coriander seeds feature daily in this plan. They are powerful anti-inflammatory agents that help balance hormones over time.'},
+  {icon:'💧',t:'Hydrate with purpose',b:'Start each day with jeera water or warm lemon water. Green tea between meals supports metabolism. Avoid fruit juices — they spike blood sugar almost as fast as soft drinks.'},
+  {icon:'🥜',t:'Healthy fats support hormones',b:'Walnuts, almonds, pumpkin seeds, flaxseeds and small amounts of ghee or coconut oil support hormone synthesis and reduce inflammation. Dietary fat is not the enemy in PCOS.'},
+  {icon:'🚫',t:'What to minimize',b:'Refined carbs (maida, white bread), added sugar, processed snacks, red meat, excessive dairy and fried food. These worsen insulin resistance and amplify PCOS-related symptoms including weight gain and acne.'}
+];
+
+// ─────────────────────────────────────
+// STATE
+// ─────────────────────────────────────
+const DAYS  = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday'];
+const DLAB  = {monday:'Monday',tuesday:'Tuesday',wednesday:'Wednesday',thursday:'Thursday',friday:'Friday',saturday:'Saturday',sunday:'Sunday'};
+const DSHT  = {monday:'Mon',tuesday:'Tue',wednesday:'Wed',thursday:'Thu',friday:'Fri',saturday:'Sat',sunday:'Sun'};
+const FISH_DAYS = new Set(['tuesday','thursday','saturday']);
+const MTYPES = ['breakfast','snack','dinner'];
+const MLAB  = {breakfast:'Breakfast',snack:'Snack',dinner:'Dinner'};
+const MICON = {breakfast:'☀️',snack:'🍎',dinner:'🌙'};
+const MICBG = {breakfast:'#FFF3E0',snack:'#E8F5E9',dinner:'#EDE7F6'};
+
+const DEF = {
+  monday:    {breakfast:'moong-cheela',  snack:'roasted-chana',   dinner:'rajma-jowar'},
+  tuesday:   {breakfast:'ragi-porridge', snack:'roasted-makhana', dinner:'bangda-grilled'},
+  wednesday: {breakfast:'oats-upma',     snack:'cucumber-hummus', dinner:'tofu-bhurji'},
+  thursday:  {breakfast:'sprouted-moong',snack:'mixed-nuts',      dinner:'tilapia-coconut'},
+  friday:    {breakfast:'besan-cheela',  snack:'chaas',           dinner:'chana-quinoa'},
+  saturday:  {breakfast:'oats-ragi-idli',snack:'chia-fruit',      dinner:'sardine-curry'},
+  sunday:    {breakfast:'quinoa-upma',   snack:'boiled-egg-fruit',dinner:'paneer-dal'}
+};
+
+let plan = JSON.parse(JSON.stringify(DEF));
+let mobDay = 'monday';
+let filter = 'all';
+let dragId = null;
+let atpId  = null;
+
+// ─────────────────────────────────────
+// HELPERS
+// ─────────────────────────────────────
+const R = id => RECIPES.find(r=>r.id===id);
+const dayTot = d => MTYPES.reduce((s,mt)=>{ const r=R(plan[d][mt]); return s+(r?r.cal:0); },0);
+
+function toast(msg){
+  const el=document.getElementById('toast');
+  el.textContent=msg; el.classList.add('show');
+  clearTimeout(el._t); el._t=setTimeout(()=>el.classList.remove('show'),2600);
+}
+
+// ─────────────────────────────────────
+// DESKTOP PLAN GRID
+// ─────────────────────────────────────
+function renderGrid(){
+  const g=document.getElementById('plan-grid');
+  let h='';
+  // header row
+  h+=`<div class="pg-cell pg-corner pg-row-lbl"></div>`;
+  DAYS.forEach(d=>{
+    const f=FISH_DAYS.has(d);
+    h+=`<div class="pg-cell pg-day-hdr${f?' fish':''}">
+      <div class="pg-day-name">${DSHT[d]}</div>
+      ${f?`<div class="pg-fish-tag">🐟 Fish</div>`:''}
+    </div>`;
+  });
+  // meal rows
+  MTYPES.forEach(mt=>{
+    h+=`<div class="pg-cell pg-row-lbl"><span class="pg-row-lbl-text">${MLAB[mt]}</span></div>`;
+    DAYS.forEach(d=>{
+      const r=R(plan[d][mt]);
+      h+=`<div class="pg-cell meal-slot" data-d="${d}" data-mt="${mt}" onclick="showRec('${plan[d][mt]}')">
+        <button class="ms-reset" title="Reset to default" onclick="event.stopPropagation();resetSlot('${d}','${mt}')">↩</button>
+        <div class="ms-name">${r?r.name:'—'}</div>
+        <div class="ms-cal">${r?r.cal+' kcal':''}</div>
+        <div class="ms-badges">
+          ${r&&r.fish?`<span class="ms-badge fish">🐟</span>`:''}
+          ${r?r.tags.slice(0,1).map(t=>`<span class="ms-badge">${t}</span>`).join(''):''}
+        </div>
+      </div>`;
+    });
+  });
+  // totals row
+  h+=`<div class="pg-cell pg-row-lbl pg-total-row"><span class="pg-row-lbl-text">Total</span></div>`;
+  DAYS.forEach(d=>{
+    h+=`<div class="pg-cell pg-total-row" id="gt-${d}">${dayTot(d)} kcal</div>`;
+  });
+  g.innerHTML=h;
+  // DnD events
+  g.querySelectorAll('.meal-slot').forEach(slot=>{
+    const {d,mt}=slot.dataset;
+    slot.addEventListener('dragover',e=>{
+      e.preventDefault();
+      const r=R(dragId);
+      slot.classList.toggle('drag-over',!!(r&&r.type===mt));
+      slot.classList.toggle('drag-bad',!!(r&&r.type!==mt));
+    });
+    slot.addEventListener('dragleave',()=>slot.classList.remove('drag-over','drag-bad'));
+    slot.addEventListener('drop',e=>{
+      e.preventDefault();
+      slot.classList.remove('drag-over','drag-bad');
+      const id=e.dataTransfer.getData('text/plain')||dragId;
+      const r=R(id);
+      if(!r){return;}
+      if(r.type!==mt){toast(`"${r.name}" is a ${r.type} — drop it in the ${r.type} row`);return;}
+      plan[d][mt]=id;
+      renderGrid(); renderNutri();
+      toast(`✓ "${r.name}" added to ${DLAB[d]} ${MLAB[mt]}`);
+    });
+  });
+}
+
+// ─────────────────────────────────────
+// MOBILE PLAN
+// ─────────────────────────────────────
+function renderMob(){
+  document.getElementById('day-scroll').innerHTML=DAYS.map(d=>
+    `<button class="day-btn${d===mobDay?' on':''}${FISH_DAYS.has(d)?' fish-day':''}" onclick="setMobDay('${d}')">
+      ${DSHT[d]}${FISH_DAYS.has(d)?' 🐟':''}
+    </button>`).join('');
+  document.getElementById('mob-meals').innerHTML=MTYPES.map(mt=>{
+    const r=R(plan[mobDay][mt]);
+    return`<div class="mob-meal">
+      <div class="mob-icon" style="background:${MICBG[mt]}">${MICON[mt]}</div>
+      <div style="flex:1">
+        <div class="mob-type">${MLAB[mt]}</div>
+        <div class="mob-name">${r?.name||'—'}</div>
+        <div class="mob-cal">${r?.cal||0} kcal · ${r?.time||''}</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <button class="btn btn-ghost btn-sm" onclick="showRec('${r?.id}')">📖 Recipe</button>
+          <button class="btn btn-ghost btn-sm" onclick="resetSlot('${mobDay}','${mt}')">↩ Reset</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+  document.getElementById('mob-total').textContent=`Day total: ${dayTot(mobDay)} kcal`;
+}
+function setMobDay(d){mobDay=d;renderMob();}
+
+// ─────────────────────────────────────
+// RESET
+// ─────────────────────────────────────
+function resetSlot(d,mt){
+  plan[d][mt]=DEF[d][mt];
+  renderGrid(); renderMob(); renderNutri();
+}
+function resetWeek(){
+  plan=JSON.parse(JSON.stringify(DEF));
+  renderGrid(); renderMob(); renderNutri();
+  toast('✓ Week reset to defaults');
+}
+
+// ─────────────────────────────────────
+// RECIPE POOL
+// ─────────────────────────────────────
+function renderFilters(){
+  const counts={all:RECIPES.length, breakfast:0, snack:0, dinner:0, fish:0};
+  RECIPES.forEach(r=>{counts[r.type]++;if(r.fish)counts.fish++;});
+  const btns=[
+    {f:'all',label:`All (${counts.all})`},
+    {f:'breakfast',label:`☀️ Breakfast (${counts.breakfast})`},
+    {f:'snack',label:`🍎 Snack (${counts.snack})`},
+    {f:'dinner',label:`🌙 Dinner (${counts.dinner})`},
+    {f:'fish',label:`🐟 Fish meals (${counts.fish})`,cls:'fish-flt'}
+  ];
+  document.getElementById('pool-filters').innerHTML=btns.map(b=>
+    `<button class="pf-btn${b.cls?' '+b.cls:''}${filter===b.f?' on':''}" onclick="setFilter('${b.f}',this)">${b.label}</button>`).join('');
+}
+
+function setFilter(f,btn){
+  filter=f;
+  document.querySelectorAll('.pf-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  renderPool();
+}
+
+function renderPool(){
+  const list=RECIPES.filter(r=>{
+    if(filter==='all')return true;
+    if(filter==='fish')return r.fish;
+    return r.type===filter;
+  });
+  document.getElementById('pool-grid').innerHTML=list.map(r=>`
+    <div class="pool-card" draggable="true"
+      ondragstart="startDrag(event,'${r.id}')"
+      ondragend="endDrag(event)">
+      <div class="pc-top">
+        <div class="pc-type ${r.type}">${MLAB[r.type]}</div>
+        ${r.fish?`<div class="pc-fish">🐟 Fish</div>`:''}
+      </div>
+      <div class="pc-name">${r.name}</div>
+      <div class="pc-meta"><span>🔥 ${r.cal} kcal</span><span>⏱ ${r.time}</span></div>
+      <div class="pc-tags">${r.tags.map(t=>`<span class="pc-tag">${t}</span>`).join('')}</div>
+      <div class="pc-actions">
+        <button class="btn btn-ghost btn-sm" onclick="showRec('${r.id}')">View</button>
+        <button class="btn btn-ghost btn-sm" onclick="openAtp('${r.id}')">+ Plan</button>
+      </div>
+      <span class="drag-hint" title="Drag to meal plan">⠿</span>
+    </div>`).join('');
+}
+
+function startDrag(e,id){
+  dragId=id;
+  e.dataTransfer.setData('text/plain',id);
+  e.dataTransfer.effectAllowed='copy';
+  e.target.closest('.pool-card').classList.add('is-dragging');
+}
+function endDrag(e){
+  dragId=null;
+  e.target.closest('.pool-card')?.classList.remove('is-dragging');
+}
+
+// ─────────────────────────────────────
+// RECIPE MODAL
+// ─────────────────────────────────────
+function showRec(id){
+  const r=R(id); if(!r)return;
+  document.getElementById('rec-body').innerHTML=`
+    <div class="m-type-row">
+      <div class="pc-type ${r.type}" style="display:inline-block">${MLAB[r.type]}</div>
+      ${r.fish?`<div class="pc-fish" style="display:inline-block">🐟 Fish</div>`:''}
+    </div>
+    <h3>${r.name}</h3>
+    <div class="m-meta"><span>⏱ ${r.time}</span><span>🔥 ${r.cal} kcal</span></div>
+    <p class="m-desc">${r.desc}</p>
+    <div class="m-sec">Ingredients</div>
+    <div class="m-ings">${r.ing.map(i=>`<div class="m-ing"><span class="m-ing-dot">•</span><span>${i}</span></div>`).join('')}</div>
+    <div class="m-sec">Steps</div>
+    ${r.steps.map((s,i)=>`<div class="m-step"><div class="m-step-n">${i+1}</div><div class="m-step-t">${s}</div></div>`).join('')}
+    <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:20px" onclick="closeM('rec-modal');openAtp('${r.id}')">+ Add to my plan</button>`;
+  document.getElementById('rec-modal').classList.add('open');
+}
+
+// ─────────────────────────────────────
+// ADD TO PLAN
+// ─────────────────────────────────────
+function openAtp(id){
+  atpId=id;
+  const r=R(id);
+  document.getElementById('atp-rname').textContent=`"${r.name}" — ${r.cal} kcal`;
+  document.getElementById('atp-slot').value=r.type;
+  document.getElementById('atp-modal').classList.add('open');
+}
+function confirmAtp(){
+  const d=document.getElementById('atp-day').value;
+  const mt=document.getElementById('atp-slot').value;
+  const r=R(atpId);
+  if(r.type!==mt){toast(`"${r.name}" is a ${r.type} — select the ${r.type} slot`);return;}
+  plan[d][mt]=atpId;
+  closeM('atp-modal');
+  renderGrid(); renderMob(); renderNutri();
+  toast(`✓ "${r.name}" added to ${DLAB[d]} ${MLAB[mt]}`);
+}
+function closeM(id,e){
+  if(!e||e.target===document.getElementById(id))
+    document.getElementById(id).classList.remove('open');
+}
+
+// ─────────────────────────────────────
+// TIPS
+// ─────────────────────────────────────
+function renderTips(){
+  document.getElementById('tips-grid').innerHTML=TIPS.map(t=>`
+    <div class="tip-card">
+      <div class="tip-icon">${t.icon}</div>
+      <div class="tip-title">${t.t}</div>
+      <div class="tip-body">${t.b}</div>
+    </div>`).join('');
+}
+
+// ─────────────────────────────────────
+// NUTRITION
+// ─────────────────────────────────────
+function renderNutri(){
+  const max=1000;
+  document.getElementById('nutri-grid').innerHTML=DAYS.map(d=>{
+    const tot=dayTot(d);
+    const pct=Math.min(Math.round(tot/max*100),100);
+    const f=FISH_DAYS.has(d);
+    return`<div class="nutri-day${f?' fish':''}">
+      <div class="nd-name">${DSHT[d]}${f?' 🐟':''}</div>
+      <div class="nd-cal">${tot}</div>
+      <div class="nd-unit">kcal</div>
+      <div class="nd-bar"><div class="nd-fill" style="width:${pct}%"></div></div>
+    </div>`;
+  }).join('');
+
+  const avg=Math.round(DAYS.reduce((s,d)=>s+dayTot(d),0)/7);
+  const fishDays=DAYS.filter(d=>MTYPES.some(mt=>{const r=R(plan[d][mt]);return r&&r.fish;})).length;
+
+  const cards=[
+    {v:`${avg} kcal`,l:'Average daily calories',c:'var(--primary)'},
+    {v:`${fishDays} days`,l:'Fish meals this week',c:'var(--fish)'},
+    {v:'3 meals',l:'Structured meals per day',c:'var(--sage)'},
+    {v:'Low–mid',l:'Glycemic index rating',c:'#D4830A'},
+    {v:'5 / 7',l:'Dairy-free days',c:'#6A5ACD'},
+    {v:'≤ 30 min',l:'Max prep time per meal',c:'#2E8B57'}
+  ];
+  document.getElementById('nutri-cards').innerHTML=cards.map(c=>`
+    <div class="nutri-card">
+      <span class="nc-val" style="color:${c.c}">${c.v}</span>
+      <span class="nc-lbl">${c.l}</span>
+    </div>`).join('');
+}
+
+// ─────────────────────────────────────
+// NAV
+// ─────────────────────────────────────
+function toggleDrawer(){
+  document.getElementById('mob-drawer').classList.toggle('open');
+}
+
+// ─────────────────────────────────────
+// INIT
+// ─────────────────────────────────────
+renderGrid();
+renderMob();
+renderFilters();
+renderPool();
+renderTips();
+renderNutri();
+</script>
+</body>
+</html>

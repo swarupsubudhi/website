@@ -3,10 +3,20 @@
 
 <head>
   <meta charset="utf-8">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('swarupks-theme');
+        document.documentElement.setAttribute('data-theme', saved === 'dark' ? 'dark' : 'light');
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Swarup K S - VAVETipper</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta content="Value engineering case study on hydraulic tipping kit assemblies for the LKP2518 tipper truck family at Tata Motors." name="description">
+  <meta content="Swarup Subudhi, mechanical engineer, University of Maryland, reliability engineering" name="keywords">
 
   <!-- Favicons -->
   <link href="../assets/img/swarupks-logo-web.png" rel="icon">
@@ -15,7 +25,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Lexend:wght@100..900&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="../assets/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -59,19 +69,27 @@
       <a href="http://behance.net/swarupks" class="behance" target="_blank" title="Behance"><i class="bi bi-behance"></i></a>
     </div>
 
+    <div id="theme-switch" class="theme-switch" role="group" aria-label="Theme">
+      <button type="button" class="theme-switch-btn" data-theme-choice="light" aria-pressed="false">
+        <i class="bi bi-sun-fill"></i>Light
+      </button>
+      <button type="button" class="theme-switch-btn" data-theme-choice="dark" aria-pressed="false">
+        <i class="bi bi-moon-stars-fill"></i>Dark
+      </button>
+    </div>
+
     <nav id="navmenu" class="navmenu">
       <ul>
         <li><a href="../index.html#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
         <li><a href="../index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="../index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> CV/ Resume</a></li>
+        <li><a href="../index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Experience</a></li>
         <li><a href="../index.html#portfolio"><i class="bi bi-images navicon"></i> Projects</a></li>
-        <li><a href="../index.html#testimonials"><i class="bi bi-hdd-stack navicon"></i> Testimonials</a></li>
         <li><a href="../index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-		<li class="dropdown"><a href="../blog.html"><i class="bi bi-menu-button navicon"></i> <span>Blog</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+		<li class="dropdown"><a href="../blog/blog-home.html"><i class="bi bi-menu-button navicon"></i> <span>Blog</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
-            <li><a href="#">Research</a></li>
-            <li><a href="#">Philosophy</a></li>
-            <li><a href="#">Interests</a></li>
+            <li><a href="../blog/blog-home.html#research">Research</a></li>
+            <li><a href="../blog/blog-home.html#philosophy">Philosophy</a></li>
+            <li><a href="../blog/blog-home.html#interests">Interests</a></li>
           </ul>
         </li>
       </ul>
@@ -119,7 +137,7 @@
                 }
               </script>
 
-              <div class="swiper-wrapper align-items-center" style="border: 1px solid #ededed">
+              <div class="swiper-wrapper align-items-center" style="border: 1px solid rgba(255,255,255,0.1)">
 
                 <div class="swiper-slide">
                   <img src="../assets/gifs/pd-7-img-1.gif" alt="">

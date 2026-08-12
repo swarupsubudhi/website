@@ -137,7 +137,7 @@
 
 .tl-content:hover {
   border-color: color-mix(in srgb, var(--accent-color), transparent 55%);
-  box-shadow: 0 4px 18px rgba(20, 157, 221, 0.09);
+  box-shadow: 0 4px 18px color-mix(in srgb, var(--accent-color), transparent 86%);
 }
 
 .tl-date {

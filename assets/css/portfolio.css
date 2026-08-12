@@ -13,8 +13,8 @@
 .project-card {
   display: flex;
   flex-direction: column;
-  background-color: #1a2738;
-  border: 1px solid rgba(20, 157, 221, 0.15);
+  background-color: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
   border-radius: 8px;
   overflow: hidden;
   height: 100%;
@@ -23,8 +23,8 @@
 
 .project-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(20, 157, 221, 0.55);
-  box-shadow: 0 14px 42px rgba(20, 157, 221, 0.12);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 45%);
+  box-shadow: 0 14px 42px color-mix(in srgb, var(--accent-color), transparent 85%);
 }
 
 /* ── Card image area ──────────────────────────────────────── */
@@ -32,7 +32,7 @@
   position: relative;
   overflow: hidden;
   aspect-ratio: 16 / 9;
-  background: #0f1a26;
+  background: color-mix(in srgb, var(--background-color), var(--heading-color) 6%);
 }
 
 .project-card-img img {
@@ -61,22 +61,27 @@
   pointer-events: none;
 }
 
+/* Badge pill backgrounds/borders are fixed tinted rgba (same hue in both themes), but the text color
+   is theme-relative via --badge-*-fg (see main.css vars) — a single fixed text color can't clear 4.5:1
+   against both a light-tinted pill (on a white card) and a dark-tinted pill (on a dark card), so each
+   theme gets its own tuned foreground. Verified: light-theme fg's give 5.4–7.2:1, dark-theme fg's give
+   6.8–8.7:1 against their respective composited backgrounds. */
 .badge-research {
-  background: rgba(20, 157, 221, 0.18);
-  color: #67d4ff;
-  border: 1px solid rgba(20, 157, 221, 0.4);
+  background: rgba(8, 145, 178, 0.22);
+  color: var(--badge-research-fg);
+  border: 1px solid rgba(8, 145, 178, 0.45);
 }
 
 .badge-professional {
-  background: rgba(63, 185, 80, 0.18);
-  color: #6dde85;
-  border: 1px solid rgba(63, 185, 80, 0.4);
+  background: rgba(22, 163, 74, 0.2);
+  color: var(--badge-professional-fg);
+  border: 1px solid rgba(22, 163, 74, 0.45);
 }
 
 .badge-engineering {
-  background: rgba(248, 135, 60, 0.18);
-  color: #ffa872;
-  border: 1px solid rgba(248, 135, 60, 0.4);
+  background: rgba(99, 102, 241, 0.2);
+  color: var(--badge-engineering-fg);
+  border: 1px solid rgba(99, 102, 241, 0.45);
 }
 
 /* ── Card body ────────────────────────────────────────────── */
@@ -97,7 +102,7 @@
 
 .project-year {
   font-size: 11px;
-  color: #7a92a8;
+  color: color-mix(in srgb, var(--default-color), transparent 15%);
   font-family: 'Google Sans Code', monospace, sans-serif;
   letter-spacing: 0.04em;
 }
@@ -112,22 +117,22 @@
 }
 
 .status-active {
-  background: rgba(63, 185, 80, 0.15);
-  color: #6dde85;
-  border: 1px solid rgba(63, 185, 80, 0.3);
+  background: rgba(22, 163, 74, 0.16);
+  color: var(--badge-professional-fg);
+  border: 1px solid rgba(22, 163, 74, 0.35);
 }
 
 .status-complete {
-  background: rgba(160, 160, 170, 0.12);
-  color: #a0a8b0;
-  border: 1px solid rgba(160, 160, 170, 0.25);
+  background: color-mix(in srgb, var(--default-color), transparent 88%);
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 75%);
 }
 
 /* Title */
 .project-card-title {
   font-size: 15px !important;
   font-weight: 600 !important;
-  color: #e8f0f8 !important;
+  color: var(--heading-color) !important;
   margin-bottom: 8px !important;
   line-height: 1.35 !important;
 }
@@ -135,7 +140,7 @@
 /* Short description */
 .project-card-desc {
   font-size: 13px;
-  color: #8a9db5;
+  color: color-mix(in srgb, var(--default-color), transparent 5%);
   line-height: 1.6;
   flex: 1;
   margin-bottom: 14px;
@@ -152,23 +157,23 @@
 .project-skill-tag {
   font-size: 10.5px;
   font-family: 'Google Sans Code', monospace, sans-serif;
-  color: #7a92a8;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: color-mix(in srgb, var(--default-color), transparent 15%);
+  background: color-mix(in srgb, var(--default-color), transparent 94%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
   padding: 3px 8px;
   border-radius: 3px;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .project-card:hover .project-skill-tag {
-  color: #b0cce0;
-  border-color: rgba(20, 157, 221, 0.3);
+  color: var(--accent-color);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 65%);
 }
 
 /* ── Card footer ──────────────────────────────────────────── */
 .project-card-footer {
   padding: 12px 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -177,7 +182,7 @@
 
 .project-affiliation {
   font-size: 11.5px;
-  color: #5e7a92;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -201,7 +206,7 @@
 }
 
 .project-card:hover .project-details-btn {
-  color: #67d4ff;
+  color: var(--accent-blue);
 }
 
 .project-card:hover .project-details-btn i {

@@ -12,44 +12,150 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+  --default-font: "Zalando Sans",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Lexend",  sans-serif;
+  --nav-font: "Zalando Sans",  sans-serif;
 }
 
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #050d18; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #149ddd; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website
+   Theme system: :root defines the LIGHT theme (default). [data-theme="dark"] on <html> overrides to the dark theme.
+   The nav sidebar and hero always use .dark-background (a fixed dark chrome panel, independent of the light/dark toggle) —
+   this is a deliberate design choice, not a bug: a persistent dark anchor panel against light content is standard portfolio practice. */
+:root {
+  --background-color: #f5f8fc; /* Background color for the entire website, including individual sections */
+  --default-color: #445261; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #10151c; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #3b6ea5; /* Primary accent — steel blue. Used for buttons, links, and elements that need to stand out. Checked at 4.98:1 against --background-color and 5.30:1 against --surface-color (white) — passes WCAG AA for normal text. */
+  --accent-blue: #087389; /* Secondary "technical/blueprint" accent — deeper teal-blue, used for research badges and technical annotations. 5.49:1 against white — passes AA. */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  /* Badge/status text colors — kept as separate vars (not folded into --accent-color) because each needs its
+     own light/dark tuning to clear 4.5:1 against its own tinted pill background (see portfolio.css). */
+  --badge-research-fg: #0a5b70;
+  --badge-professional-fg: #12622f;
+  --badge-engineering-fg: #3c33ad;
+  /* Fixed steel blue for the theme switch pill — intentionally NOT overridden in [data-theme="dark"].
+     The switch always lives in the permanently-dark sidebar chrome (.dark-background), so its active-state
+     white-on-blue contrast (6.14:1) must stay constant regardless of which theme is active; using the
+     theme-variable --accent-color here would fail contrast in dark mode (dark mode's lighter accent
+     only gives 3.16:1 against white, below the 4.5:1 text threshold). */
+  --switch-accent: #2e6690;
+  /* Fixed steel blue for links that sit permanently inside the dark hero chrome (e.g. the "New Blogpost"
+     box). Same reasoning as --switch-accent: the hero never changes with the toggle, so its link color
+     can't be the theme-variable --accent-color (light theme's darker accent only gives 3.87:1 there). */
+  --hero-link-color: #5b96c9;
+  /* Text color for anything sitting ON a --accent-color background (buttons, active filter pills, hover
+     chips) — separate from --contrast-color because --contrast-color is also used on the fixed dark
+     chrome (always safe as white) while accent-color itself changes value per theme. White text on the
+     light theme's accent (#3b6ea5) passes at 5.30:1, but white on the dark theme's lighter accent
+     (#5b96c9) only reaches 3.16:1 — so dark theme needs a dark foreground here instead. */
+  --accent-contrast: #ffffff;
 }
 
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+[data-theme="dark"] {
+  --background-color: #0a0e13;
+  --default-color: #aab4bf;
+  --heading-color: #f3f6f9;
+  --accent-color: #5b96c9; /* Lighter steel blue for dark backgrounds — 6.13:1 against dark body, 5.55:1 against dark surface. */
+  --accent-blue: #38bdf0; /* Already passes AA (8.10:1) against dark surface — left as-is. */
+  --surface-color: #131a22;
+  --contrast-color: #ffffff;
+  --badge-research-fg: #6fcbe0;
+  --badge-professional-fg: #6fe0a0;
+  --badge-engineering-fg: #9fb0fc;
+  --accent-contrast: #0a0e13; /* Dark text on the lighter dark-theme accent — 6.13:1, passes AA. */
+}
+
+/* Nav Menu Colors - fixed dark-chrome values, independent of the light/dark toggle (see note above) */
 :root {
-  --nav-color: #a8a9b4;  /* The default color of the main navmenu links */
-  --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #040b14; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #040b14; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #a8a9b4; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #ffffff; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: #8b96a1;  /* The default color of the main navmenu links */
+  --nav-hover-color: #f3f6f9; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #05080b; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #0d1319; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #8b96a1; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #f3f6f9; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme.
+   .light-background and .semi-dark-background are theme-relative panel tints (via color-mix) so they adapt automatically
+   whether the active theme is light or dark, instead of hardcoding a fixed color. */
 
 .light-background {
-  --background-color: #f4fafd;
-  --surface-color: #ffffff;
+  --background-color: color-mix(in srgb, var(--background-color), var(--heading-color) 4%);
+  --surface-color: color-mix(in srgb, var(--surface-color), var(--heading-color) 3%);
+}
+
+.semi-dark-background {
+  --background-color: color-mix(in srgb, var(--background-color), var(--heading-color) 7%);
 }
 
 .dark-background {
-  --background-color: #040b14;
-  --default-color: #ffffff;
+  --background-color: #05080b;
+  --default-color: #f3f6f9;
   --heading-color: #ffffff;
-  --surface-color: #151f2b;
+  --surface-color: #131a22;
   --contrast-color: #ffffff;
+}
+
+/* Subtle blueprint-grid texture for the always-dark chrome (hero, nav sidebar) */
+.dark-background {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--accent-blue), transparent 94%) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--accent-blue), transparent 94%) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/*--------------------------------------------------------------
+# Theme Switch (Light | Dark segmented control)
+# Lives inside the permanently-dark sidebar chrome, so its colors are
+# fixed (--switch-accent, --nav-color, --nav-hover-color) rather than
+# theme-relative — see the --switch-accent comment in the vars block.
+--------------------------------------------------------------*/
+.theme-switch {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  width: fit-content;
+  margin: 4px auto 16px;
+  padding: 3px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.theme-switch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  background: transparent;
+  color: var(--nav-color);
+  font-family: var(--nav-font);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 6px 14px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.theme-switch-btn i {
+  font-size: 12px;
+  line-height: 0;
+}
+
+.theme-switch-btn:hover {
+  color: var(--nav-hover-color);
+}
+
+.theme-switch-btn.active {
+  background: var(--switch-accent);
+  color: #ffffff;
+}
+
+.theme-switch-btn.active:hover {
+  color: #ffffff;
 }
 
 /* Smooth scroll */
@@ -201,7 +307,7 @@ h6 {
 }
 
 .header .social-links a:hover {
-  color: var(--contrast-color);
+  color: var(--accent-contrast);
   background: var(--accent-color);
 }
 
@@ -224,7 +330,7 @@ h6 {
 }
 
 .header .header-toggle {
-  color: var(--contrast-color);
+  color: var(--accent-contrast);
   background-color: var(--accent-color);
   font-size: 22px;
   display: flex;
@@ -242,7 +348,7 @@ h6 {
 }
 
 .header .header-toggle:hover {
-  color: var(--contrast-color);
+  color: var(--accent-contrast);
   background-color: color-mix(in srgb, var(--accent-color) 90%, white 15%);
 }
 
@@ -303,7 +409,7 @@ h6 {
 .navmenu a .toggle-dropdown:hover,
 .navmenu a:focus .toggle-dropdown:hover {
   background-color: var(--accent-color);
-  color: var(--contrast-color);
+  color: var(--accent-contrast);
 }
 
 .navmenu a:hover,
@@ -321,7 +427,7 @@ h6 {
 .navmenu .active .toggle-dropdown,
 .navmenu .active:focus .toggle-dropdown {
   background-color: var(--accent-color);
-  color: var(--contrast-color);
+  color: var(--accent-contrast);
   transform: rotate(180deg);
 }
 
@@ -447,13 +553,13 @@ h6 {
 
 .scroll-top i {
   font-size: 24px;
-  color: var(--contrast-color);
+  color: var(--accent-contrast);
   line-height: 0;
 }
 
 .scroll-top:hover {
   background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-  color: var(--contrast-color);
+  color: var(--accent-contrast);
 }
 
 .scroll-top.active {
@@ -507,6 +613,13 @@ h6 {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
+/* .page-title always carries .dark-background (permanently-dark chrome, like the hero) — its breadcrumb
+   link needs the same fixed --hero-link-color as the hero, not the theme-variable --accent-color, for the
+   same reason: light theme's accent (#3b6ea5) only gives 3.79:1 against this dark bar. */
+.page-title.dark-background .breadcrumbs ol li a {
+  color: var(--hero-link-color);
+}
+
 /*--------------------------------------------------------------
 # Global Sections
 --------------------------------------------------------------*/
@@ -521,9 +634,14 @@ section,
 /*--------------------------------------------------------------
 # Global Section Titles
 --------------------------------------------------------------*/
+main {
+  counter-reset: section-index;
+}
+
 .section-title {
   padding-bottom: 60px;
   position: relative;
+  counter-increment: section-index;
 }
 
 .section-title h2 {
@@ -532,6 +650,18 @@ section,
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
+  letter-spacing: -0.01em;
+}
+
+.section-title h2::before {
+  content: "// " counter(section-index, decimal-leading-zero);
+  display: block;
+  font-family: 'Google Sans Code', monospace, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--accent-color);
+  margin-bottom: 10px;
 }
 
 .section-title h2:after {
@@ -589,6 +719,10 @@ section,
   margin: 0;
   font-size: 64px;
   font-weight: 700;
+}
+
+.hero-name-accent {
+  color: var(--accent-color);
 }
 
 .hero p {
@@ -888,7 +1022,7 @@ section,
 
 .portfolio .portfolio-filters li:hover,
 .portfolio .portfolio-filters li.filter-active {
-  color: #fff;
+  color: var(--accent-contrast);
   background-color: var(--accent-color);
 }
 
@@ -977,10 +1111,6 @@ section,
   transform: scale(1.1);
 }
 
-.semi-dark-background{
-  background-color: #253241 !important;
-}
-
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
@@ -1002,7 +1132,7 @@ section,
 }
 
 .services .service-item .icon i {
-  color: var(--contrast-color);
+  color: var(--accent-contrast);
   font-size: 24px;
   line-height: 0;
 }
@@ -1179,7 +1309,7 @@ section,
 
 .contact .info-item:hover i {
   background: var(--accent-color);
-  color: var(--contrast-color);
+  color: var(--accent-contrast);
 }
 
 .contact .php-email-form {
@@ -1220,7 +1350,7 @@ section,
 }
 
 .contact .php-email-form button[type=submit] {
-  color: var(--contrast-color);
+  color: var(--accent-contrast);
   background: var(--accent-color);
   border: 0;
   padding: 10px 30px;
@@ -1381,7 +1511,7 @@ section,
 # Projects Pages
 --------------------------------------------------------------*/
 .project-text-main{
-	color: #000;
+	color: var(--default-color);
 	border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
 	padding: 30px;
 }
@@ -1391,11 +1521,12 @@ section,
 }
 
 .project-outcomes{
-	color: #000;
+	color: var(--default-color);
 	border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
 	padding-top: 30px;
 }
 .project-outcomes h4{
+	color: var(--heading-color);
 	border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
 	padding-left: 10px;
 }

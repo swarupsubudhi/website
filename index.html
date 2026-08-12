@@ -3,19 +3,26 @@
 
 <head>
   <meta charset="utf-8">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('swarupks-theme');
+        document.documentElement.setAttribute('data-theme', saved === 'dark' ? 'dark' : 'light');
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Swarup K S - Website</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta content="Swarup Kumar Subudhi — Mechanical Engineering PhD candidate at the University of Maryland specializing in hardware qualification testing, reliability engineering, and printed electronics for space and automotive applications." name="description">
+  <meta content="Swarup Subudhi, mechanical engineer, reliability engineering, qualification testing, GD&T, FEA, printed electronics, University of Maryland, NASA GSFC, Six Sigma" name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/swarupks-logo-web.png" rel="icon">
   <link href="assets/img/swarupks-logo-web.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <!--<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Lexend:wght@100..900&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
@@ -70,13 +77,21 @@
       <a href="http://behance.net/swarupks" class="behance" target="_blank" title="Behance"><i class="bi bi-behance"></i></a>
     </div>
 
+    <div id="theme-switch" class="theme-switch" role="group" aria-label="Theme">
+      <button type="button" class="theme-switch-btn" data-theme-choice="light" aria-pressed="false">
+        <i class="bi bi-sun-fill"></i>Light
+      </button>
+      <button type="button" class="theme-switch-btn" data-theme-choice="dark" aria-pressed="false">
+        <i class="bi bi-moon-stars-fill"></i>Dark
+      </button>
+    </div>
+
     <nav id="navmenu" class="navmenu">
       <ul>
         <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
         <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
         <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Experience</a></li>
         <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Projects</a></li>
-        <li><a href="#testimonials"><i class="bi bi-hdd-stack navicon"></i> Testimonials</a></li>
         <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
 		<li class="dropdown"><a href="blog/blog-home.html"><i class="bi bi-menu-button navicon"></i> <span>Blog</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
@@ -103,28 +118,26 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <img src="assets/img/coalescence.gif" alt="" data-aos="fade-in" class="">
+      <img src="" alt="" data-aos="fade-in" class="">
 	  <!--<video autoplay muted loop playsinline class="bg-video">
 		<source src="assets/img/vid03.mp4" type="video/mp4">
 		</video>-->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100"">
-	  
-        <h2 style="font-family: 'Lexend', Arial, sans-serif;">Hi<br>I am<br>Swarup Subudhi</h2> <!--work on this js animation-->
-        <p>I'm a 
-			<span class="typed" data-typed-items="Doctoral Candidate in MechE, Multiphysics Researcher, Machine Designer">Doctoral Candidate in MechE</span><br></p>
-			<!--<span class="typed-cursor typed-cursor--blink" aria-hidden="true">WTF</span><br> <!--blinks-->
-			<!--<span class="typed-cursor typed-cursor--blink" aria-hidden="true">WTF</span></p> <!--blinks-->
-		<br></br>	
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <h2>Hi<br>I am<br><span class="hero-name-accent">Swarup Subudhi</span></h2>
+        <p>I'm a
+			<span class="typed" data-typed-items="Doctoral Candidate in MechE, Multiphysics Researcher, Product Designer">Doctoral Candidate in MechE</span><br></p>
+		<br>
 		<div class="row">
 			<div class="news col-lg-8" style="padding:10px; background:rgba(0,0,0,0.5); border: 1px white; border-radius:5px;">
-				<a href="">
+				<a href="blog/blog-home.html#research" style="color: var(--hero-link-color);">
 					<span style="font-size: 14px">
 					<strong>New Blogpost</strong></span><br>
 					<span style="font-size: 18px">
 					<b>What is super paramagnetism?</b></a>
 			</div>
-			<div class="col-lg-4" style="padding: 20px; background: #f8f9fa63; border: 1px white; border-radius: 5px; color: white; text-align:center;">
+			<div class="col-lg-4" style="padding: 20px; background: rgba(0,0,0,0.45); border: 1px solid rgba(255,255,255,0.25); border-radius: 5px; color: white; text-align:center;">
 				<a href="#about" style="color: white; font-size: 20px;">Scroll down</a>
 			</div>
 		</div>
@@ -150,7 +163,7 @@
           <div class="col-lg-8 content" style="padding-right:10%">
             <h2>Doctoral Candidate & Researcher</h2>
             <p class="py-3" style="fontsize:12px !important">  
-			  <b>Swarup Kumar Subudhi</b> is a Ph.D. candidate and Graduate Research Assistant in Mechanical Engineering at the University of Maryland, College Park, specializing in fluid mechanics, soft magnetic materials, and printed electronics research. He holds a B.Tech in Mechanical Engineering from the National Institute of Technology, Rourkela and brings four years of industrial experience from Tata Motors. His work includes developing printable soft magnetic films, experimental nanoscale fluid dynamics, and published peer-reviewed research. He has presented at academic symposia and contributed to multidisciplinary materials science innovations, positioning him for advanced R&D roles in U.S. engineering and technology sectors.
+			  <b>Swarup Kumar Subudhi</b> is a Ph.D. candidate in Mechanical Engineering at the University of Maryland, College Park, working at the intersection of additive manufacturing, printed electronics, and reliability engineering. Sponsored by NASA-Goddard Space Flight Center, his current research qualifies extrusion-printed silver interconnects for a compact X-ray polarimeter &mdash; holding &plusmn;10 &micro;m print tolerances and passing NASA GEVS vibration qualification for launch environments. His broader graduate work spans physics-of-failure modeling, JEDEC-standard thermal-cycling reliability, and the magnetohydrodynamics of magnetic-nanoparticle droplets for lab-on-chip applications. Before UMD, he spent four years at Tata Motors leading Six Sigma and New Product Introduction programs for commercial and defense-vehicle transmissions, cutting warranty failures by roughly 50% and saving &#8377;4.53 crore annually. He holds a B.Tech in Mechanical Engineering from NIT Rourkela and has authored seven peer-reviewed publications, three as first author.
             </p>
 			<br>
 			<a href="https://www.linkedin.com/in/swarupks/">LinkedIn Profile</a>
@@ -167,7 +180,7 @@
     </section><!-- /About Section -->
 
     <!-- Stats Section -->
-    <section id="stats" class="stats section" style="background-color:#e8edf0">
+    <section id="stats" class="stats section light-background">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -281,14 +294,14 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2 style="color:#fff">Projects</h2>
-        <p style="color:#fff">Here are my top research, technical and professional (from my automotive job) projects. I will keep updating with my new projects as soon as they get published.
+        <h2>Projects</h2>
+        <p>Here are my top research, technical and professional (from my automotive job) projects. I will keep updating with my new projects as soon as they get published.
 		<br>***Project details pages are under construction.</p>
       </div><!-- End Section Title -->
 
       <div class="container">
 
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+        <div class="isotope-layout" data-default-filter="*" data-layout="fitRows" data-sort="original-order">
 
           <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
             <li data-filter="*" class="filter-active">All</li>
@@ -541,7 +554,7 @@
                 <i class="bi bi-geo-alt flex-shrink-0"></i>
                 <div>
                   <h3>Address</h3>
-                  <p>8136 Paint Branch Dr<br>Room 3103, Glen L. Martin Hall<br>College Park, MD 20742<br>United States</p>
+                  <p>College Park, MD<br>United States</p>
                 </div>
               </div><!-- End Info Item -->
 

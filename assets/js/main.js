@@ -227,3 +227,44 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+/**
+ * Light / Dark theme switch (segmented Light | Dark control)
+ * The initial theme is set synchronously by an inline script in <head> (before this file
+ * loads) to avoid a flash of the wrong theme. This block wires up both click targets and
+ * keeps the active/inactive button states in sync.
+ */
+(function () {
+  "use strict";
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const switchEl = document.getElementById('theme-switch');
+    if (!switchEl) return;
+    const buttons = switchEl.querySelectorAll('.theme-switch-btn');
+    if (!buttons.length) return;
+
+    function syncButtons() {
+      const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      buttons.forEach(function (btn) {
+        const isActive = btn.getAttribute('data-theme-choice') === current;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+    }
+
+    syncButtons();
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const choice = btn.getAttribute('data-theme-choice') === 'dark' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', choice);
+        try {
+          localStorage.setItem('swarupks-theme', choice);
+        } catch (e) {
+          /* localStorage unavailable — theme just won't persist across reloads */
+        }
+        syncButtons();
+      });
+    });
+  });
+})();

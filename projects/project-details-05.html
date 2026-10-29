@@ -173,9 +173,7 @@
               </ul>
             </div>
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <!--<h3>Magnetic Nanoparticle Aggregation and Complete De-encapsulation of Such Aggregates from a Liquid Drop Interior</h3>-->
-              <p></p>
-              <p>Scroll down for more details.</p>
+              <p>A rubbery silicone film loaded with magnetic nanoparticles that can be folded, twisted and bent a thousand times and still keeps its magnetism within about 3%, which makes it a candidate material for wearable electronics.</p>
             </div>
           </div>
 
@@ -183,28 +181,249 @@
       <br><br>
 	<div class="row gy-4">
 	  <div class="col-lg-8 project-text-main">
-	    <!--add details of the project here-->
-	        <h2>Abstract</h2>
-		<p style="text-align: justify">In this paper, we develop multifunctional, physically soft, mechanically compliant, and
-magnetically responsive PDMS films, with embedded Fe3O4 nanoparticles, that show robust
-magnetic properties over a significant range of mechanical deformation. First, we establish that the
-magnetic properties, namely the saturation magnetization (Ms), remanent magnetization (Mr),
-and intrinsic coercivity (Hci) of these PDMS films in highly deformed configurations, i.e. in folded,
-twisted (with different twist angles), and bent (flexed) configurations, show very little degradation
-compared to those obtained in undeformed configurations. Next, the films were subjected to
-repetitive cycles of zero-to-max deformation (R = 0) and the saturation magnetization of the films
-was shown to not exhibit any significant degree of progressive degradation as a function of cyclic
-deformation history. These findings confirm the excellent robustness and cyclic durability of
-magnetic properties shown by these magnetic and compliant PDMS films and point to their
-suitability for wearable electronics applications.
-</p>
+	    <article class="project-article">
 
-		
-		<a href="https://iopscience.iop.org/article/10.1088/2058-8585/ad2dae/pdf">Article Link</a>
+	      <p class="article-lede">Wearable electronics live a hard life. A patch on your wrist or a sensor stitched into a shirt gets bent, folded and twisted every time you move. Whatever material does the work inside it has to keep working through all of that. This project asked a simple question about one such material, a soft magnetic film: <em>if you keep bending it, does it stop being magnetic?</em> The short answer is no. After 1,000 cycles of folding, twisting or bending, it lost at most about 3% of its magnetic strength.</p>
 
-		<br><br>
-		<h2></h2>
-		<p></p>
+	      <div class="key-numbers">
+	        <div><span class="num">20&ndash;30 nm</span><span class="label">size of the magnetic particles inside the film</span></div>
+	        <div><span class="num">4</span><span class="label">ways of deforming the film: fold, two twists, bend</span></div>
+	        <div><span class="num">1,000</span><span class="label">deformation cycles per test</span></div>
+	        <div><span class="num">&le; 3.2%</span><span class="label">largest average loss in magnetic strength</span></div>
+	      </div>
+
+	      <h2>Why this matters</h2>
+	      <p>Engineers often make "smart" flexible materials by mixing tiny functional particles into a soft polymer. The polymer supplies the flexibility; the particles supply the function. Mix magnetic particles into a silicone rubber and you get a film that is both bendable and magnetic. Films like this have been used for shielding electronics from electromagnetic interference, for tiny magnetically driven actuators and pumps, for flexible antennas, and for pressure sensors.</p>
+	      <p>The most widely studied version combines a silicone called PDMS with iron-oxide (Fe<sub>3</sub>O<sub>4</sub>) nanoparticles. Both ingredients are cheap and easy to work with, and PDMS is safe against skin. Yet two practical questions had barely been tested:</p>
+	      <ol>
+	        <li>Does the film stay magnetic while it is <strong>folded, twisted or bent</strong>, not just while it lies flat?</li>
+	        <li>Does it stay magnetic after being deformed <strong>hundreds of times</strong>, the way a wearable device would be?</li>
+	      </ol>
+	      <p>Earlier studies had looked at bending or stretching, but folding, twisting and long-term repeated deformation had not been measured. Without that data, nobody can say how long such a film would last inside a real device.</p>
+
+	      <div class="explainer">
+	        <strong>What "soft magnetic" means.</strong> Some magnets, like a fridge magnet, stay magnetic on their own (that is a "hard" magnet). A <em>soft</em> magnetic material behaves differently: it becomes strongly magnetic when a magnet or electromagnet is nearby, and lets go of almost all of that magnetism once the field is removed. That on/off behaviour is what makes it useful for actuators, sensors and shielding. "Soft" here describes the magnetism, and the PDMS film also happens to be physically soft.
+	      </div>
+
+	      <h2>Making the film</h2>
+	      <p>The recipe is a lot like making a very fine paint and letting it set:</p>
+	      <ol>
+	        <li>Liquid PDMS is thinned with a solvent (xylene) and stirred for 30 minutes.</li>
+	        <li>Iron-oxide nanoparticles, each only 20&ndash;30 nanometres across and coated with oleic acid so they mix in more easily, are added and stirred for another 30 minutes at 60&ndash;80&nbsp;&deg;C.</li>
+	        <li>The mixture spends 12 hours in an ultrasonic bath, whose high-frequency vibrations break up particle clumps so the particles spread evenly.</li>
+	        <li>A curing agent is added and the mixture is poured onto a plate or into a shaped mould, less than 2&nbsp;mm thick.</li>
+	        <li>It is cured into a solid, rubbery film: 6 hours at 120&nbsp;&deg;C on a hot plate, a few hours under UV light, or about a day at room temperature.</li>
+	      </ol>
+
+	      <figure>
+	        <svg class="fig-svg" viewBox="0 0 720 150" role="img" aria-label="Five-step fabrication flow: mix PDMS and xylene, add nanoparticles, ultrasonicate 12 hours, cast into mould, cure into film">
+	          <defs><marker id="ah1" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" class="arrowhead"/></marker></defs>
+	          <rect class="box" x="5" y="35" width="118" height="80" rx="6"/>
+	          <text x="64" y="68" text-anchor="middle" class="t-strong" font-size="13">Mix</text>
+	          <text x="64" y="86" text-anchor="middle" font-size="11">PDMS + xylene</text>
+	          <text x="64" y="101" text-anchor="middle" font-size="11">30 min</text>
+	          <line class="arrow" x1="125" y1="75" x2="148" y2="75" marker-end="url(#ah1)"/>
+	          <rect class="box" x="152" y="35" width="118" height="80" rx="6"/>
+	          <text x="211" y="68" text-anchor="middle" class="t-strong" font-size="13">Add particles</text>
+	          <text x="211" y="86" text-anchor="middle" font-size="11">Fe&#8323;O&#8324;, 20&#8211;30 nm</text>
+	          <text x="211" y="101" text-anchor="middle" font-size="11">60&#8211;80 &#176;C, 30 min</text>
+	          <line class="arrow" x1="272" y1="75" x2="295" y2="75" marker-end="url(#ah1)"/>
+	          <rect class="box" x="299" y="35" width="118" height="80" rx="6"/>
+	          <text x="358" y="68" text-anchor="middle" class="t-strong" font-size="13">Disperse</text>
+	          <text x="358" y="86" text-anchor="middle" font-size="11">ultrasonic bath</text>
+	          <text x="358" y="101" text-anchor="middle" font-size="11">12 h</text>
+	          <line class="arrow" x1="419" y1="75" x2="442" y2="75" marker-end="url(#ah1)"/>
+	          <rect class="box" x="446" y="35" width="118" height="80" rx="6"/>
+	          <text x="505" y="68" text-anchor="middle" class="t-strong" font-size="13">Cast</text>
+	          <text x="505" y="86" text-anchor="middle" font-size="11">into a mould</text>
+	          <text x="505" y="101" text-anchor="middle" font-size="11">&lt; 2 mm thick</text>
+	          <line class="arrow" x1="566" y1="75" x2="589" y2="75" marker-end="url(#ah1)"/>
+	          <rect class="box-accent" x="593" y="35" width="122" height="80" rx="6"/>
+	          <text x="654" y="68" text-anchor="middle" class="t-strong" font-size="13">Cure</text>
+	          <text x="654" y="86" text-anchor="middle" font-size="11">120 &#176;C 6 h, UV,</text>
+	          <text x="654" y="101" text-anchor="middle" font-size="11">or room temp ~1 day</text>
+	        </svg>
+	        <figcaption><b>Figure 1.</b> How the film is made. Redrawn from the published paper (Fig. 1).</figcaption>
+	      </figure>
+
+	      <p>Eight recipes with different proportions of silicone, solvent and particles were made. The best one, about one-third iron oxide by weight, gave the strongest magnetic response and was used for all the tests below. For reference, the bare particles on their own reach about 60 units of magnetic strength (emu/g); the film reaches 21&ndash;23. That is the expected trade-off, since two-thirds of the film is non-magnetic rubber.</p>
+
+	      <h2>How magnetism was measured</h2>
+	      <p>Magnetic strength was measured with a <strong>vibrating sample magnetometer</strong>. The sample sits between the poles of a large electromagnet and is shaken up and down. As the field is swept from strongly positive to strongly negative, the moving magnetised sample induces a tiny electrical signal in pickup coils, which reveals how magnetised it is at each step. The result is a curve showing how the material responds to the field. Its highest point is the <em>saturation magnetization</em>, the most magnetic the material can get. This is the main number tracked in this study.</p>
+	      <p>The flat film behaved exactly like a good soft magnet: it became strongly magnetic in the field and kept almost none of that magnetism once the field returned to zero. It was also slightly (about 5%) more magnetic along its surface than through its thickness, a small directional preference that probably came from the way it was cured on a hot plate.</p>
+
+	      <figure>
+	        <img src="../assets/img/portfolio/pd-5-vsm.jpg" alt="Magnetization versus field curves for the flat film, in-plane and out-of-plane, with a zoomed inset near zero field; 3D rendering of the vibrating sample magnetometer with the sample holder between the magnet poles; close-up of the holder; photo of a dark film strip" loading="lazy">
+	        <figcaption><b>Figure 2.</b> (a) Magnetization of the flat film as the field is swept, measured along the surface (blue) and through the thickness (red). The inset zooms in near zero field: the curves almost pass through the origin, so very little magnetism is left once the field is removed. (b) The magnetometer: the sample on its holder is shaken between the poles of an electromagnet while pickup coils read its signal. (c) The flat-sample holder in detail. (d) A finished film. From Subudhi <i>et&nbsp;al.</i>, <i>Flex. Print. Electron.</i> 9, 015013 (2024), CC&nbsp;BY&nbsp;4.0.</figcaption>
+	      </figure>
+
+	      <h2>Test 1: Measuring while folded, twisted and bent</h2>
+	      <p>A standard magnetometer holder only fits a flat sample. To measure the film while deformed, I designed and 3D-printed custom holders that clamp it in four shapes:</p>
+
+	      <figure>
+	        <svg class="fig-svg" viewBox="0 0 720 170" role="img" aria-label="Four deformation shapes: folded in half, twisted 90 degrees, twisted 180 degrees, and bent around a 3.18 millimetre radius">
+	          <!-- Folded -->
+	          <g transform="translate(40,40)">
+	            <polygon class="film" points="0,40 110,40 120,30 10,30"/>
+	            <polygon class="film-edge" points="0,40 110,40 110,48 0,48"/>
+	            <polygon class="film" points="10,30 120,30 120,22 10,22"/>
+	            <text x="60" y="88" text-anchor="middle" class="t-strong" font-size="13">Folded</text>
+	            <text x="60" y="105" text-anchor="middle" font-size="11">bent 180&#176; flat on itself</text>
+	          </g>
+	          <!-- Twist 90 -->
+	          <g transform="translate(215,40)">
+	            <path class="film" d="M0,30 L45,22 C55,22 65,10 65,0 L65,0 C65,10 75,50 85,50 L130,42 L130,52 L85,60 C75,60 65,20 65,10 C65,20 55,32 45,32 L0,40 z"/>
+	            <text x="65" y="88" text-anchor="middle" class="t-strong" font-size="13">Twisted 90&#176;</text>
+	            <text x="65" y="105" text-anchor="middle" font-size="11">quarter turn end-to-end</text>
+	          </g>
+	          <!-- Twist 180 -->
+	          <g transform="translate(395,40)">
+	            <path class="film" d="M0,22 C25,22 40,48 65,48 C90,48 105,22 130,22 L130,32 C105,32 90,58 65,58 C40,58 25,32 0,32 z"/>
+	            <path class="film-edge" d="M0,32 C25,32 40,6 65,6 C90,6 105,32 130,32 L130,36 C105,36 90,10 65,10 C40,10 25,36 0,36 z" opacity="0.8"/>
+	            <text x="65" y="88" text-anchor="middle" class="t-strong" font-size="13">Twisted 180&#176;</text>
+	            <text x="65" y="105" text-anchor="middle" font-size="11">half turn end-to-end</text>
+	          </g>
+	          <!-- Bent -->
+	          <g transform="translate(580,40)">
+	            <circle class="holder" cx="55" cy="38" r="22"/>
+	            <path class="film" d="M33,38 A22,22 0 0 1 77,38 L84,38 A29,29 0 0 0 26,38 z"/>
+	            <text x="55" y="88" text-anchor="middle" class="t-strong" font-size="13">Bent</text>
+	            <text x="55" y="105" text-anchor="middle" font-size="11">around a 3.18 mm radius</text>
+	          </g>
+	        </svg>
+	        <figcaption><b>Figure 3.</b> The four deformed shapes tested. Each was held in a custom 3D-printed holder that fits inside the magnetometer. Schematic redrawn from the published paper (Fig. 3).</figcaption>
+	      </figure>
+
+	      <figure>
+	        <img src="../assets/img/portfolio/pd-5-holders.jpg" alt="3D renderings of four half-cylinder magnetometer holders clamping the film folded, twisted 90 degrees, twisted 180 degrees and bent, and a photo of three black 3D-printed holders" loading="lazy">
+	        <figcaption><b>Figure 4.</b> The custom holders. (d-i to d-iv) How the film sits in the holder for folding, 90&deg; twist, 180&deg; twist and bending. (e) The 3D-printed holders themselves. From Subudhi <i>et&nbsp;al.</i>, <i>Flex. Print. Electron.</i> 9, 015013 (2024), CC&nbsp;BY&nbsp;4.0.</figcaption>
+	      </figure>
+
+	      <p>In none of the four shapes did the film lose magnetic strength. In several cases it measured slightly <em>stronger</em> while deformed. Folding raised the reading along the surface by about 21%, and bending by about 10%. Once the film was flattened again, its properties returned to normal.</p>
+
+	      <figure>
+	        <svg class="fig-svg" viewBox="0 0 720 300" role="img" aria-label="Bar chart of in-plane saturation magnetization, flat versus deformed: folded 22.1 to 26.7, twisted 90 degrees 22.1 to 22.4, twisted 180 degrees 22.4 to 22.6, bent 23.3 to 25.5 emu per gram">
+	          <!-- axes: y from 0 to 30 emu/g mapped to 250..40 (7 px per unit) -->
+	          <line class="grid" x1="70" y1="40" x2="700" y2="40"/>
+	          <line class="grid" x1="70" y1="110" x2="700" y2="110"/>
+	          <line class="grid" x1="70" y1="180" x2="700" y2="180"/>
+	          <line class="axis" x1="70" y1="250" x2="700" y2="250"/>
+	          <line class="axis" x1="70" y1="40" x2="70" y2="250"/>
+	          <text x="62" y="254" text-anchor="end" font-size="11">0</text>
+	          <text x="62" y="184" text-anchor="end" font-size="11">10</text>
+	          <text x="62" y="114" text-anchor="end" font-size="11">20</text>
+	          <text x="62" y="44" text-anchor="end" font-size="11">30</text>
+	          <text x="20" y="145" text-anchor="middle" font-size="11" transform="rotate(-90 20 145)">Saturation magnetization (emu/g)</text>
+	          <!-- groups: width 157.5 each, start 70 -->
+	          <!-- Folded 22.07 / 26.69 -->
+	          <rect class="bar-a" x="103" y="95.5" width="40" height="154.5"/>
+	          <rect class="bar-b" x="148" y="63.2" width="40" height="186.8"/>
+	          <text x="123" y="89" text-anchor="middle" font-size="10">22.1</text>
+	          <text x="168" y="57" text-anchor="middle" font-size="10" class="t-strong">26.7</text>
+	          <text x="146" y="272" text-anchor="middle" font-size="12" class="t-strong">Folded</text>
+	          <!-- Twist 90 22.10 / 22.39 -->
+	          <rect class="bar-a" x="260" y="95.3" width="40" height="154.7"/>
+	          <rect class="bar-b" x="305" y="93.3" width="40" height="156.7"/>
+	          <text x="280" y="89" text-anchor="middle" font-size="10">22.1</text>
+	          <text x="325" y="87" text-anchor="middle" font-size="10" class="t-strong">22.4</text>
+	          <text x="303" y="272" text-anchor="middle" font-size="12" class="t-strong">Twisted 90&#176;</text>
+	          <!-- Twist 180 22.38 / 22.57 -->
+	          <rect class="bar-a" x="418" y="93.3" width="40" height="156.7"/>
+	          <rect class="bar-b" x="463" y="92.0" width="40" height="158.0"/>
+	          <text x="438" y="87" text-anchor="middle" font-size="10">22.4</text>
+	          <text x="483" y="86" text-anchor="middle" font-size="10" class="t-strong">22.6</text>
+	          <text x="461" y="272" text-anchor="middle" font-size="12" class="t-strong">Twisted 180&#176;</text>
+	          <!-- Bent 23.30 / 25.54 -->
+	          <rect class="bar-a" x="575" y="86.9" width="40" height="163.1"/>
+	          <rect class="bar-b" x="620" y="71.2" width="40" height="178.8"/>
+	          <text x="595" y="81" text-anchor="middle" font-size="10">23.3</text>
+	          <text x="640" y="65" text-anchor="middle" font-size="10" class="t-strong">25.5</text>
+	          <text x="618" y="272" text-anchor="middle" font-size="12" class="t-strong">Bent</text>
+	          <!-- legend -->
+	          <rect class="bar-a" x="470" y="12" width="12" height="12"/><text x="488" y="22" font-size="11">Flat</text>
+	          <rect class="bar-b" x="530" y="12" width="12" height="12"/><text x="548" y="22" font-size="11">Deformed</text>
+	        </svg>
+	        <figcaption><b>Figure 5.</b> Peak magnetic strength measured along the film's surface, flat versus deformed. Values from Table 2 of the published paper. None of the deformed shapes reduced it.</figcaption>
+	      </figure>
+
+	      <div class="explainer">
+	        <strong>Why would bending make it <em>more</em> magnetic?</strong> Stretching or squeezing a magnetic material slightly changes how easily its internal magnetic regions line up with an applied field. This is a known effect called the <em>inverse magnetoelastic</em> (or Villari) effect. Deforming the film puts the embedded particles under stress, which nudges their magnetic response. The effect is temporary: flatten the film and it goes back to its original values.
+	      </div>
+
+	      <p>Measured through the thickness of the film, the results were similar. The largest swing was bending, which raised the reading by about 55%. The one decrease was about 8%, in the half-twisted shape. Again, the film returned to normal once flattened.</p>
+
+	      <h2>Test 2: A thousand bends</h2>
+	      <p>Surviving one deformation is a good start; a wearable has to survive thousands. To test that, I built four small automated rigs, one for each deformation type. Each uses a hobby servo motor driven by a microcontroller. In each cycle the rig takes the film from flat to fully deformed and back again in about 7 seconds, pausing half a second at each end. Every film went through 1,000 cycles. Its magnetic strength was re-measured every 100 cycles, after an hour's rest so the rubber could relax.</p>
+
+	      <figure>
+	        <img src="../assets/img/portfolio/pd-5-cycling-rig.jpg" alt="Top: schematic of folding cycles from flat to folded and back, counted up to 1000. Bottom: five photos of a servo-driven 3D-printed rig folding the film and releasing it" loading="lazy">
+	        <figcaption><b>Figure 6.</b> One of the four cycling rigs (folding). Top: each cycle takes the film from flat to fully folded and back, repeated 1,000 times. Bottom: the servo rig through one cycle. The paper shows the same set-up for both twists and for bending. From Subudhi <i>et&nbsp;al.</i>, <i>Flex. Print. Electron.</i> 9, 015013 (2024), CC&nbsp;BY&nbsp;4.0.</figcaption>
+	      </figure>
+
+	      <figure>
+	        <svg class="fig-svg" viewBox="0 0 720 260" role="img" aria-label="Bar chart of magnetic strength remaining after 1000 cycles: folded 96.8 percent, twisted 90 degrees 98.6 percent, twisted 180 degrees 98.5 percent, bent 97.3 percent">
+	          <!-- x scale: 0..100% across 200..680 (4.8 px per %) -->
+	          <line class="grid" x1="440" y1="20" x2="440" y2="215"/>
+	          <line class="grid" x1="560" y1="20" x2="560" y2="215"/>
+	          <line class="axis" x1="200" y1="20" x2="200" y2="215"/>
+	          <line class="axis" x1="680" y1="20" x2="680" y2="215" stroke-dasharray="3 3"/>
+	          <line class="axis" x1="200" y1="215" x2="680" y2="215"/>
+	          <text x="200" y="232" text-anchor="middle" font-size="11">0%</text>
+	          <text x="440" y="232" text-anchor="middle" font-size="11">50%</text>
+	          <text x="560" y="232" text-anchor="middle" font-size="11">75%</text>
+	          <text x="680" y="232" text-anchor="middle" font-size="11">100%</text>
+	          <text x="440" y="252" text-anchor="middle" font-size="11">Magnetic strength remaining after 1,000 cycles</text>
+	          <text x="188" y="56" text-anchor="end" font-size="12" class="t-strong">Folded</text>
+	          <rect class="bar-b" x="200" y="38" width="464.8" height="28"/>
+	          <text x="656" y="57" text-anchor="end" font-size="11" fill="#fff" style="fill:var(--accent-contrast)">96.8%</text>
+	          <text x="188" y="104" text-anchor="end" font-size="12" class="t-strong">Twisted 90&#176;</text>
+	          <rect class="bar-b" x="200" y="86" width="473.2" height="28"/>
+	          <text x="664" y="105" text-anchor="end" font-size="11" style="fill:var(--accent-contrast)">98.6%</text>
+	          <text x="188" y="152" text-anchor="end" font-size="12" class="t-strong">Twisted 180&#176;</text>
+	          <rect class="bar-b" x="200" y="134" width="472.6" height="28"/>
+	          <text x="664" y="153" text-anchor="end" font-size="11" style="fill:var(--accent-contrast)">98.5%</text>
+	          <text x="188" y="200" text-anchor="end" font-size="12" class="t-strong">Bent</text>
+	          <rect class="bar-b" x="200" y="182" width="467.1" height="28"/>
+	          <text x="658" y="201" text-anchor="end" font-size="11" style="fill:var(--accent-contrast)">97.3%</text>
+	        </svg>
+	        <figcaption><b>Figure 7.</b> How much of its original magnetic strength the film kept after 1,000 deformation cycles, measured along the surface. Average losses reported in the paper: folded 3.16%, twisted 90&#176; 1.41%, twisted 180&#176; 1.55%, bent 2.69%. Measurements through the thickness showed the same pattern.</figcaption>
+	      </figure>
+
+	      <p>Across all four tests the film lost only 1.4&ndash;3.2% of its magnetic strength, and the loss did not grow steadily from cycle to cycle. To find where the small loss came from, I cut the folded samples open and looked at them under optical and electron microscopes. Tiny holes had formed <em>inside</em> the film, in the regions that took the most stress. The surface showed no creases or cracks. Those internal holes slightly reduce the amount of magnetic material in the sample, which accounts for the small drop.</p>
+
+	      <figure>
+	        <img src="../assets/img/portfolio/pd-5-durability.jpg" alt="Line chart of saturation magnetization every 100 cycles from 1 to 1000 for folding, 90 degree twist, 180 degree twist and bending, all staying between about 20 and 23 emu per gram; optical cross-sections before and after 1000 folds, with circled holes near the surface; electron microscope cross-section with circled holes" loading="lazy">
+	        <figcaption><b>Figure 8.</b> (a) Peak magnetic strength measured every 100 cycles for each deformation: the lines stay nearly flat. (b) Cross-sections of a folded sample under the optical microscope before (b-i) and after 1,000 folds (b-ii), and under the electron microscope after 1,000 folds (b-iii). Circles mark the small holes that formed near the surface in the high-stress region. From Subudhi <i>et&nbsp;al.</i>, <i>Flex. Print. Electron.</i> 9, 015013 (2024), CC&nbsp;BY&nbsp;4.0.</figcaption>
+	      </figure>
+
+	      <h2>What this tells us</h2>
+	      <ul>
+	        <li><strong>The magnetism survives deformation.</strong> Folding, twisting and bending do not weaken the film while it is deformed, and it returns to its original state when released.</li>
+	        <li><strong>The magnetism survives repetition.</strong> A thousand cycles of each deformation cost at most about 3% of the film's magnetic strength.</li>
+	        <li><strong>The failure mode is identifiable.</strong> The small loss traces back to microscopic voids forming in high-stress regions. That gives a concrete target for improving the material.</li>
+	        <li><strong>Reliability has to be tested, not assumed.</strong> Many flexible functional materials are reported from a single measurement on a flat sample. This work shows why repeated-deformation testing is needed before a material goes into a real device.</li>
+	      </ul>
+
+	      <h3>Scope of the study</h3>
+	      <p>The deformation tests used one composition (about one-third iron oxide by weight), one bending radius (3.18&nbsp;mm), and 1,000 cycles per deformation type. Each deformation type was tested on its own, not combined.</p>
+
+	      <h2 id="review">Related review: soft magnetic films and devices</h2>
+	      <div class="explainer">
+	        <strong>Physically soft magnetic films and devices: fabrication, properties, printability, and applications</strong> (<em>J. Mater. Chem. C</em>, 2022).
+	        <p>This co-authored review surveys the wider family of materials this project belongs to: films as soft as rubber that respond to magnets. It covers the two ingredients (a soft polymer such as PDMS, and magnetic particles such as iron oxide or NdFeB), how the films are made (moulding, casting, lithography and 3D printing), how they are tested mechanically and magnetically, and what they are used for: beating artificial cilia that pump fluid in lab-on-a-chip devices, small swimming and gripping robots, wearable sensors, and drug delivery and surgery. Its main argument is that new soft magnetic inks are still found by trial and error, and it proposes a design-first route that combines molecular and flow simulations with machine learning.</p>
+	        <p><strong>My role:</strong> the review was written largely by an undergraduate team in the UMD Gemstone Honors Program (lead author Anjali Dhamsania), supervised by Prof. Siddhartha Das. I checked all sections of the manuscript together with Beihan Zhao, and reviewed and edited the final version.</p>
+	        <p>A. Dhamsania, W. Mah, A. Sivarajan, J. Ting, S. Chung, E. Carlson, A. Wang, G. Lee, B. Huynh, A. Chen, L. Mueller, C. Kim, S. K. Subudhi, B. Zhao, B. S. Chava and S. Das, <em>Journal of Materials Chemistry C</em> 10, 6563&ndash;6589 (2022). <a href="https://doi.org/10.1039/d2tc00388k" target="_blank" rel="noopener">doi:10.1039/d2tc00388k</a></p>
+	      </div>
+
+	      <h2>My role</h2>
+	      <p>As first author, I developed the film fabrication process and the eight test recipes. I designed and 3D-printed the deformation holders for the magnetometer, and built the four servo-driven cyclic-loading rigs. I ran the magnetic characterization and the 1,000-cycle durability tests, did the microscopy-based failure analysis, and wrote the paper. The work was done in Prof. Siddhartha Das's group at the University of Maryland, with collaborators from Mechanical Engineering, Materials Science and Electrical &amp; Computer Engineering.</p>
+
+	      <div class="article-refs">
+	        <p><strong>Read the paper:</strong> S. K. Subudhi, B. Zhao, X. Wang, J. Ting, I. Takeuchi, A. Dasgupta and S. Das, &ldquo;Flexible and twistable free-standing PDMS-magnetic-nanoparticle-based soft magnetic films with robust magnetic properties,&rdquo; <em>Flexible and Printed Electronics</em> 9, 015013 (2024). <a href="https://doi.org/10.1088/2058-8585/ad2dae" target="_blank" rel="noopener">doi:10.1088/2058-8585/ad2dae</a> (open access).</p>
+	        <p>Figures 2, 4, 6 and 8 are reproduced (some cropped) from the paper; Figures 1, 3, 5 and 7 are redrawn from its data and schematics. The paper is published under a CC&nbsp;BY&nbsp;4.0 licence.</p>
+	      </div>
+
+	    </article>
 	  </div>
 	  <div class="col-lg-4 project-outcomes">
 		  <h4>Outcomes:</h4>
@@ -215,6 +434,12 @@ suitability for wearable electronics applications.
 		  <br>
 		  <a href="https://iopscience.iop.org/article/10.1088/2058-8585/ad2dae/pdf">DOI: 10.1088/2058-8585/ad2dae</a>
 		  </li><br>
+		  <li>Review (co-author) published in the RSC <i>Journal of Materials Chemistry C</i> on Mar 30, 2022.
+		  <br>
+		  <span style="color:#9aa7b3"><i>J. Mater. Chem. C</i> 2022, 10, 6563&ndash;6589</span>
+		  <br>
+		  <a href="https://doi.org/10.1039/d2tc00388k">DOI: 10.1039/d2tc00388k</a>
+		  </li>
 		  </ul>
 	  </div>
 	</div>

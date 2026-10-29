@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('swarupks-theme');
+        document.documentElement.setAttribute('data-theme', saved === 'dark' ? 'dark' : 'light');
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Swarup K S - 3D Deposits from Drying Drops</title>
+  <meta content="How drying a particle-laden drop inside a silicone cavity produces particle deposits that span three dimensions instead of the usual flat coffee ring. Langmuir 2023." name="description">
+  <meta content="Swarup Subudhi, coffee ring effect, evaporation, 3D deposits, nanoparticles, carbon nanotubes, PDMS, University of Maryland" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets/img/swarupks-logo-web.png" rel="icon">
+  <link href="../assets/img/swarupks-logo-web.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Lexend:wght@100..900&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendors/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendors/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendors/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="../assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="../assets/img/linkedin_profile_img.jpg" alt="" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="../index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Swarup K S</h1>
+    </a>
+
+    <div class="social-links text-center">
+      <a href="http://linkedin.com/in/swarupks/" class="linkedin" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      <a href="mailto:swarupks001@gmail.com" class="envelope" title="Mail"><i class="bi bi-envelope"></i></a>
+      <a href="https://scholar.google.com/citations?hl=en&authuser=1&user=byx4q4oAAAAJ" class="card-list" target="_blank" title="Scholar"><i class="bi bi-card-list"></i></a>
+      <a href="http://github.com/swarupsubudhi" class="github" target="_blank" title="Github"><i class="bi bi-github"></i></a>
+      <a href="http://behance.net/swarupks" class="behance" target="_blank" title="Behance"><i class="bi bi-behance"></i></a>
+    </div>
+
+    <div id="theme-switch" class="theme-switch" role="group" aria-label="Theme">
+      <button type="button" class="theme-switch-btn" data-theme-choice="light" aria-pressed="false">
+        <i class="bi bi-sun-fill"></i>Light
+      </button>
+      <button type="button" class="theme-switch-btn" data-theme-choice="dark" aria-pressed="false">
+        <i class="bi bi-moon-stars-fill"></i>Dark
+      </button>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="../index.html#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="../index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="../index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Experience</a></li>
+        <li><a href="../index.html#portfolio"><i class="bi bi-images navicon"></i> Projects</a></li>
+        <li><a href="../index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+        <li class="dropdown"><a href="../blog/blog-home.html"><i class="bi bi-menu-button navicon"></i> <span>Blog</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul>
+            <li><a href="../blog/blog-home.html#research">Research</a></li>
+            <li><a href="../blog/blog-home.html#philosophy">Philosophy</a></li>
+            <li><a href="../blog/blog-home.html#interests">Interests</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Project Details</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="../index.html">Home</a></li>
+            <li class="current">Projects</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <article class="project-article" style="max-width:none">
+              <figure style="margin-top:0">
+                <svg class="fig-svg" viewBox="0 0 720 250" role="img" aria-label="Left: a drop drying on a flat surface leaves a flat coffee ring. Right: a drop drying inside a cavity in silicone leaves deposits that wrap around the cavity in three dimensions">
+                  <defs><marker id="ah9a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" class="arrowhead"/></marker></defs>
+                  <text x="175" y="24" text-anchor="middle" class="t-strong" font-size="14">Usual: drop on a flat surface</text>
+                  <rect class="holder" x="40" y="150" width="270" height="14" rx="2"/>
+                  <path class="drop" d="M90,150 A85,60 0 0 1 260,150 Z"/>
+                  <line class="arrow" x1="175" y1="172" x2="175" y2="196" marker-end="url(#ah9a)"/>
+                  <ellipse cx="175" cy="214" rx="70" ry="12" fill="none" stroke="#6b3a1c" stroke-width="5"/>
+                  <text x="175" y="244" text-anchor="middle" font-size="12">flat ring (2D)</text>
+                  <line class="grid" x1="360" y1="30" x2="360" y2="240"/>
+                  <text x="545" y="24" text-anchor="middle" class="t-strong" font-size="14">This study: drop inside a silicone cavity</text>
+                  <rect class="bath" x="420" y="70" width="250" height="150"/>
+                  <circle class="drop" cx="545" cy="128" r="56"/>
+                  <rect x="420" y="40" width="250" height="30" style="fill:var(--background-color)"/>
+                  <text x="545" y="60" text-anchor="middle" font-size="11">air (evaporation happens through the opening)</text>
+                  <path d="M499,160 A56,56 0 0 0 591,160" fill="none" stroke="#4a2412" stroke-width="7"/>
+                  <text x="545" y="240" text-anchor="middle" font-size="12">curved shell (3D)</text>
+                </svg>
+                <figcaption><b>The idea in one picture.</b> A drying drop normally leaves particles in a flat ring. Drying the drop inside a cavity it has moulded into silicone lets very small particles settle as a curved shell instead. Schematic drawn for this site, after Fig. 1 of the paper.</figcaption>
+              </figure>
+            </article>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h5>Three-Dimensional Deposits from Drying Particle-Laden Drops</h5>
+              <ul>
+                <li><strong>Category</strong>: Research</li>
+                <li><strong>Affiliation</strong>: University of Maryland, College Park</li>
+                <li><strong>Sponsor</strong>: <a href="https://smiel.umd.edu/">SMIEL Lab</a></li>
+                <li><strong>PI</strong>: Dr. Siddhartha Das</li>
+                <li><strong>Collab</strong>: Beihan Zhao (1st author), Vishal S. Sivasankar, Shayandev Sinha, Shakiba Nikfarjam, Taylor Woehl</li>
+                <li><strong>Published</strong>: Jun 2023</li>
+              </ul>
+            </div>
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+              <p>Everyone has seen the ring a spilled coffee drop leaves behind. This study dried drops inside a small cavity in silicone instead of on a flat surface, and found that small enough particles settle as a curved 3D shell rather than a flat ring.</p>
+            </div>
+          </div>
+
+        </div>
+      <br><br>
+	<div class="row gy-4">
+	  <div class="col-lg-8 project-text-main">
+	    <article class="project-article">
+
+	      <p class="article-lede">Let a drop of coffee dry on a table and it leaves a dark ring, not a spot. That "coffee ring" is so universal that engineers spend real effort fighting it when they print electronics or coatings. But every coffee ring ever made is flat: it sits on the surface where the drop dried. This study asked what happens if a drop dries while sitting inside a hollow it has carved for itself. The answer: depending on the size of the particles, the deposit can wrap around the cavity in three dimensions.</p>
+
+	      <div class="key-numbers">
+	        <div><span class="num">3</span><span class="label">particle sizes compared: coffee grounds, carbon nanotubes, silver nanoparticles</span></div>
+	        <div><span class="num">20 &micro;L</span><span class="label">drop size (about 3.4 mm across)</span></div>
+	        <div><span class="num">3&ndash;4 days</span><span class="label">time for the drop to fully dry at room temperature</span></div>
+	        <div><span class="num">56%</span><span class="label">of carbon nanotubes ending up in the 3D shell rather than the ring</span></div>
+	      </div>
+
+	      <h2>Why coffee rings form</h2>
+	      <p>As a drop dries, liquid evaporates fastest at its edge. The edge is stuck in place, so liquid from the middle flows outward to replace what is lost. That outward flow carries the particles with it and piles them up at the edge. The result is a ring.</p>
+	      <p>The effect is useful for some things, such as concentrating a sample before testing it, and a nuisance for others, such as printing an even layer of conductive ink. Either way, the deposit always ends up in a flat plane: the surface the drop sat on.</p>
+
+	      <h2>The setup: let the drop make its own mould</h2>
+	      <figure>
+	        <svg class="fig-svg" viewBox="0 0 720 200" role="img" aria-label="Four steps: a drop is placed in liquid silicone, it floats up to the surface, the silicone cures around it forming a cavity, and the drop evaporates through the opening over several days">
+	          <defs><marker id="ah9b" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" class="arrowhead"/></marker></defs>
+	          <g transform="translate(10,30)">
+	            <rect class="bath" x="0" y="20" width="140" height="110"/>
+	            <circle class="drop" cx="70" cy="100" r="18"/>
+	            <line class="axis" x1="70" y1="0" x2="70" y2="80" stroke-width="3"/>
+	            <text x="70" y="152" text-anchor="middle" class="t-strong" font-size="13">1. Inject</text>
+	            <text x="70" y="168" text-anchor="middle" font-size="11">into liquid silicone</text>
+	          </g>
+	          <line class="arrow" x1="158" y1="105" x2="180" y2="105" marker-end="url(#ah9b)"/>
+	          <g transform="translate(190,30)">
+	            <rect class="bath" x="0" y="20" width="140" height="110"/>
+	            <circle class="drop" cx="70" cy="34" r="18"/>
+	            <line class="arrow" x1="70" y1="110" x2="70" y2="62" marker-end="url(#ah9b)"/>
+	            <text x="70" y="152" text-anchor="middle" class="t-strong" font-size="13">2. Floats up</text>
+	            <text x="70" y="168" text-anchor="middle" font-size="11">~10 min, pokes through</text>
+	          </g>
+	          <line class="arrow" x1="338" y1="105" x2="360" y2="105" marker-end="url(#ah9b)"/>
+	          <g transform="translate(370,30)">
+	            <rect class="box-accent" x="0" y="20" width="140" height="110"/>
+	            <circle class="drop" cx="70" cy="34" r="18"/>
+	            <text x="70" y="152" text-anchor="middle" class="t-strong" font-size="13">3. Silicone cures</text>
+	            <text x="70" y="168" text-anchor="middle" font-size="11">1&ndash;2 days, forms a cavity</text>
+	          </g>
+	          <line class="arrow" x1="518" y1="105" x2="540" y2="105" marker-end="url(#ah9b)"/>
+	          <g transform="translate(550,30)">
+	            <rect class="box-accent" x="0" y="20" width="140" height="110"/>
+	            <path class="drop" d="M54,40 A18,18 0 0 0 86,40 Z" />
+	            <path d="M52,24 A18,18 0 0 0 88,24" fill="none" class="axis" stroke-dasharray="3 3"/>
+	            <text x="70" y="152" text-anchor="middle" class="t-strong" font-size="13">4. Drop dries</text>
+	            <text x="70" y="168" text-anchor="middle" font-size="11">3&ndash;4 days, through the top</text>
+	          </g>
+	        </svg>
+	        <figcaption><b>Figure 1.</b> How the drop ends up drying inside a cavity. The order matters: the drop has to rise faster than the silicone cures, and the silicone has to cure faster than the drop dries. Schematic drawn for this site, after Fig. 3 of the paper.</figcaption>
+	      </figure>
+	      <p>A drop of water carrying particles is injected into a layer of liquid silicone (PDMS). Being lighter, the drop floats up in about ten minutes until its top pokes through into the air. The silicone then cures into a solid over a day or two, moulding itself around the drop. Now the drop sits in a cavity of its own shape, open to the air only through a small opening at the top, about 1.4&nbsp;mm across. Over the next three to four days it slowly evaporates through that opening.</p>
+	      <p>The same experiment was run with three kinds of particles, all at the same concentration (5&nbsp;mg per mL):</p>
+	      <ul>
+	        <li><strong>Coffee particles</strong>, the largest: 20&ndash;50 micrometres.</li>
+	        <li><strong>Carbon nanotubes</strong>, in between: tiny fibres 1&ndash;2 micrometres long.</li>
+	        <li><strong>Silver nanoparticles</strong>, the smallest: about 20 nanometres, a thousand times smaller than the coffee particles.</li>
+	      </ul>
+
+	      <h2>Three particle sizes, three outcomes</h2>
+	      <figure>
+	        <svg class="fig-svg" viewBox="0 0 720 210" role="img" aria-label="Three cavities: coffee particles form a ring at the top opening, carbon nanotubes form both a ring at the top and a shell at the bottom, silver nanoparticles form a shell at the bottom">
+	          <g transform="translate(40,20)">
+	            <rect class="bath" x="0" y="20" width="170" height="120"/>
+	            <path d="M45,40 A40,40 0 1 0 125,40" fill="none" class="axis"/>
+	            <rect x="0" y="0" width="170" height="20" style="fill:var(--background-color)"/>
+	            <rect x="56" y="34" width="58" height="8" rx="3" class="clump"/>
+	            <text x="85" y="166" text-anchor="middle" class="t-strong" font-size="13">Coffee particles</text>
+	            <text x="85" y="184" text-anchor="middle" font-size="11">flat ring at the opening</text>
+	          </g>
+	          <g transform="translate(275,20)">
+	            <rect class="bath" x="0" y="20" width="170" height="120"/>
+	            <path d="M45,40 A40,40 0 1 0 125,40" fill="none" class="axis"/>
+	            <rect x="0" y="0" width="170" height="20" style="fill:var(--background-color)"/>
+	            <rect x="56" y="34" width="58" height="8" rx="3" class="clump"/>
+	            <path d="M55,96 A40,40 0 0 0 115,96" fill="none" stroke="#4a2412" stroke-width="7"/>
+	            <text x="85" y="166" text-anchor="middle" class="t-strong" font-size="13">Carbon nanotubes</text>
+	            <text x="85" y="184" text-anchor="middle" font-size="11">ring + curved shell</text>
+	          </g>
+	          <g transform="translate(510,20)">
+	            <rect class="bath" x="0" y="20" width="170" height="120"/>
+	            <path d="M45,40 A40,40 0 1 0 125,40" fill="none" class="axis"/>
+	            <rect x="0" y="0" width="170" height="20" style="fill:var(--background-color)"/>
+	            <path d="M52,92 A40,40 0 0 0 118,92" fill="none" stroke="#4a2412" stroke-width="7"/>
+	            <text x="85" y="166" text-anchor="middle" class="t-strong" font-size="13">Silver nanoparticles</text>
+	            <text x="85" y="184" text-anchor="middle" font-size="11">curved shell at the bottom</text>
+	          </g>
+	        </svg>
+	        <figcaption><b>Figure 2.</b> Where the particles ended up once each drop had dried (cavities shown in cross-section). Schematic drawn for this site, after Figs. 4&ndash;6 of the paper, which show the actual microscope images.</figcaption>
+	      </figure>
+	      <ul>
+	        <li><strong>Coffee particles</strong> behaved exactly like a normal coffee ring: a ring about 20&ndash;30 micrometres thick around the opening at the top.</li>
+	        <li><strong>Silver nanoparticles</strong> did something new. Almost none went to the ring. Instead they coated the bottom of the cavity as a curved shell, spanning all three dimensions.</li>
+	        <li><strong>Carbon nanotubes</strong>, being in between in size, did both: about 44% formed a ring at the top and about 56% formed a shell at the bottom.</li>
+	      </ul>
+	      <p>The silver result was confirmed by electron microscopy and by mapping the chemical elements in the deposit. To check that size, not the type of material, was what mattered, the experiment was repeated with two other nanoparticles of similar size: aluminium oxide (about 5&nbsp;nm) and iron oxide (20&ndash;30&nbsp;nm). Both formed the same bottom shell.</p>
+
+	      <h2>Why size decides it</h2>
+	      <p>Computer simulations of the flow inside the drying drop showed the same outward flow that causes a normal coffee ring, with the liquid running along the cavity walls toward the edge of the opening. Whether a particle follows that flow depends on a tug-of-war between two effects:</p>
+
+	      <div class="explainer">
+	        <strong>Riding the current vs. jiggling around.</strong> Every particle in water is constantly jostled by water molecules, so it wanders at random (Brownian motion). A large particle barely notices this and simply rides the flow, like a log in a river. A very small particle is jostled so much that the flow hardly steers it. Scientists compare the two with a single ratio, the P&eacute;clet number: much greater than 1 means "rides the current", much less than 1 means "wanders at random".
+	      </div>
+
+	      <p>For the coffee particles that ratio is enormous, around 100,000 to 1,000,000. They follow the flow to the edge and form the ring. For the silver nanoparticles it is about 0.1, so they ignore the flow and keep wandering through the drop. As the drop dries, its top surface sinks down through the cavity like a lowering ceiling and sweeps up the wandering nanoparticles, which stick to it. When the last of the liquid disappears, that surface settles onto the bottom of the cavity and leaves the nanoparticles behind as a shell. Carbon nanotubes sit in between, so some ride the flow and some get swept up.</p>
+
+	      <h2>What this tells us</h2>
+	      <ul>
+	        <li><strong>Drying deposits don't have to be flat.</strong> With the right container shape and particle size, evaporation can lay particles down on a curved, three-dimensional surface.</li>
+	        <li><strong>Particle size is the switch.</strong> Large particles still make rings; nanoparticles make shells; in-between particles make both.</li>
+	        <li><strong>It suggests new ways to make things.</strong> The paper points to self-assembled coatings and electronics on curved surfaces, since the particles arrange themselves without any printing or deposition equipment.</li>
+	      </ul>
+
+	      <h3>Scope of the study</h3>
+	      <p>Only water drops, one particle concentration and one silicone recipe were tested. Mixing large and small particles in the same drop did not cleanly separate them by size, probably because the two kinds of particle stick to each other. Other liquids, concentrations and particle shapes are left for future work.</p>
+
+	      <h2>My role</h2>
+	      <p>I was a co-author on this study, which was led by Beihan Zhao in Prof. Siddhartha Das's group at the University of Maryland, with collaborators in Chemical &amp; Biomolecular Engineering.</p>
+
+	      <div class="article-refs">
+	        <p><strong>Read the paper:</strong> B. Zhao, V. S. Sivasankar, S. K. Subudhi, S. Sinha, S. Nikfarjam, T. Woehl and S. Das, &ldquo;Three-dimensional deposits from drying particle-laden drops,&rdquo; <em>Langmuir</em> 39, 9773&ndash;9784 (2023). <a href="https://doi.org/10.1021/acs.langmuir.3c00831" target="_blank" rel="noopener">doi:10.1021/acs.langmuir.3c00831</a></p>
+	        <p>Figures on this page are simplified schematics drawn for this site; the original microscope images and simulations are in the published paper.</p>
+	      </div>
+
+	    </article>
+	  </div>
+	  <div class="col-lg-4 project-outcomes">
+		  <h4>Outcomes:</h4>
+		  <ul>
+		  <li>Paper published in the ACS journal Langmuir on Jun 30, 2023.
+		  <br>
+		  <span style="color:#9aa7b3"><i>Langmuir</i> 2023, 39, 9773&ndash;9784</span>
+		  <br>
+		  <a href="https://doi.org/10.1021/acs.langmuir.3c00831">DOI: 10.1021/acs.langmuir.3c00831</a>
+		  </li>
+		  </ul>
+	  </div>
+	</div>
+
+      </div>
+
+    </section><!-- /Portfolio Details Section -->
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendors/php-email-form/validate.js"></script>
+  <script src="../assets/vendors/aos/aos.js"></script>
+  <script src="../assets/vendors/typed.js/typed.umd.js"></script>
+  <script src="../assets/vendors/purecounter/purecounter_vanilla.js"></script>
+  <script src="../assets/vendors/waypoints/noframework.waypoints.js"></script>
+  <script src="../assets/vendors/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="../assets/vendors/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendors/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('swarupks-theme');
+        document.documentElement.setAttribute('data-theme', saved === 'dark' ? 'dark' : 'light');
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Swarup K S - Scientific Software</title>
+  <meta content="Scientific software built by Swarup Subudhi: nScryptConformal, which turns a laser surface scan into a contact-free conformal toolpath for the nScrypt printer, and TrakLab." name="description">
+  <meta content="Swarup Subudhi, scientific software, nScrypt, conformal printing, toolpath, laser scan, quadratic programming, Python, SciPy, TrakLab" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets/img/swarupks-logo-web.png" rel="icon">
+  <link href="../assets/img/swarupks-logo-web.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Lexend:wght@100..900&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendors/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendors/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendors/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="../assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="../assets/img/linkedin_profile_img.jpg" alt="" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="../index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Swarup K S</h1>
+    </a>
+
+    <div class="social-links text-center">
+      <a href="http://linkedin.com/in/swarupks/" class="linkedin" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      <a href="mailto:swarupks001@gmail.com" class="envelope" title="Mail"><i class="bi bi-envelope"></i></a>
+      <a href="https://scholar.google.com/citations?hl=en&authuser=1&user=byx4q4oAAAAJ" class="card-list" target="_blank" title="Scholar"><i class="bi bi-card-list"></i></a>
+      <a href="http://github.com/swarupsubudhi" class="github" target="_blank" title="Github"><i class="bi bi-github"></i></a>
+      <a href="http://behance.net/swarupks" class="behance" target="_blank" title="Behance"><i class="bi bi-behance"></i></a>
+    </div>
+
+    <div id="theme-switch" class="theme-switch" role="group" aria-label="Theme">
+      <button type="button" class="theme-switch-btn" data-theme-choice="light" aria-pressed="false">
+        <i class="bi bi-sun-fill"></i>Light
+      </button>
+      <button type="button" class="theme-switch-btn" data-theme-choice="dark" aria-pressed="false">
+        <i class="bi bi-moon-stars-fill"></i>Dark
+      </button>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="../index.html#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="../index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="../index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Experience</a></li>
+        <li><a href="../index.html#portfolio"><i class="bi bi-images navicon"></i> Projects</a></li>
+        <li><a href="../index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+        <li class="dropdown"><a href="../blog/blog-home.html"><i class="bi bi-menu-button navicon"></i> <span>Blog</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul>
+            <li><a href="../blog/blog-home.html#research">Research</a></li>
+            <li><a href="../blog/blog-home.html#philosophy">Philosophy</a></li>
+            <li><a href="../blog/blog-home.html#interests">Interests</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Project Details</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="../index.html">Home</a></li>
+            <li class="current">Projects</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <article class="project-article" style="max-width:none">
+              <figure style="margin-top:0">
+                <svg class="fig-svg" viewBox="0 0 720 240" role="img" aria-label="A print nozzle following a bumpy surface at a constant small gap, compared with a flat toolpath that would crash into the bumps or float too high in the dips">
+                  <text x="360" y="22" text-anchor="middle" class="t-strong" font-size="14">Printing on a surface that isn't flat</text>
+                  <path class="holder" d="M30,190 C110,190 130,150 200,150 C260,150 280,185 340,182 C400,179 420,120 470,118 C520,116 540,170 600,168 C640,167 670,160 690,158 L690,220 L30,220 Z"/>
+                  <text x="360" y="212" text-anchor="middle" font-size="12">real part surface (measured by laser scan)</text>
+                  <line x1="30" y1="140" x2="690" y2="140" class="path-dash"/>
+                  <text x="40" y="132" font-size="11">flat toolpath: crashes into peaks, floats over dips</text>
+                  <path class="curve-b" d="M30,178 C110,178 130,138 200,138 C260,138 280,173 340,170 C400,167 420,108 470,106 C520,104 540,158 600,156 C640,155 670,148 690,146"/>
+                  <text x="452" y="70" text-anchor="end" font-size="11" class="t-strong">conformed toolpath: constant small gap</text>
+                  <rect class="magnet" x="463" y="50" width="16" height="36" rx="3"/>
+                  <path class="magnet" d="M465,86 L477,86 L471,100 Z"/>
+                </svg>
+                <figcaption><b>The problem in one picture.</b> A fine-line printer holds its nozzle a few micrometres to tens of micrometres above the part. Real parts are never perfectly flat, so a toolpath written for a flat plane either hits the surface or loses the gap. Schematic drawn for this site; vertical scale exaggerated.</figcaption>
+              </figure>
+            </article>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h5>Scientific Software Builds</h5>
+              <ul>
+                <li><strong>Category</strong>: Engineering</li>
+                <li><strong>Affiliation</strong>: University of Maryland, College Park</li>
+                <li><strong>Tools</strong>: nScryptConformal, TrakLab</li>
+                <li><strong>Stack</strong>: Python (NumPy, SciPy, Matplotlib, customtkinter); MATLAB (App Designer, Image Processing and Computer Vision toolboxes)</li>
+                <li><strong>Developer</strong>: Swarup Subudhi</li>
+              </ul>
+            </div>
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+              <p>Software I wrote to solve problems in my own lab work: turning a laser scan of a part into a printer program that follows its surface, and turning lab videos into position and velocity data. Each tool will get its own interactive demo page.</p>
+            </div>
+          </div>
+
+        </div>
+      <br><br>
+	<div class="row gy-4">
+	  <div class="col-lg-8 project-text-main">
+	    <article class="project-article">
+
+	      <p class="article-lede">Research instruments rarely come with the software you need. When a printer can only follow flat toolpaths, or a camera records hours of video that someone has to measure by hand, the fastest route is often to write the tool yourself. This page collects the scientific software I have built, what each tool does, and how it works under the hood.</p>
+
+	      <div class="key-numbers">
+	        <div><span class="num">~9,700</span><span class="label">lines of Python in nScryptConformal v2.1</span></div>
+	        <div><span class="num">4</span><span class="label">surface-following strategies, including a constrained optimisation</span></div>
+	        <div><span class="num">3</span><span class="label">scan types supported: line scans, path scans and area scans</span></div>
+	        <div><span class="num">~2,500</span><span class="label">lines of MATLAB in TrakLab v0.3</span></div>
+	      </div>
+
+	      <h2 id="nscrypt-conformal">nScryptConformal: printing that follows the surface</h2>
+
+	      <h3>The problem it solves</h3>
+	      <p>The nScrypt 3Dn is a precision direct-write printer that dispenses conductive inks through a fine nozzle held just above the part. Its print programs are written for a flat plane. Real substrates (circuit boards, coupons, moulded parts) are slightly warped or stepped, by amounts comparable to the gap itself. A program written for a flat plane will drag the nozzle through high spots and lift away from low spots, giving broken or uneven lines. Adjusting the height by hand, point by point, is slow and does not scale beyond a few lines.</p>
+
+	      <h3>How it works</h3>
+	      <figure>
+	        <svg class="fig-svg" viewBox="0 0 720 200" role="img" aria-label="Pipeline: laser scan and flat print program go in; the program is parsed, the scan is aligned to it, a surface model is fitted, a nozzle height path is planned under machine limits, and a conformed print program comes out">
+	          <defs><marker id="ah12a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" class="arrowhead"/></marker></defs>
+	          <g font-size="11">
+	            <rect class="box" x="10" y="30" width="110" height="46" rx="6"/><text x="65" y="50" text-anchor="middle" class="t-strong">Laser scan</text><text x="65" y="66" text-anchor="middle">line / path / area</text>
+	            <rect class="box" x="10" y="120" width="110" height="46" rx="6"/><text x="65" y="140" text-anchor="middle" class="t-strong">Flat program</text><text x="65" y="156" text-anchor="middle">nScrypt .txt</text>
+	            <line class="arrow" x1="124" y1="53" x2="150" y2="88" marker-end="url(#ah12a)"/>
+	            <line class="arrow" x1="124" y1="143" x2="150" y2="108" marker-end="url(#ah12a)"/>
+	            <rect class="box-accent" x="156" y="74" width="100" height="48" rx="6"/><text x="206" y="94" text-anchor="middle" class="t-strong">1. Parse</text><text x="206" y="110" text-anchor="middle">print vs travel</text>
+	            <line class="arrow" x1="258" y1="98" x2="272" y2="98" marker-end="url(#ah12a)"/>
+	            <rect class="box-accent" x="276" y="74" width="100" height="48" rx="6"/><text x="326" y="94" text-anchor="middle" class="t-strong">2. Align</text><text x="326" y="110" text-anchor="middle">scan ↔ program</text>
+	            <line class="arrow" x1="378" y1="98" x2="392" y2="98" marker-end="url(#ah12a)"/>
+	            <rect class="box-accent" x="396" y="74" width="100" height="48" rx="6"/><text x="446" y="94" text-anchor="middle" class="t-strong">3. Fit</text><text x="446" y="110" text-anchor="middle">surface model</text>
+	            <line class="arrow" x1="498" y1="98" x2="512" y2="98" marker-end="url(#ah12a)"/>
+	            <rect class="box-accent" x="516" y="74" width="100" height="48" rx="6"/><text x="566" y="94" text-anchor="middle" class="t-strong">4. Plan</text><text x="566" y="110" text-anchor="middle">nozzle height</text>
+	            <line class="arrow" x1="618" y1="98" x2="632" y2="98" marker-end="url(#ah12a)"/>
+	            <rect class="box" x="636" y="74" width="76" height="48" rx="6"/><text x="674" y="94" text-anchor="middle" class="t-strong">Conformed</text><text x="674" y="110" text-anchor="middle">program</text>
+	          </g>
+	          <text x="436" y="160" text-anchor="middle" font-size="11">clearance, Z-speed limit and algorithm are set by the user and saved as presets</text>
+	        </svg>
+	        <figcaption><b>Figure 1.</b> The nScryptConformal pipeline. Diagram drawn for this site.</figcaption>
+	      </figure>
+	      <ol>
+	        <li><strong>Parse the program.</strong> The flat print program is split into print passes (between valve-open and valve-close commands) and travel moves. The parser can rebuild the original file exactly, so nothing outside the print passes is changed.</li>
+	        <li><strong>Align scan and program.</strong> The laser scanner and the print head ride on the same machine axes, so a single XY offset maps program coordinates onto scan coordinates, with a check that every print point falls inside the scanned area.</li>
+	        <li><strong>Fit the surface.</strong> The scan is turned into a smooth height model: one curve per scan line for straight passes, a full 2D surface for area scans, or a curve along the path's own length for diagonal and curved passes.</li>
+	        <li><strong>Plan the nozzle height.</strong> The user picks a clearance and the machine's Z-speed limit, then one of several strategies: a least-squares polynomial (smoothest), evenly spaced sample points, curvature-adaptive points that concentrate where the surface bends, or a constrained optimisation (below).</li>
+	        <li><strong>Write the new program.</strong> The result is a ready-to-run nScrypt file in which every print move tracks the real surface. Plots show the surface, clearance band and toolpath for every line before anything is printed.</li>
+	      </ol>
+
+	      <h3>The interesting bit: lift early, lower late</h3>
+	      <figure>
+	        <svg class="fig-svg" viewBox="0 0 720 220" role="img" aria-label="A narrow peak on the surface. A path that tracks a smoothed version of the surface clips the top of the peak. The optimised path starts rising before the peak and comes down after it, staying above the surface while respecting the Z speed limit">
+	          <path class="holder" d="M20,180 L250,180 C300,180 320,70 360,70 C400,70 420,180 470,180 L700,180 L700,200 L20,200 Z"/>
+	          <path class="curve-a" stroke-dasharray="6 4" d="M20,168 L230,168 C290,168 320,110 360,110 C400,110 430,168 490,168 L700,168"/>
+	          <path class="curve-b" d="M20,168 L200,168 L330,56 L390,56 L520,168 L700,168"/>
+	          <circle cx="360" cy="108" r="16" fill="none" stroke="#d6453d" stroke-width="2"/>
+	          <text x="470" y="98" font-size="11">smoothed-surface path clips the peak</text>
+	          <line x1="466" y1="94" x2="378" y2="104" stroke="#d6453d" stroke-width="1.2"/>
+	          <text x="196" y="80" font-size="11" class="t-strong">optimised path:</text>
+	          <text x="196" y="95" font-size="11">rises early at the</text>
+	          <text x="196" y="110" font-size="11">maximum Z speed</text>
+	          <text x="360" y="214" text-anchor="middle" font-size="11">surface (narrow peak)</text>
+	        </svg>
+	        <figcaption><b>Figure 2.</b> Why smoothing the surface is the wrong fix. Schematic drawn for this site.</figcaption>
+	      </figure>
+	      <p>The Z axis can only move up and down so fast. An early version handled that by smoothing the measured surface until the nozzle could keep up. That is the wrong lever: smoothing lowers a sharp peak, and the lowered peak is exactly where the nozzle then runs into the part. To clear a tall, narrow feature, the nozzle does not need to <em>track</em> it; it needs to start climbing before it and come down after it.</p>
+	      <p>So the latest version keeps the measured surface intact and moves the machine's limits into the constraints of an optimisation problem:</p>
+	      <ul>
+	        <li>stay as close as possible to the target gap above the surface,</li>
+	        <li><strong>never</strong> go below the surface plus a safety margin,</li>
+	        <li>never change height faster than the Z axis can (with an optional acceleration limit).</li>
+	      </ul>
+	      <div class="explainer">
+	        <strong>Why there is always an answer.</strong> The problem is a convex quadratic program, so it has a single best solution with no local minima and no tuning knobs. Better still, a safe path always exists: take the surface floor and "dilate" it by a cone whose slope is the Z-speed limit. That envelope is the lowest path that never touches the part and never moves too fast. The software solves the optimisation and then takes the higher of its answer and that envelope, so the output is guaranteed contact-free and within machine limits even if the solver stops early.
+	      </div>
+
+	      <h3>The application</h3>
+	      <ul>
+	        <li><strong>Toolpath Generator:</strong> a code editor with a 3D/2D viewer for writing and checking nScrypt programs, with preset patterns (line arrays, contact pads, fan-outs) that can be overlaid.</li>
+	        <li><strong>Conformal:</strong> the three-step load &rarr; select &rarr; configure-and-generate workflow described above.</li>
+	        <li><strong>Batch Conformal:</strong> apply a saved preset to a whole folder of scans, approve or reject each result, and generate all approved files at once.</li>
+	        <li><strong>Curved toolpaths:</strong> planned, for genuinely three-dimensional parts.</li>
+	      </ul>
+	      <p>Built in Python with NumPy and SciPy for the numerics (splines, sparse linear algebra), Matplotlib for the plots and customtkinter for the interface, and released under the Apache 2.0 licence.</p>
+	      <p><a href="software/nscrypt-conformal.html">Try the nScryptConformal demo &rarr;</a> <em>(interactive animation of a sample case, coming soon)</em></p>
+
+	      <h2 id="traklab">TrakLab: measuring motion in lab videos</h2>
+
+	      <h3>The problem it solves</h3>
+	      <p>My magnetic-drop experiments are recorded on video: a drop sinks through thick silicone toward a magnet, a clump of nanoparticles breaks out of it, and in the cargo-transfer work that clump is caught by a second drop. The physics is in the numbers: where the drop's centre is in every frame, how fast it moves, exactly when and where the clump leaves. Measuring that by hand, frame by frame, across many runs is slow and hard to repeat. TrakLab turns a video into calibrated position and velocity data in a few clicks.</p>
+
+	      <figure>
+	        <svg class="fig-svg" viewBox="0 0 720 230" role="img" aria-label="Left: a video frame with the drop outlined by a detected circle, two tracked points marked and their trails drawn. Right: the resulting plots of position and velocity against time">
+	          <defs><marker id="ah12b" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" class="arrowhead"/></marker></defs>
+	          <rect class="bath" x="20" y="20" width="300" height="190" rx="4"/>
+	          <path class="path-dash" d="M170,30 L170,70"/>
+	          <circle class="drop" cx="170" cy="95" r="30"/>
+	          <circle cx="170" cy="95" r="33" fill="none" stroke="#3b6ea5" stroke-width="2.5"/>
+	          <circle cx="170" cy="95" r="3" fill="#3b6ea5"/>
+	          <ellipse class="clump" cx="170" cy="150" rx="5" ry="12"/>
+	          <path d="M170,128 L170,140" stroke="#d6453d" stroke-width="2" stroke-dasharray="3 3"/>
+	          <circle cx="170" cy="138" r="4" fill="#d6453d"/>
+	          <text x="208" y="80" font-size="11">circle detector: drop centre</text>
+	          <text x="182" y="150" font-size="11">point tracker: clump tip</text>
+	          <rect class="magnet" x="20" y="196" width="300" height="14" rx="2"/>
+	          <line class="arrow" x1="330" y1="115" x2="380" y2="115" marker-end="url(#ah12b)"/>
+	          <g transform="translate(395,20)">
+	            <rect class="box" x="0" y="0" width="305" height="190" rx="6"/>
+	            <line class="axis" x1="40" y1="20" x2="40" y2="80"/><line class="axis" x1="40" y1="80" x2="290" y2="80"/>
+	            <path class="curve-b" d="M40,28 C110,32 170,46 220,64 L290,76"/>
+	            <text x="34" y="18" font-size="10" text-anchor="end">z</text>
+	            <line class="axis" x1="40" y1="110" x2="40" y2="170"/><line class="axis" x1="40" y1="170" x2="290" y2="170"/>
+	            <path class="curve-b" d="M40,165 C110,160 180,130 215,118 C230,140 250,150 290,152"/>
+	            <path class="curve-a" stroke="#d6453d" style="stroke:#d6453d" d="M200,150 C220,140 250,128 290,116"/>
+	            <text x="34" y="108" font-size="10" text-anchor="end">v</text>
+	            <text x="165" y="186" font-size="10" text-anchor="middle">time</text>
+	            <text x="250" y="98" font-size="10" text-anchor="middle">position (mm)</text>
+	          </g>
+	        </svg>
+	        <figcaption><b>Figure 3.</b> What TrakLab does: find the drop and follow chosen points in every frame, then convert pixels to millimetres and compute positions and velocities. Schematic drawn for this site; curves are illustrative.</figcaption>
+	      </figure>
+
+	      <h3>How it works</h3>
+	      <ol>
+	        <li><strong>Load and trim.</strong> Open a video, crop to the region of interest, downscale for speed, set the pixels-per-millimetre calibration, choose to use every <em>k</em>-th frame, and mark the start and end times on a scrubbable timeline.</li>
+	        <li><strong>Cache.</strong> The selected frames are read once and kept in memory, so tracking and re-runs are fast. The cache is keyed on every setting that affects it and rebuilds itself automatically when one of them changes.</li>
+	        <li><strong>Find the drop.</strong> A circle detector (a Hough transform) locates the drop's centre and radius in each frame, with adjustable radius range, polarity and sensitivity.</li>
+	        <li><strong>Follow points.</strong> Click a feature, such as the bottom of the drop or the tip of an escaping clump, and an optical-flow point tracker follows it from frame to frame.</li>
+	        <li><strong>Watch and export.</strong> Trajectories are drawn live over the video. When the run ends, TrakLab plots position and velocity against time and exports an Excel sheet and an annotated overlay video.</li>
+	      </ol>
+
+	      <div class="explainer">
+	        <strong>How the point tracker stays honest.</strong> TrakLab uses the Kanade&ndash;Lucas&ndash;Tomasi (KLT) method: it takes a small patch of pixels around the chosen point and finds where that patch has moved in the next frame, working from a coarse, blurred image down to full detail so it can follow fast motion. Each step is also checked backwards: track the point forward one frame, then track it back. If it doesn't return to where it started, the match is unreliable and is rejected rather than silently drifting.
+	      </div>
+
+	      <h3>Extras</h3>
+	      <ul>
+	        <li><strong>Clump volume estimate:</strong> outline a dark particle clump in a frame and estimate its volume by spinning its silhouette around its axis, the same method used to measure pendant drops. The tool also reports how asymmetric the clump is, as a warning when the estimate should be treated as approximate.</li>
+	        <li><strong>Crop preview, zoom, pixel ruler and scale bar</strong>, plus a session log that can be saved with the results.</li>
+	      </ul>
+	      <p>Built as a MATLAB App Designer application (about 2,500 lines) using the Image Processing and Computer Vision toolboxes. It produced the trajectory data for my <a href="project-details-04.html#cargo-transfer">drop-to-drop cargo transfer</a> work.</p>
+	      <p><a href="software/traklab.html">Try the TrakLab demo &rarr;</a> <em>(coming soon)</em></p>
+
+	      <h2>My role</h2>
+	      <p>I designed and wrote these tools myself, to support my own experiments and printing work at the University of Maryland.</p>
+
+	    </article>
+	  </div>
+	  <div class="col-lg-4 project-outcomes">
+		  <h4>Outcomes:</h4>
+		  <ul>
+		  <li>nScryptConformal v2.1: scan-to-toolpath conforming for the nScrypt 3Dn, with a contact-free, rate-limited trajectory optimiser.</li><br>
+		  <li>TrakLab v0.3: video-based drop and point tracking, used for the trajectory analysis in the drop-to-drop cargo transfer study.</li><br>
+		  <li>Interactive browser demos for each tool: in development.</li>
+		  </ul>
+	  </div>
+	</div>
+
+      </div>
+
+    </section><!-- /Portfolio Details Section -->
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendors/php-email-form/validate.js"></script>
+  <script src="../assets/vendors/aos/aos.js"></script>
+  <script src="../assets/vendors/typed.js/typed.umd.js"></script>
+  <script src="../assets/vendors/purecounter/purecounter_vanilla.js"></script>
+  <script src="../assets/vendors/waypoints/noframework.waypoints.js"></script>
+  <script src="../assets/vendors/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="../assets/vendors/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendors/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

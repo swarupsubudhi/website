@@ -14,9 +14,9 @@
     })();
   </script>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Swarup K S - Printed Electronics</title>
-  <meta content="Fine-line extrusion printing of nano-silver interconnects for a NASA-GSFC hard X-ray polarimeter assembly, targeting ±10 µm feature tolerances for launch qualification." name="description">
-  <meta content="Swarup Subudhi, mechanical engineer, University of Maryland, reliability engineering" name="keywords">
+  <title>Swarup K S - Additively Manufactured Electronics</title>
+  <meta content="Additively manufactured electronics: printed carbon-nanotube/graphene-oxide humidity sensors and wideband antennas, fine-line extrusion-printed silver conductors, and printed dielectric-plus-silver connections onto chip capacitors." name="description">
+  <meta content="Swarup Subudhi, printed electronics, additive manufacturing, direct write, carbon nanotubes, graphene oxide, humidity sensor, patch antenna, silver ink, extrusion printing, aerosol jet printing, dielectric ink, University of Maryland" name="keywords">
 
   <!-- Favicons -->
   <link href="../assets/img/swarupks-logo-web.png" rel="icon">
@@ -36,6 +36,7 @@
 
   <!-- Main CSS File -->
   <link href="../assets/css/main.css" rel="stylesheet">
+  <link href="../assets/css/ame.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: iPortfolio
@@ -55,16 +56,14 @@
       <img src="../assets/img/linkedin_profile_img.jpg" alt="" class="img-fluid rounded-circle">
     </div>
 
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="assets/img/logo.png" alt=""> -->
+    <a href="../index.html" class="logo d-flex align-items-center justify-content-center">
       <h1 class="sitename">Swarup K S</h1>
     </a>
 
     <div class="social-links text-center">
       <a href="http://linkedin.com/in/swarupks/" class="linkedin" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-	  <a href="mailto:swarupks001@gmail.com" class="envelope" title="Mail"><i class="bi bi-envelope"></i></a>
-	  <a href="https://scholar.google.com/citations?hl=en&authuser=1&user=byx4q4oAAAAJ" class="card-list" target="_blank" title="Scholar"><i class="bi bi-card-list"></i></a>
+      <a href="mailto:swarupks001@gmail.com" class="envelope" title="Mail"><i class="bi bi-envelope"></i></a>
+      <a href="https://scholar.google.com/citations?hl=en&authuser=1&user=byx4q4oAAAAJ" class="card-list" target="_blank" title="Scholar"><i class="bi bi-card-list"></i></a>
       <a href="http://github.com/swarupsubudhi" class="github" target="_blank" title="Github"><i class="bi bi-github"></i></a>
       <a href="http://behance.net/swarupks" class="behance" target="_blank" title="Behance"><i class="bi bi-behance"></i></a>
     </div>
@@ -85,7 +84,7 @@
         <li><a href="../index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Experience</a></li>
         <li><a href="../index.html#portfolio"><i class="bi bi-images navicon"></i> Projects</a></li>
         <li><a href="../index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-		<li class="dropdown"><a href="../blog/blog-home.html"><i class="bi bi-menu-button navicon"></i> <span>Blog</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+        <li class="dropdown"><a href="../blog/blog-home.html"><i class="bi bi-menu-button navicon"></i> <span>Blog</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
             <li><a href="../blog/blog-home.html#research">Research</a></li>
             <li><a href="../blog/blog-home.html#philosophy">Philosophy</a></li>
@@ -115,68 +114,52 @@
     <section id="portfolio-details" class="portfolio-details section">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row gy-4">
 
           <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper init-swiper">
-
-              <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  }
-                }
-              </script>
-
-              <div class="swiper-wrapper align-items-center" style="border: 1px solid rgba(255,255,255,0.1)">
-
-                <div class="swiper-slide">
-                  <img src="../assets/gifs/pd-2-img-1.gif" alt="">
-                </div>
-
-                <!--<div class="swiper-slide">
-                  <img src="../assets/img/portfolio/pd-4-img-2.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="../assets/img/portfolio/pd-4-img-3.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="../assets/img/portfolio/pd-4-img-4.jpg" alt="">
-                </div>-->
-
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
+            <article class="project-article" style="max-width:none">
+              <figure style="margin-top:0">
+                <svg class="fig-svg" viewBox="0 0 720 250" role="img" aria-label="Left: conventional electronics are made by etching copper away from a flat board. Right: printed electronics are built up by depositing ink only where it is needed, onto a thin film that can then be stuck onto a curved surface">
+                  <defs><marker id="ah2a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" class="arrowhead"/></marker></defs>
+                  <text x="175" y="24" text-anchor="middle" class="t-strong" font-size="14">Conventional: remove material</text>
+                  <rect class="holder" x="40" y="150" width="270" height="20"/>
+                  <rect x="40" y="138" width="270" height="12" fill="#c58b3c" opacity="0.35"/>
+                  <rect x="70" y="138" width="40" height="12" fill="#c58b3c"/><rect x="150" y="138" width="60" height="12" fill="#c58b3c"/><rect x="250" y="138" width="30" height="12" fill="#c58b3c"/>
+                  <text x="175" y="120" text-anchor="middle" font-size="12">copper etched away, leaving the circuit</text>
+                  <text x="175" y="200" text-anchor="middle" font-size="12">flat, rigid board</text>
+                  <line class="grid" x1="360" y1="34" x2="360" y2="230"/>
+                  <text x="545" y="24" text-anchor="middle" class="t-strong" font-size="14">Printed: add material only where needed</text>
+                  <rect class="magnet" x="470" y="50" width="26" height="46" rx="3"/>
+                  <path d="M478,96 L488,96 L483,110 Z" class="magnet"/>
+                  <text x="508" y="70" font-size="11">print head</text>
+                  <path class="path-dash" d="M420,126 L483,126"/>
+                  <rect class="box" x="400" y="128" width="200" height="8"/>
+                  <rect class="clump" x="420" y="122" width="63" height="6" rx="2"/>
+                  <text x="500" y="156" text-anchor="middle" font-size="11">ink line on thin adhesive film</text>
+                  <line class="arrow" x1="608" y1="140" x2="640" y2="140" marker-end="url(#ah2a)"/>
+                  <path d="M645,170 A40,40 0 0 1 715,170" class="bath"/>
+                  <path d="M650,162 A35,35 0 0 1 710,162" fill="none" stroke="#4a2412" stroke-width="6"/>
+                  <text x="680" y="192" text-anchor="middle" font-size="11">stuck on a</text><text x="680" y="206" text-anchor="middle" font-size="11">curved part</text>
+                </svg>
+                <figcaption><b>The idea in one picture.</b> Instead of etching a circuit out of a copper-clad board, additive manufacturing writes functional ink only where it is needed, onto surfaces a circuit board can't follow. Schematic drawn for this site.</figcaption>
+              </figure>
+            </article>
           </div>
 
           <div class="col-lg-4">
             <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h5>Printed Electronics - Compilation of Projects</h5>
+              <h5>Additively Manufactured Electronics</h5>
               <ul>
                 <li><strong>Category</strong>: Research</li>
                 <li><strong>Affiliation</strong>: University of Maryland, College Park</li>
-		<li><strong>Sponsor</strong>: <a href="https://smiel.umd.edu/">SMIEL Lab</a>, NASA-APRA, NextFlex, LPS</li>
-		<li><strong>PI</strong>: Dr. Siddhartha Das, </li>
-		<li><strong>Collab</strong>: Dr. Dasgupta Lab</li>
-                <li><strong>Project date</strong>: Jan '22 - May '23, Jun '23 - Dec '23, Jan '24 - present</li>
+                <li><strong>Sponsor</strong>: <a href="https://smiel.umd.edu/">SMIEL Lab</a></li>
+                <li><strong>PI</strong>: Dr. Siddhartha Das, Prof. Abhijit Dasgupta, Margaret Samuels</li>
+                <li><strong>Collab</strong>: Beihan Zhao, Vishal S. Sivasankar, Xiao Lin, Prabhat Janamanchi</li>
+                <li><strong>Project date</strong>: Jan '22 - present</li>
               </ul>
             </div>
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              
-              <p>No confidential material has been published on this page without consent and confirmation from the collaborating stakeholders. 
-			  Certain material has not been publisheed on this page which are under active research, and/or haven't received confirmation from collaborating stakeholders.</p>
-              <p>Scroll down for more details.</p>
+              <p>Printing electronic materials directly onto thin films and curved parts: here, carbon-nanotube humidity sensors, silver conductors  and dielectric material has been printed.</p>
             </div>
           </div>
 
@@ -184,19 +167,293 @@
       <br><br>
 	<div class="row gy-4">
 	  <div class="col-lg-8 project-text-main">
-	    <!--add details of the project here-->
-	        <!--<h3>Abstract</h3>
-		<p style="text-align: justify"></p>
-		<a href="">Article Link</a>-->
+	    <article class="project-article">
 
-		<br><br>
-		<h2></h2>
-		<p></p>
+	      <p class="article-lede">Almost every circuit board in the world is made by taking a sheet of copper and etching away everything that isn't the circuit. Additive manufacturing works the other way round: it writes conductive, insulating or sensing ink only where it is needed, the way a pen writes on paper. That makes it possible to put sensors, antennas and wiring on thin flexible films, on curved parts and on surfaces no circuit board could follow, and to change a design without making new masks or tooling. My graduate work has used three families of printed material: <strong>metal-free carbon inks</strong> (carbon nanotubes with graphene oxide), <strong>silver inks</strong> for low-resistance wiring, and <strong>dielectric (insulating) inks</strong> that let one printed layer cross or climb over another.</p>
+
+	      <div class="key-numbers">
+	        <div><span class="num">~50 &micro;m</span><span class="label">total thickness of the printed humidity sensor, film included</span></div>
+	        <div><span class="num">12&ndash;39 GHz</span><span class="label">working band of a printed carbon-nanotube antenna on a flat board</span></div>
+	        <div><span class="num">&lt;100 &micro;m</span><span class="label">width and spacing of extrusion-printed silver lines</span></div>
+	        <div><span class="num">3</span><span class="label">families of printed material: carbon, silver and dielectric</span></div>
+	      </div>
+
+	      <h2>How electronics get printed</h2>
+	      <p>Several direct-write methods are used to print electronics, each with its own ink requirements:</p>
+	      <ul>
+	        <li><strong>Syringe (extrusion) printing</strong> pushes a paste or ink out of a fine nozzle, like icing from a piping bag. It handles thick, particle-rich inks.</li>
+	        <li><strong>Aerosol jet printing</strong> turns the ink into a mist and focuses it into a narrow jet, writing lines tens of micrometres wide, even over steps and slopes.</li>
+	        <li><strong>Inkjet printing</strong> fires individual droplets, like an office printer, and needs thin, carefully tuned inks.</li>
+	      </ul>
+	      <div class="explainer">
+	        <strong>Why ink flow matters.</strong> A printable ink has to do two contradictory things: flow easily while it is being squeezed through a nozzle, then stop flowing the instant it lands so the line keeps its shape. Inks that get runnier when pushed and thicker at rest, like ketchup, are called <em>shear-thinning</em>, and that is the behaviour printable inks are designed for. The fluid mechanics behind this is the subject of our <a href="project-details-01.html">review of carbon-nanotube inks</a>.
+	      </div>
+
+	      <h2>Metal-free inks: carbon nanotubes and graphene oxide</h2>
+	      <p>Our group's CNT-GO ink mixes single-walled carbon nanotubes, which carry the current, with flakes of graphene oxide in water. It contains no metal and no polymer binder. The flat graphene oxide flakes keep the drying ink from piling up at its edges (the "coffee-ring" effect), so printed films come out even. The same ink has now been used for temperature sensors, humidity sensors and antennas, always printed onto a thin adhesive plastic film that can then be stuck onto flat, curved or flexible parts.</p>
+
+	      <h3>Printed humidity sensors that wrap around curves</h3>
+	      <p>Humidity sensors are everywhere, from weather stations to wearable health patches. Many existing designs are close to a millimetre thick, have resistances in the mega-ohm range, or take a long time to make. That makes them hard to fit into small or curved electronics. This study set out to print one that is thin, sensitive, easy to make and can be stuck onto almost any surface.</p>
+
+	      <h4>The ink</h4>
+	      <p>The ink combines two carbon nanomaterials suspended in water: <strong>single-walled carbon nanotubes</strong> (bundles 4&ndash;5&nbsp;nm across and about 1&nbsp;&micro;m long), which carry the current, and <strong>graphene oxide</strong> flakes a few micrometres across. They were mixed in equal parts at 5&nbsp;mg per mL and broken up by ultrasound. The ink is strongly shear-thinning: its viscosity falls about 400-fold, from about 4 to 0.01&nbsp;Pa&middot;s, as it is sheared harder, so it prints cleanly from a syringe.</p>
+
+	      <h4>Printing and mounting</h4>
+	      <figure>
+	        <svg class="fig-svg" viewBox="0 0 720 200" role="img" aria-label="Three steps: mix nanotubes and graphene oxide into an ink; print 5 centimetre lines onto adhesive-backed plastic film with a syringe printer; stick the film onto flat or curved surfaces and wire it up">
+	          <defs><marker id="ah2b" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" class="arrowhead"/></marker></defs>
+	          <g transform="translate(20,20)">
+	            <rect class="box" x="0" y="0" width="190" height="130" rx="8"/>
+	            <path class="bath" d="M65,30 L125,30 L120,105 L70,105 Z"/>
+	            <line class="axis" x1="80" y1="60" x2="96" y2="52"/><line class="axis" x1="98" y1="78" x2="114" y2="70"/><line class="axis" x1="78" y1="90" x2="92" y2="84"/>
+	            <rect class="clump" x="100" y="58" width="12" height="4" rx="1"/><rect class="clump" x="82" y="72" width="10" height="4" rx="1"/>
+	            <text x="95" y="155" text-anchor="middle" class="t-strong" font-size="13">1. Mix the ink</text>
+	            <text x="95" y="172" text-anchor="middle" font-size="11">nanotubes + graphene oxide</text>
+	          </g>
+	          <line class="arrow" x1="216" y1="85" x2="246" y2="85" marker-end="url(#ah2b)"/>
+	          <g transform="translate(255,20)">
+	            <rect class="box" x="0" y="0" width="190" height="130" rx="8"/>
+	            <rect class="magnet" x="88" y="14" width="18" height="48" rx="3"/>
+	            <path class="magnet" d="M92,62 L102,62 L97,74 Z"/>
+	            <rect class="box-accent" x="20" y="84" width="150" height="8"/>
+	            <rect class="clump" x="40" y="80" width="57" height="4" rx="1"/>
+	            <path class="path-dash" d="M97,82 L150,82"/>
+	            <text x="95" y="155" text-anchor="middle" class="t-strong" font-size="13">2. Syringe-print</text>
+	            <text x="95" y="172" text-anchor="middle" font-size="11">5&nbsp;cm lines on sticky PET film</text>
+	          </g>
+	          <line class="arrow" x1="451" y1="85" x2="481" y2="85" marker-end="url(#ah2b)"/>
+	          <g transform="translate(490,20)">
+	            <rect class="box" x="0" y="0" width="210" height="130" rx="8"/>
+	            <path class="bath" d="M55,110 L80,25 L130,25 L155,110 Z"/>
+	            <path d="M66,80 Q105,92 144,80" fill="none" stroke="#4a2412" stroke-width="5"/>
+	            <path d="M74,55 Q105,64 136,55" fill="none" stroke="#4a2412" stroke-width="5"/>
+	            <text x="105" y="155" text-anchor="middle" class="t-strong" font-size="13">3. Stick on and test</text>
+	            <text x="105" y="172" text-anchor="middle" font-size="11">flat film or around a tapered cup</text>
+	          </g>
+	        </svg>
+	        <figcaption><b>Figure 1.</b> How the sensors were made. The lines were stuck at different heights on tapered paper cups to give four curvatures. Schematic drawn for this site, after Figs. 1 and 3 of the paper.</figcaption>
+	      </figure>
+	      <p>Lines 5&nbsp;cm long, about 1.5&nbsp;mm wide and only 1&ndash;3&nbsp;&micro;m thick were printed on a Hyrel 3D printer fitted with a syringe head, onto 50&nbsp;&micro;m clear PET plastic film with an adhesive back. They dried at room temperature, and a dab of silver paste at each end made the electrical contacts. The finished sensor, film included, is only about 51&ndash;53&nbsp;&micro;m thick, among the thinnest humidity sensors that can be mounted on curved surfaces. The film was then peeled and stuck either flat or around tapered paper cups, giving four curvatures with radii of 3.5 to 4.25&nbsp;cm.</p>
+
+	      <h4>How it senses humidity</h4>
+	      <figure>
+	        <svg class="fig-svg" viewBox="0 0 720 200" role="img" aria-label="Left, dry air: nanotubes touch each other and current flows easily. Right, humid air: graphene oxide flakes absorb water and swell, pushing nanotubes apart, so resistance rises">
+	          <text x="180" y="22" text-anchor="middle" class="t-strong" font-size="14">Dry air: low resistance</text>
+	          <text x="540" y="22" text-anchor="middle" class="t-strong" font-size="14">Humid air: higher resistance</text>
+	          <g transform="translate(40,40)">
+	            <rect class="box" x="0" y="0" width="280" height="120" rx="8"/>
+	            <line class="axis" style="stroke-width:3" x1="20" y1="40" x2="150" y2="70"/><line class="axis" style="stroke-width:3" x1="120" y1="30" x2="250" y2="60"/><line class="axis" style="stroke-width:3" x1="40" y1="90" x2="170" y2="60"/><line class="axis" style="stroke-width:3" x1="150" y1="100" x2="260" y2="70"/>
+	            <rect class="film" x="70" y="72" width="40" height="8" rx="2" opacity="0.7"/><rect class="film" x="180" y="40" width="36" height="8" rx="2" opacity="0.7"/>
+	            <text x="140" y="140" text-anchor="middle" font-size="11">nanotubes touch: many paths for current</text>
+	          </g>
+	          <g transform="translate(400,40)">
+	            <rect class="box" x="0" y="0" width="280" height="120" rx="8"/>
+	            <line class="axis" style="stroke-width:3" x1="15" y1="30" x2="120" y2="52"/><line class="axis" style="stroke-width:3" x1="150" y1="22" x2="265" y2="40"/><line class="axis" style="stroke-width:3" x1="25" y1="102" x2="125" y2="90"/><line class="axis" style="stroke-width:3" x1="160" y1="105" x2="265" y2="92"/>
+	            <rect class="film" x="70" y="58" width="70" height="22" rx="6" opacity="0.7"/><rect class="film" x="170" y="50" width="64" height="22" rx="6" opacity="0.7"/>
+	            <text x="140" y="140" text-anchor="middle" font-size="11">swollen flakes push nanotubes apart</text>
+	          </g>
+	        </svg>
+	        <figcaption><b>Figure 2.</b> The proposed sensing mechanism: graphene oxide flakes (brown) swell as they take up water and spread the nanotube network apart. Schematic drawn for this site.</figcaption>
+	      </figure>
+	      <p>The printed line's electrical resistance rises as the air gets more humid. Pure nanotube networks respond only weakly to humidity. Adding graphene oxide more than doubles the response, and the paper proposes why: graphene oxide flakes soak up water and swell, pushing the nanotubes apart so fewer of them touch, which makes it harder for current to flow.</p>
+
+	      <h4>Results</h4>
+	      <p>In an environmental chamber, humidity was stepped from 30% to 90% and back at six fixed temperatures between 35 and 60&nbsp;&deg;C, while 20 sensors were logged continuously.</p>
+	      <ul>
+	        <li><strong>Strong, consistent response.</strong> On flat film, resistance changed by about 30% across the 30&ndash;90% humidity range. The sensitivity grew with humidity, reaching about 1.5% change in resistance per percentage point of humidity at the top of the range.</li>
+	        <li><strong>Curves don't hurt it.</strong> On all four curvatures the response stayed in the same 20&ndash;30% range, with no clear trend with curvature or temperature, so the same sensor can be used on flat and curved parts.</li>
+	        <li><strong>Easy to wire in.</strong> At 1&ndash;3&nbsp;k&Omega;, the sensors draw little current and generate little heat, unlike many nanotube sensors in the mega-ohm range.</li>
+	        <li><strong>Some lag between wetting and drying.</strong> Readings while humidity rose and fell differed slightly (hysteresis), more so when the sensor had sat in humid air for a long time between the two.</li>
+	      </ul>
+	      <div class="explainer">
+	        <strong>Does it last?</strong> These sensors also went through hundreds of hours at 90% humidity and about 2,200 temperature cycles between &minus;40 and 125&nbsp;&deg;C. Those results are on the <a href="project-details-03.html">Reliability of Printed Electronics</a> page.
+	      </div>
+
+	      <h4>Scope of the study</h4>
+	      <p>The absolute resistance varied noticeably from one printed line to the next, because the hand-mixed ink is not perfectly uniform. The paper therefore reports relative changes. Water condensing directly on a line caused huge resistance spikes; those readings were excluded. Better ink processing and post-treatment are suggested to make sensors more repeatable.</p>
+
+	      <h3>Printed antennas for tens of gigahertz</h3>
+	      <p>Phones, wearables, drones and aircraft need antennas that are small, light and able to sit on whatever surface is available. A <em>patch antenna</em> (a flat conducting rectangle above a ground layer) is the usual choice, but copper patches are normally tuned to one narrow frequency band. This study asked whether a printed carbon-nanotube patch could cover a much wider band, and keep working when stuck onto curved or bending surfaces.</p>
+	      <div class="explainer">
+	        <strong>Why try carbon instead of copper?</strong> At high frequencies, the current in a metal crowds into a thin layer at its surface (the <em>skin effect</em>), so a metal conductor behaves as if it were thinner and lossier the higher the frequency goes. Carbon nanotubes carry current along their length and are less affected by this, and they are light, flexible and do not corrode. Their drawback is a much lower conductivity than copper.
+	      </div>
+
+	      <h4>Making and mounting the antennas</h4>
+	      <figure>
+	        <img src="../assets/img/portfolio/pd-2-ant-fab.jpg" alt="Photographs: syringe printer drawing a CNT-GO antenna; rows of printed T-shaped patches and test lines on clear film; a patch stuck on a flat circuit board; CAD models and photos of curved and hinged 3D-printed substrates carrying printed patches" loading="lazy">
+	        <figcaption><b>Figure 3.</b> (a) Syringe-printing a CNT-GO patch antenna. (b) Patches and test lines on adhesive PET film. (c) A patch stuck to a flat FR4 board. (d, e) 3D-printed curved and hinged PLA substrates and the patches mounted on them. From Zhao, Subad <i>et&nbsp;al.</i>, <i>Front. Antennas Propag.</i> (2026), CC&nbsp;BY&nbsp;4.0.</figcaption>
+	      </figure>
+	      <p>Rectangular patches 10&nbsp;mm by 30&nbsp;mm were syringe-printed in three passes, giving a film about 10&nbsp;&micro;m thick; single-pass test lines were under 3&nbsp;&micro;m thick. Because the nanotube film conducts far less well than copper (about 3&nbsp;&times;&nbsp;10<sup>3</sup>&nbsp;S/m), the patch was made larger than a copper one would be to keep its surface resistance down. The films were stuck onto three kinds of 1.6&nbsp;mm-thick base, each with a copper ground layer on the back: a flat FR4 circuit board, 3D-printed curved plastic (radii of 2.5 and 5&nbsp;mm), and a 3D-printed hinged plastic plate that could be bent from 0&deg; to 90&deg;. A network analyser then measured how much of the signal fed into each antenna was reflected back, from a few gigahertz up to 40&nbsp;GHz.</p>
+	      <div class="explainer">
+	        <strong>Reading an antenna's "S<sub>11</sub>".</strong> S<sub>11</sub> is the fraction of the signal that bounces back from the antenna instead of going into it, in decibels. The usual working rule is that an antenna is usable wherever S<sub>11</sub> is below &minus;10&nbsp;dB, meaning less than 10% of the power is reflected. The width of that frequency range is the antenna's <em>bandwidth</em>.
+	      </div>
+
+	      <h4>Results</h4>
+	      <figure>
+	        <svg class="fig-svg" viewBox="0 0 720 230" role="img" aria-label="Bar chart of working frequency bands from 0 to 40 gigahertz: copper patch 18 to 20; CNT-GO patch on flat board 12 to 39; on curved plastic 7 to 22; on bendable plastic 5 to 25">
+	          <g transform="translate(190,20)">
+	            <line class="grid" x1="0" y1="0" x2="0" y2="160"/><line class="grid" x1="125" y1="0" x2="125" y2="160"/><line class="grid" x1="250" y1="0" x2="250" y2="160"/><line class="grid" x1="375" y1="0" x2="375" y2="160"/><line class="grid" x1="500" y1="0" x2="500" y2="160"/>
+	            <line class="axis" x1="0" y1="160" x2="500" y2="160"/>
+	            <text x="0" y="178" text-anchor="middle" font-size="11">0</text><text x="125" y="178" text-anchor="middle" font-size="11">10</text><text x="250" y="178" text-anchor="middle" font-size="11">20</text><text x="375" y="178" text-anchor="middle" font-size="11">30</text><text x="500" y="178" text-anchor="middle" font-size="11">40</text>
+	            <text x="250" y="200" text-anchor="middle" font-size="12">Frequency (GHz) where S&#8321;&#8321; &lt; &minus;10 dB</text>
+	            <rect class="bar-a" x="225" y="12" width="25" height="22" rx="3"/>
+	            <rect class="bar-b" x="150" y="50" width="337.5" height="22" rx="3"/>
+	            <rect class="bar-b" x="87.5" y="88" width="187.5" height="22" rx="3" opacity="0.75"/>
+	            <rect class="bar-b" x="62.5" y="126" width="250" height="22" rx="3" opacity="0.55"/>
+	            <text x="258" y="28" font-size="11">18&ndash;20</text>
+	            <text x="480" y="66" font-size="11" text-anchor="end" class="badge-text">12&ndash;39</text>
+	            <text x="283" y="104" font-size="11">7&ndash;22</text>
+	            <text x="320" y="142" font-size="11">5&ndash;25</text>
+	          </g>
+	          <text x="180" y="37" text-anchor="end" font-size="12">Copper patch (for reference)</text>
+	          <text x="180" y="75" text-anchor="end" class="t-strong" font-size="12">CNT-GO, flat board</text>
+	          <text x="180" y="113" text-anchor="end" class="t-strong" font-size="12">CNT-GO, curved plastic</text>
+	          <text x="180" y="151" text-anchor="end" class="t-strong" font-size="12">CNT-GO, bendable plastic</text>
+	        </svg>
+	        <figcaption><b>Figure 4.</b> Measured working bands of the printed CNT-GO patch on different bases, compared with a machined copper patch designed for about 20&nbsp;GHz. Chart drawn for this site from the values reported in the paper.</figcaption>
+	      </figure>
+	      <ul>
+	        <li><strong>Very wide band on a flat board.</strong> The printed patch stayed below &minus;10&nbsp;dB from about 12 to 39&nbsp;GHz, a fractional bandwidth of about 104%. The copper patch worked only from 18 to 20&nbsp;GHz (about 10%).</li>
+	        <li><strong>Still wideband on curves and bends.</strong> On curved plastic the band was about 7&ndash;22&nbsp;GHz, and on the hinged plate about 5&ndash;25&nbsp;GHz. Performance dropped somewhat at the sharpest bends (60&deg; and 90&deg;), which the paper attributes to strain in the film and the lower, more porous dielectric of 3D-printed plastic.</li>
+	        <li><strong>The trade-off.</strong> Part of the reason the band is so wide is the same thing that makes the material lossy: resistance flattens the antenna's resonance. The measured radiation efficiency was about 15% near 18&nbsp;GHz and the simulated peak gain about 1.3&nbsp;dB, modest next to metal antennas. Raising the ink's conductivity is the main route to improving both.</li>
+	        <li><strong>Survives temperature swings, not yet humidity.</strong> After about 60 cycles between &minus;40 and 125&nbsp;&deg;C (one week), the antennas' bandwidth was essentially unchanged. A short exposure to 85% humidity at 60&nbsp;&deg;C did degrade them, likely because the water-based ink takes up moisture.</li>
+	      </ul>
+	      <figure>
+	        <img src="../assets/img/portfolio/pd-2-ant-bend.jpg" alt="Four photographs of a printed antenna on a hinged green plastic plate connected to a network analyser, bent at 0, 30, 60 and 90 degrees" loading="lazy">
+	        <figcaption><b>Figure 5.</b> Measuring the printed patch on the hinged substrate at bending angles of 0&deg;, 30&deg;, 60&deg; and 90&deg;. From Zhao, Subad <i>et&nbsp;al.</i>, <i>Front. Antennas Propag.</i> (2026), CC&nbsp;BY&nbsp;4.0.</figcaption>
+	      </figure>
+
+	      <h2>Metal-based conductive inks: fine-line silver</h2>
+	      <p>Carbon inks are good for sensing and for some antennas, but wiring that has to carry real current with little loss still needs metal. Silver is the standard choice for printed conductors. The challenge is to print silver lines that are both <em>fine</em> (narrow, closely spaced lines so a circuit fits into a small area) and <em>highly conductive</em>, using an ink that cures at a temperature the substrate and nearby components can survive. This part of my work was sponsored by NASA; the page describes the printing methods only.</p>
+
+	      <h3>Extrusion-printing dense silver lines</h3>
+	      <p>The ink is a commercial, very thick paste packed with silver nanoflakes that cures at a low temperature, gentle enough for plastics and nearby components. It was printed on a precision micro-dispensing printer onto PEEK, a tough, heat- and chemical-resistant engineering plastic used for circuit boards in demanding environments. Silver ink only partly wets PEEK, which makes clean, narrow lines harder to hold.</p>
+	      <p>In extrusion printing, air pressure pushes the paste through a fine ceramic nozzle while the nozzle moves over the surface. Four settings decide the line: the <strong>air pressure</strong>, the <strong>print speed</strong>, the <strong>nozzle size</strong> and the <strong>gap</strong> between nozzle tip and surface. The behaviour follows from simple mass balance: the paste leaving the nozzle has to equal the paste laid down.</p>
+	      <ul>
+	        <li><strong>Faster printing gives thinner lines</strong>, because the same flow is spread along more length, until the flow can no longer keep up and the line breaks into dots.</li>
+	        <li><strong>Higher pressure gives wider lines</strong>, because it drives more paste through the nozzle.</li>
+	        <li><strong>A smaller nozzle and a smaller gap</strong> reach the finest lines. For the densest patterns the nozzle had to ride only a few micrometres above the surface, a small fraction of a hair's width.</li>
+	      </ul>
+	      <p>Mapping these settings gave a printing window in which the narrowest repeatable lines were about 60&nbsp;&micro;m wide at a spacing of about 100&nbsp;&micro;m. After curing, the lines reached a substantial fraction of the conductivity of solid silver, among the best combinations of line width and conductivity reported for extrusion printing. Curiously, the thinner lines were the more conductive ones, a result that will need microstructure studies to explain. Going finer still with a smaller nozzle was blocked by the flakes clogging it, which points to inks with smaller particles as the next step.</p>
+	      <!-- Preprint photos: uncomment once the preprint is public (images already in assets/img/portfolio/).
+	      <figure>
+	        <img src="../assets/img/portfolio/pd-2-ag-lines.jpg" alt="Microscope images of closely spaced printed silver lines" loading="lazy">
+	        <figcaption><b>Printed lines.</b> Parallel extrusion-printed silver lines on PEEK at two scales (scale bars 1000 and 250&nbsp;&micro;m). From Subudhi <i>et&nbsp;al.</i>, preprint.</figcaption>
+	      </figure>
+	      <figure>
+	        <img src="../assets/img/portfolio/pd-2-ag-coupon.jpg" alt="Test coupon with printed silver lines running between square contact pads" loading="lazy">
+	        <figcaption><b>Test coupon.</b> Printed test resistors used to measure conductivity. From Subudhi <i>et&nbsp;al.</i>, preprint.</figcaption>
+	      </figure>
+	      -->
+
+	      <h3>Keeping the nozzle on track over an uneven surface</h3>
+	      <p>A gap that small is smaller than the bumps on a "flat" plastic sheet. The surface measured here wandered by tens of micrometres, invisible to the eye but enough for the nozzle either to lift off (and break the line) or to crash into the surface. The printer's own surface-following produced broken lines and visible chatter from many tiny up-and-down moves.</p>
+	      <figure>
+	        <svg class="fig-svg" viewBox="0 0 720 220" role="img" aria-label="Left: a nozzle path built from evenly spaced points cuts into a bump on the surface. Right: a path with points packed closely around the bump and spread out on flat parts follows the surface at a constant small gap">
+	          <text x="180" y="20" text-anchor="middle" class="t-strong" font-size="13">Evenly spaced waypoints</text>
+	          <text x="540" y="20" text-anchor="middle" class="t-strong" font-size="13">Curvature-adaptive waypoints</text>
+	          <g transform="translate(20,35)">
+	            <rect class="box" x="0" y="0" width="320" height="150" rx="8"/>
+	            <path class="bath" d="M10,120 L80,118 C110,117 125,70 150,62 C175,70 190,116 220,118 L310,120 L310,140 L10,140 Z"/>
+	            <path class="curve-a" d="M10,108 L80,106 L150,98 L220,106 L310,108"/>
+	            <circle class="particle" cx="10" cy="108" r="3.5"/><circle class="particle" cx="80" cy="106" r="3.5"/><circle class="particle" cx="150" cy="98" r="3.5"/><circle class="particle" cx="220" cy="106" r="3.5"/><circle class="particle" cx="310" cy="108" r="3.5"/>
+	            <circle cx="150" cy="96" r="12" fill="none" stroke="#c0392b" stroke-width="2"/>
+	            <text x="168" y="40" font-size="11" style="fill:#c0392b">path cuts through the bump</text>
+	          </g>
+	          <g transform="translate(380,35)">
+	            <rect class="box" x="0" y="0" width="320" height="150" rx="8"/>
+	            <path class="bath" d="M10,120 L80,118 C110,117 125,70 150,62 C175,70 190,116 220,118 L310,120 L310,140 L10,140 Z"/>
+	            <path class="curve-b" d="M10,109 L80,107 L105,100 L120,80 L135,60 L150,51 L165,60 L180,80 L195,100 L220,107 L310,109"/>
+	            <circle class="badge" cx="10" cy="109" r="3.5"/><circle class="badge" cx="80" cy="107" r="3.5"/><circle class="badge" cx="105" cy="100" r="3.5"/><circle class="badge" cx="120" cy="80" r="3.5"/><circle class="badge" cx="135" cy="60" r="3.5"/><circle class="badge" cx="150" cy="51" r="3.5"/><circle class="badge" cx="165" cy="60" r="3.5"/><circle class="badge" cx="180" cy="80" r="3.5"/><circle class="badge" cx="195" cy="100" r="3.5"/><circle class="badge" cx="220" cy="107" r="3.5"/><circle class="badge" cx="310" cy="109" r="3.5"/>
+	            <text x="160" y="30" font-size="11" text-anchor="middle">dense points where the surface bends</text>
+	          </g>
+	          <text x="360" y="210" text-anchor="middle" font-size="11">Surface height exaggerated. Lines between points are straight, so fewer, smarter points also mean less chatter.</text>
+	        </svg>
+	        <figcaption><b>Figure 6.</b> Turning a measured surface into a nozzle path. Placing waypoints according to the local curvature keeps the nozzle at a steady small gap; evenly spaced points miss the bumps. Schematic drawn for this site.</figcaption>
+	      </figure>
+	      <p>The fix was a toolpath algorithm. A laser height sensor scans the surface along each line; the scan is smoothed and fitted with a spline; and the curvature along it is computed. Waypoints are then placed in proportion to the curvature, packed close together where the surface bends and spread out where it is flat, while capping how fast the nozzle may move up and down. Compared with evenly spaced linear or polynomial paths, this curvature-adaptive path kept the nozzle within its tolerance band much more of the time and cut the risk of striking the surface, which is what made repeatable sub-100&nbsp;&micro;m lines possible on real, slightly uneven parts.</p>
+
+	      <h2>Other circuitry: printed connections onto a chip capacitor</h2>
+	      <p>Real circuits mix printed lines with small off-the-shelf parts. Joining the two is a classic problem: a chip part stands up from the board like a tiny step, and a printed silver line has to climb that step to reach the contact on top without touching the side of the chip. In conventional electronics this is done with fine bonding wires. Here it was printed, using a test part called an MIS (metal&ndash;insulator&ndash;semiconductor) capacitor, a small square chip with its electrode on top, sitting in a gap in a printed signal line.</p>
+	      <figure>
+	        <svg class="fig-svg" viewBox="0 0 720 230" role="img" aria-label="Two-pass printing. Pass 1: an extrusion nozzle prints insulating ink as a sloped ramp against the side of the chip. Pass 2: an extrusion nozzle prints a silver line from the base trace up the ramp onto the top of the chip">
+	          <defs><marker id="ah2c" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" class="arrowhead"/></marker></defs>
+	          <g transform="translate(20,15)">
+	            <rect class="box" x="0" y="0" width="320" height="185" rx="8"/>
+	            <text x="16" y="24" class="t-strong" font-size="13">Pass 1: insulating ramp</text>
+	            <rect class="magnet" x="140" y="36" width="20" height="40" rx="3"/>
+	            <path class="magnet" d="M144,76 L156,76 L150,90 Z"/>
+	            <text x="168" y="62" font-size="11">extrusion nozzle</text>
+	            <rect class="holder" x="20" y="150" width="280" height="16"/>
+	            <rect class="magnet" x="30" y="144" width="90" height="6"/>
+	            <rect class="film-edge" x="180" y="100" width="70" height="50"/>
+	            <rect class="film" x="180" y="96" width="70" height="6"/>
+	            <path class="box-accent" d="M120,150 L180,104 L180,150 Z"/>
+	            <text x="80" y="140" font-size="12" text-anchor="middle">base trace</text>
+	            <text x="215" y="130" font-size="12" text-anchor="middle" style="fill:#fff">chip</text>
+	            <text x="150" y="178" font-size="12" text-anchor="middle">dielectric ramp (NEA121)</text>
+	          </g>
+	          <line class="arrow" x1="346" y1="108" x2="374" y2="108" marker-end="url(#ah2c)"/>
+	          <g transform="translate(380,15)">
+	            <rect class="box" x="0" y="0" width="320" height="185" rx="8"/>
+	            <text x="16" y="24" class="t-strong" font-size="13">Pass 2: silver line over the ramp</text>
+	            <rect class="magnet" x="150" y="36" width="20" height="40" rx="3"/>
+	            <path class="magnet" d="M154,76 L166,76 L160,90 Z"/>
+	            <rect class="holder" x="20" y="150" width="280" height="16"/>
+	            <rect class="magnet" x="30" y="144" width="90" height="6"/>
+	            <rect class="film-edge" x="180" y="100" width="70" height="50"/>
+	            <rect class="film" x="180" y="96" width="70" height="6"/>
+	            <path class="box-accent" d="M120,150 L180,104 L180,150 Z"/>
+	            <path d="M95,145 L120,145 L180,99 L210,95" fill="none" stroke="#9aa7b3" stroke-width="5" stroke-linecap="round"/>
+	            <text x="96" y="178" font-size="12" text-anchor="middle">silver interconnect</text>
+	            <text x="215" y="130" font-size="12" text-anchor="middle" style="fill:#fff">chip</text>
+	          </g>
+	        </svg>
+	        <figcaption><b>Figure 7.</b> Printing a connection onto a chip capacitor in two passes: first an insulating ramp, then a silver line that runs up it to the chip's top electrode. Not to scale; schematic drawn for this site.</figcaption>
+	      </figure>
+	      <p>The connection was built in two printed layers. First, an insulating ink (NEA121) was printed as a sloped ramp against the edge of the chip, filling the step between the board and the chip top and covering the chip's side so the silver could not short to it. Second, a silver line was printed from the end of the signal line, up the ramp and onto the chip's top electrode. The finished parts were then tested with a network analyser up to 40&nbsp;GHz to see how cleanly a high-frequency signal passes through the printed joint and the capacitor. This work is not yet published, so results are not shown here.</p>
+	      <p>The same idea, a printed dielectric used as a bridge or ramp under a printed conductor, is what lets additive manufacturing build multilayer circuits: crossovers, connections onto components, and wiring that follows a part's shape in three dimensions.</p>
+
+	      <h2>Related work</h2>
+	      <ul>
+	        <li><a href="project-details-01.html">Nanoparticle Reviews</a>: the fluid mechanics and colloidal science of printable carbon-nanotube inks.</li>
+	        <li><a href="project-details-09.html">3D Deposits from Drying Drops</a>: how particles settle as an ink drop dries.</li>
+	        <li><a href="project-details-03.html">Reliability of Printed Electronics</a>: how printed sensors and circuits survive heat, cold and humidity.</li>
+	      </ul>
+
+	      <h2>My role</h2>
+	      <p>I am first author of the silver fine-line printing study, carried out with Prabhat Janamanchi, Prof. Abhijit Dasgupta and Prof. Siddhartha Das. I was a contributing author on the humidity sensor study (led by Beihan Zhao), the printed antenna study (led by Beihan Zhao and Rafsan Al Shafatul Islam Subad) and the printed capacitor work, all in Prof. Das's group at the University of Maryland with Prof. Dasgupta.</p>
+
+	      <div class="article-refs">
+	        <p><strong>Read the papers:</strong></p>
+	        <p>B. Zhao, V. S. Sivasankar, S. K. Subudhi, A. Dasgupta and S. Das, &ldquo;Printed carbon nanotube-based humidity sensors deployable on surfaces of widely varying curvatures,&rdquo; <em>ACS Applied Nano Materials</em> 6, 1459&ndash;1474 (2023). <a href="https://doi.org/10.1021/acsanm.2c05423" target="_blank" rel="noopener">doi:10.1021/acsanm.2c05423</a></p>
+	        <p>B. Zhao, R. A. S. I. Subad, H. Abusalma, S. Subudhi, C. Riso, A. Dasgupta and S. Das, &ldquo;Fabrication, characterization, and reliability analysis of 3D printed high frequency, wideband, and flexible carbon-nanotube and graphene-oxide based rectangular patch antennas deployable on curvilinear and deformable surfaces,&rdquo; <em>Frontiers in Antennas and Propagation</em> 4 (2026), open access under CC&nbsp;BY&nbsp;4.0. <a href="https://doi.org/10.3389/fanpr.2026.1884827" target="_blank" rel="noopener">doi:10.3389/fanpr.2026.1884827</a></p>
+	        <p>S. K. Subudhi, P. Janamanchi, A. Dasgupta, M. H. Samuels and S. Das, &ldquo;Extrusion-printed high-density conductive silver traces on PEEK substrate,&rdquo; manuscript in review.</p>
+	        <p>Photographs from the antenna paper are reproduced under its CC&nbsp;BY&nbsp;4.0 licence. All other figures on this page are simplified schematics drawn for this site.</p>
+	      </div>
+
+	    </article>
 	  </div>
 	  <div class="col-lg-4 project-outcomes">
 		  <h4>Outcomes:</h4>
 		  <ul>
-			<li>TBD</li>
+		  <li>Paper published in journal ACS Applied Nano Materials on Jan 16, 2023.
+        <br><i>Printed carbon nanotube-based humidity sensors deployable on surfaces of widely varying curvatures</i>
+		  <br>
+		  <span style="color:#9aa7b3"><i>ACS Appl. Nano Mater.</i> 2023, 6, 2, 1459–1474</span>
+		  <br>
+		  <a href="https://pubs.acs.org/doi/10.1021/acsanm.2c05423">DOI: 10.1021/acsanm.2c05423</a>
+		  </li>
+		  <li>Paper accepted in journal Frontiers in Antennas and Propagation.
+        <br><i>Fabrication, Characterization, and Reliability Analysis of 3D Printed High Frequency, Wideband, and Flexible Carbon-Nanotube and Graphene-Oxide Based Rectangular Patch Antennas Deployable on Curvilinear and Deformable Surfaces</i>
+		  <br>
+		  <span style="color:#9aa7b3"><i>Front. Antennas Propag.</i> 2026, 4 (Wearable Antennas)</span>
+		  <br>
+		  <a href="https://www.frontiersin.org/journals/antennas-and-propagation/articles/10.3389/fanpr.2026.1884827/abstract" target="_blank" rel="noopener">DOI: 10.3389/fanpr.2026.1884827</a>
+		  </li>
+		  <li>Paper in review with journal.
+        <br><i>Extrusion-Printed High-Density Conductive Silver Traces on PEEK Substrate</i>
+		  </li>
 		  </ul>
 	  </div>
 	</div>

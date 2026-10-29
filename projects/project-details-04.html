@@ -168,14 +168,12 @@
                 <li><strong>Affiliation</strong>: University of Maryland, College Park</li>
 		<li><strong>Sponsor</strong>: <a href="https://smiel.umd.edu/">SMIEL Lab</a></li>
 		<li><strong>PI</strong>: Dr. Siddhartha Das</li>
-		<li><strong>Collab</strong>: Ghansham Chandel, Vishal Sivasankar</li>
-                <li><strong>Project date</strong>: May 2022 - Jul 2024</li>
+		<li><strong>Collab</strong>: Ghansham Chandel, Vishal Sivasankar, Sai Achyut Madhira</li>
+                <li><strong>Project date</strong>: May 2022 - present</li>
               </ul>
             </div>
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <!--<h3>Magnetic Nanoparticle Aggregation and Complete De-encapsulation of Such Aggregates from a Liquid Drop Interior</h3>-->
-              <p></p>
-              <p>Scroll down for more details.</p>
+              <p>Using a magnet to pull a clump of nanoparticles cleanly out of a water drop, with the drop staying round and intact afterwards. One drop can drop off its cargo at several chosen spots in a row, like the nozzle of a tiny printer. Follow-up work shows the released clump can be caught by a second drop.</p>
             </div>
           </div>
 
@@ -183,14 +181,279 @@
       <br><br>
 	<div class="row gy-4">
 	  <div class="col-lg-8 project-text-main">
-	    <!--add details of the project here-->
-	        <h2>Abstract</h2>
+	    <article class="project-article">
+
+	      <p class="article-lede">Put a few tiny particles inside a drop of water and they are trapped. The drop's surface acts like a stretched skin, and for something nanometres across, that skin is an almost unbreakable wall. This project found a way through it. With nothing more than a magnet, the particles inside a drop gather into a clump, push through the surface, and leave the drop completely. The drop then snaps back to its round shape, unharmed, and can do it again somewhere else.</p>
+
+	      <div class="key-numbers">
+	        <div><span class="num">20&ndash;30 nm</span><span class="label">size of the magnetic particles inside the drop</span></div>
+	        <div><span class="num">10&ndash;20 &micro;L</span><span class="label">drop volumes tested (about a raindrop or smaller)</span></div>
+	        <div><span class="num">~5&ndash;7.5 mm</span><span class="label">distance from the magnet where the clump breaks free</span></div>
+	        <div><span class="num">3</span><span class="label">separate clumps dropped off by one drop, on demand</span></div>
+	      </div>
+
+	      <h2>Why this matters</h2>
+	      <p>Iron-oxide (Fe<sub>3</sub>O<sub>4</sub>) nanoparticles are widely studied for <strong>targeted drug delivery</strong> and for placing materials precisely where they are needed. They are safe for the body and respond to magnets, so a magnet outside the body or outside a device can steer them.</p>
+	      <p>Liquid drops are a natural way to carry such particles around. Getting the particles <em>out</em> of the drop at the right place is the hard part. Particles inside a drop tend to collect at its surface and stay there, held by surface tension. Many studies have used that effect to make particles line up or self-assemble at the surface. What had essentially not been shown before was the opposite: pulling the particles all the way through the surface and away from the drop, while leaving the drop itself intact. The paper calls this <strong>de-encapsulation</strong>.</p>
+
+	      <div class="explainer">
+	        <strong>Surface tension, in one line.</strong> The molecules at a liquid's surface cling to each other, so the surface behaves like a thin elastic skin. It is the reason a water strider can stand on a pond. For a large object the skin is weak. For a nanoparticle it is enormous compared with any push you can give the particle, so particles reaching the surface usually stay stuck there.
+	      </div>
+
+	      <h2>The experiment</h2>
+	      <p>The setup is simple to picture:</p>
+	      <ul>
+	        <li><strong>The drop:</strong> 10&ndash;20 microlitres of water carrying iron-oxide nanoparticles (coated with a polymer called PVP so they disperse well), at five concentrations from 10 to 20&nbsp;mg per mL.</li>
+	        <li><strong>The surrounding liquid:</strong> a bath of partly cured silicone (PDMS), roughly as thick as honey, about 4,000 times more viscous than water. It is slightly denser than the drop, so without a magnet the drop would float upward.</li>
+	        <li><strong>The magnet:</strong> a stack of neodymium bar magnets under the bath. The drop is released 20&nbsp;mm above it.</li>
+	        <li><strong>The cameras:</strong> a high-speed camera and a second camera at right angles. Together they record the drop from two sides, which let me reconstruct the size of each clump in 3D.</li>
+	      </ul>
+	      <p>Looking through a block of silicone bends light, much like a straw looks bent in a glass of water. To keep measurements honest, I photographed a grid inside the silicone and used the distortion to correct every image before taking measurements.</p>
+
+	      <h2>What happens</h2>
+	      <p>Once the drop is released close enough to the magnet, the same sequence plays out every time:</p>
+
+	      <figure>
+	        <svg class="fig-svg" viewBox="0 0 720 240" role="img" aria-label="Five stages: the drop sinks toward the magnet, particles gather at the bottom, the drop stretches into a teardrop with a neck, the clump pinches off, and the drop returns to a round shape while the clump settles on the floor">
+	          <rect class="magnet" x="0" y="214" width="720" height="16" rx="2"/>
+	          <text x="360" y="226" text-anchor="middle" font-size="11" style="fill:var(--background-color)">magnet</text>
+	          <!-- 1 sinks -->
+	          <text x="72" y="22" text-anchor="middle" class="t-strong" font-size="13">1. Sinks</text>
+	          <circle class="drop" cx="72" cy="70" r="28"/>
+	          <circle class="particle" cx="62" cy="60" r="2"/><circle class="particle" cx="80" cy="64" r="2"/><circle class="particle" cx="70" cy="78" r="2"/><circle class="particle" cx="86" cy="80" r="2"/><circle class="particle" cx="58" cy="82" r="2"/><circle class="particle" cx="74" cy="52" r="2"/>
+	          <line class="arrow" x1="72" y1="110" x2="72" y2="150" marker-end="url(#ah4)"/>
+	          <defs><marker id="ah4" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" class="arrowhead"/></marker></defs>
+	          <!-- 2 gathers -->
+	          <text x="216" y="22" text-anchor="middle" class="t-strong" font-size="13">2. Particles gather</text>
+	          <circle class="drop" cx="216" cy="110" r="28"/>
+	          <ellipse class="clump" cx="216" cy="130" rx="10" ry="5"/>
+	          <!-- 3 neck -->
+	          <text x="360" y="22" text-anchor="middle" class="t-strong" font-size="13">3. Stretches &amp; necks</text>
+	          <path class="drop" d="M334,110 A26,26 0 0 1 386,110 C386,130 366,140 364,172 L356,172 C354,140 334,130 334,110 Z"/>
+	          <ellipse class="clump" cx="360" cy="168" rx="4.5" ry="10"/>
+	          <!-- 4 pinch off -->
+	          <text x="504" y="22" text-anchor="middle" class="t-strong" font-size="13">4. Clump breaks free</text>
+	          <path class="drop" d="M478,110 A26,26 0 0 1 530,110 C530,126 510,134 506,148 L502,148 C498,134 478,126 478,110 Z"/>
+	          <ellipse class="clump" cx="504" cy="178" rx="4.5" ry="9"/>
+	          <line class="arrow" x1="520" y1="168" x2="520" y2="196" marker-end="url(#ah4)"/>
+	          <!-- 5 recovers -->
+	          <text x="648" y="22" text-anchor="middle" class="t-strong" font-size="13">5. Drop recovers</text>
+	          <circle class="drop" cx="648" cy="110" r="28"/>
+	          <ellipse class="clump" cx="648" cy="208" rx="9" ry="5"/>
+	        </svg>
+	        <figcaption><b>Figure 1.</b> The sequence observed in every successful run. Schematic based on the high-speed video frames in the published paper (Figs. 1 and 4).</figcaption>
+	      </figure>
+
+	      <ol>
+	        <li><strong>The drop sinks</strong> toward the magnet, because the pull on the particles outweighs the drop's tendency to float.</li>
+	        <li><strong>The particles gather</strong> at the bottom of the drop, the side nearest the magnet. You can see it on video: the top of the drop turns clear while the bottom darkens.</li>
+	        <li><strong>The drop stretches</strong> into a teardrop, and a thin neck forms just above the clump.</li>
+	        <li><strong>The clump breaks free.</strong> It passes through the drop's surface, pinches off with a little water attached, and settles at the bottom.</li>
+	        <li><strong>The drop returns to its round shape.</strong> The thick silicone around it keeps it from deforming permanently.</li>
+	      </ol>
+
+	      <h2>Why a clump can escape when a single particle can't</h2>
+	      <p>This is the heart of the result, and it comes down to how forces scale with size. Four forces act on the clump at the moment it tries to leave: the magnet and gravity pull it down; buoyancy and surface tension hold it back.</p>
+
+	      <figure>
+	        <svg class="fig-svg" viewBox="0 0 720 280" role="img" aria-label="Left: force diagram on the escaping clump, with surface tension and buoyancy pulling up and gravity and magnetic force pulling down. Right: conceptual graph showing holding force growing in proportion to clump size while pulling force grows with the cube of size, so the pulling force wins once the clump is big enough">
+	          <defs>
+	            <marker id="ah4b" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" class="arrowhead"/></marker>
+	          </defs>
+	          <!-- left: force diagram -->
+	          <path class="drop" d="M90,80 A60,60 0 0 1 210,80 C210,130 160,150 156,206 L144,206 C140,150 90,130 90,80 Z"/>
+	          <ellipse class="clump" cx="150" cy="206" rx="7" ry="16"/>
+	          <line class="arrow" x1="150" y1="186" x2="150" y2="136" marker-end="url(#ah4b)"/>
+	          <text x="160" y="146" font-size="12" class="t-strong">surface tension</text>
+	          <line class="arrow" x1="175" y1="200" x2="175" y2="172" marker-end="url(#ah4b)"/>
+	          <text x="182" y="182" font-size="12">buoyancy</text>
+	          <line class="arrow" x1="125" y1="212" x2="125" y2="240" marker-end="url(#ah4b)"/>
+	          <text x="60" y="244" font-size="12">gravity</text>
+	          <line class="arrow" x1="150" y1="224" x2="150" y2="268" marker-end="url(#ah4b)"/>
+	          <text x="160" y="266" font-size="12" class="t-strong">magnetic pull</text>
+	          <!-- right: scaling chart -->
+	          <line class="axis" x1="400" y1="40" x2="400" y2="230"/>
+	          <line class="axis" x1="400" y1="230" x2="690" y2="230"/>
+	          <text x="545" y="258" text-anchor="middle" font-size="12">clump size &#8594;</text>
+	          <text x="385" y="135" text-anchor="middle" font-size="12" transform="rotate(-90 385 135)">force &#8594;</text>
+	          <path class="curve-a" d="M400,230 L680,90"/>
+	          <path class="curve-b" d="M400,230 Q560,226 600,170 T672,48"/>
+	          <text x="684" y="86" text-anchor="end" font-size="11">holding (surface tension) &#8733; size</text>
+	          <text x="656" y="44" text-anchor="end" font-size="11" class="t-strong">pulling (magnet + weight) &#8733; size&#179;</text>
+	          <line class="path-dash" x1="636" y1="112" x2="636" y2="230"/>
+	          <text x="636" y="246" text-anchor="middle" font-size="11">escape</text>
+	          <text x="490" y="210" text-anchor="middle" font-size="11">single particles: stuck</text>
+	        </svg>
+	        <figcaption><b>Figure 2.</b> Left: the forces on the clump at the moment it breaks free (after the force-balance sketch in the paper, Fig. 4a). Right: a conceptual graph, not to scale, of why size decides the outcome.</figcaption>
+	      </figure>
+
+	      <p>The surface-tension grip grows with the clump's <em>size</em> (its width), while the magnetic pull and weight grow with its <em>volume</em> (width cubed). Double the clump's width and the grip doubles, but the pull goes up eightfold. A single nanoparticle is so small that the grip wins by a huge margin. Once enough particles band together, the pull overtakes the grip and the clump punches through. That is why gathering inside the drop is the necessary first step.</p>
+
+	      <h2>What controls it</h2>
+	      <p>For each run I measured two things: <strong>how far from the magnet</strong> the clump broke free, and <strong>how big</strong> the escaping clump was. Both grew with more particles in the drop and with a bigger drop:</p>
+	      <ul>
+	        <li>The break-free distance rose from roughly 5&nbsp;mm to about 7.5&nbsp;mm across the tested range.</li>
+	        <li>The escaping clump grew from roughly 0.07 to 0.2 cubic millimetres.</li>
+	      </ul>
+	      <p>The logic: a drop holding more particles starts forming a clump earlier, further from the magnet. That clump grows big quickly, so it can escape even where the magnetic field is weaker. A bigger clump also faces a bigger surface-tension grip, so the magnetic pull needed to free it rises with it.</p>
+	      <p>One combination did not work: the smallest drop (10&nbsp;&micro;L) at the lowest concentration (10&nbsp;mg/mL). It took over 80 seconds to sink and reached the bottom of the container before the clump could pinch off. That points to a minimum amount of magnetic material needed for the effect.</p>
+	      <p>A theoretical model balancing the four forces in Figure 2 was developed with my co-authors. Once two experimental points were used to calibrate two properties that could not be measured directly, the model reproduced the trend of break-free distance across all drop sizes and concentrations.</p>
+
+	      <h2>One drop, three deliveries</h2>
+	      <p>To show what this could be used for, I built a container with three magnets on different sides that could be switched on one at a time. A single drop (20&nbsp;&micro;L, 20&nbsp;mg/mL) was released and steered from magnet to magnet:</p>
+
+	      <figure>
+	        <svg class="fig-svg" viewBox="0 0 720 300" role="img" aria-label="Container with magnets M1 at the bottom, M2 on the left and M3 at the top. One drop travels toward each magnet in turn and releases a clump each time, at 11.75, 5.33 and 2.71 millimetres from the active magnet">
+	          <defs><marker id="ah4c" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" class="arrowhead"/></marker></defs>
+	          <rect class="bath" x="70" y="40" width="330" height="220"/>
+	          <rect class="magnet" x="70" y="262" width="330" height="16" rx="2"/><text x="235" y="274" text-anchor="middle" font-size="11" style="fill:var(--background-color)">M1</text>
+	          <rect class="magnet" x="52" y="40" width="16" height="220" rx="2"/><text x="60" y="154" text-anchor="middle" font-size="11" style="fill:var(--background-color)">M2</text>
+	          <rect class="magnet" x="70" y="22" width="330" height="16" rx="2"/><text x="235" y="34" text-anchor="middle" font-size="11" style="fill:var(--background-color)">M3</text>
+	          <!-- release -->
+	          <circle class="drop" cx="330" cy="80" r="12" fill-opacity="0.45"/>
+	          <text x="346" y="72" font-size="11">release</text>
+	          <path class="arrow" d="M326,94 L292,196" marker-end="url(#ah4c)"/>
+	          <!-- extraction 1 -->
+	          <circle class="drop" cx="288" cy="212" r="12"/>
+	          <ellipse class="clump" cx="288" cy="255" rx="6" ry="3"/>
+	          <circle class="badge" cx="268" cy="236" r="9"/><text x="268" y="240" text-anchor="middle" font-size="11" class="badge-text">1</text>
+	          <path class="arrow" d="M276,206 Q200,200 140,160" marker-end="url(#ah4c)"/>
+	          <!-- extraction 2 -->
+	          <circle class="drop" cx="126" cy="152" r="11"/>
+	          <ellipse class="clump" cx="85" cy="152" rx="3" ry="6"/>
+	          <circle class="badge" cx="104" cy="130" r="9"/><text x="104" y="134" text-anchor="middle" font-size="11" class="badge-text">2</text>
+	          <path class="arrow" d="M134,142 Q170,90 196,66" marker-end="url(#ah4c)"/>
+	          <!-- extraction 3 -->
+	          <circle class="drop" cx="206" cy="60" r="10"/>
+	          <ellipse class="clump" cx="160" cy="255" rx="6" ry="3"/>
+	          <circle class="badge" cx="230" cy="64" r="9"/><text x="230" y="68" text-anchor="middle" font-size="11" class="badge-text">3</text>
+	          <!-- legend -->
+	          <text x="440" y="80" class="t-strong" font-size="13">Magnet switched on, in turn:</text>
+	          <circle class="badge" cx="450" cy="111" r="9"/><text x="450" y="115" text-anchor="middle" font-size="11" class="badge-text">1</text>
+	          <text x="468" y="108" font-size="12">M1 on: clump released</text>
+	          <text x="468" y="124" font-size="12">11.75 mm from M1</text>
+	          <circle class="badge" cx="450" cy="159" r="9"/><text x="450" y="163" text-anchor="middle" font-size="11" class="badge-text">2</text>
+	          <text x="468" y="156" font-size="12">M2 on: clump released</text>
+	          <text x="468" y="172" font-size="12">5.33 mm from M2</text>
+	          <circle class="badge" cx="450" cy="207" r="9"/><text x="450" y="211" text-anchor="middle" font-size="11" class="badge-text">3</text>
+	          <text x="468" y="204" font-size="12">M3 on: clump released</text>
+	          <text x="468" y="220" font-size="12">2.71 mm from M3</text>
+	        </svg>
+	        <figcaption><b>Figure 3.</b> One drop delivering three separate clumps as the active magnet is switched. Simplified from the published paper (Fig. 5); paths are schematic, and the release distances are the measured values.</figcaption>
+	      </figure>
+
+	      <p>Each time a magnet was switched on, the drop travelled toward it and released a clump, then stayed intact for the next leg. Every release left the drop with fewer particles, so it moved more slowly each time and had to get closer to the magnet before the next clump could escape: 11.75&nbsp;mm, then 5.33&nbsp;mm, then 2.71&nbsp;mm. In effect, the drop behaved like the nozzle of a printer that deposits particles on command.</p>
+
+	      <h2 id="cargo-transfer">Part 2: Handing the cargo to another drop</h2>
+	      <p>The natural next question: if a drop can release its particles on command, can a second drop catch them? In follow-up work, now posted as a preprint, we showed that it can. The clump that leaves one drop, the <strong>source drop</strong>, can be steered straight into a second drop, the <strong>receiver drop</strong>, and both drops come out of it intact.</p>
+
+	      <figure>
+	        <svg class="fig-svg" viewBox="0 0 720 270" role="img" aria-label="Three stages: a particle-rich source drop sits above a nearly empty receiver drop near the magnet; the clump leaves the source drop and dents the top of the receiver drop; the clump is inside the receiver drop as upright skyscraper-like columns and both drops are round again">
+	          <defs><marker id="ah4d" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" class="arrowhead"/></marker></defs>
+	          <g transform="translate(20,10)">
+	            <rect class="bath" x="0" y="10" width="200" height="200"/>
+	            <rect class="magnet" x="0" y="212" width="200" height="14" rx="2"/>
+	            <circle class="drop" cx="100" cy="60" r="24"/>
+	            <circle class="particle" cx="92" cy="56" r="3"/><circle class="particle" cx="106" cy="64" r="3"/><circle class="particle" cx="98" cy="72" r="3"/><circle class="particle" cx="110" cy="52" r="3"/><circle class="particle" cx="88" cy="68" r="3"/>
+	            <circle class="drop" cx="100" cy="188" r="22" fill-opacity="0.45"/>
+	            <text x="132" y="52" font-size="11">source</text>
+	            <text x="128" y="186" font-size="11">receiver</text>
+	            <text x="100" y="250" text-anchor="middle" class="t-strong" font-size="13">1. Line them up</text>
+	          </g>
+	          <line class="arrow" x1="228" y1="120" x2="252" y2="120" marker-end="url(#ah4d)"/>
+	          <g transform="translate(260,10)">
+	            <rect class="bath" x="0" y="10" width="200" height="200"/>
+	            <rect class="magnet" x="0" y="212" width="200" height="14" rx="2"/>
+	            <path class="drop" d="M76,70 A24,24 0 0 1 124,70 C124,86 108,92 104,104 L96,104 C92,92 76,86 76,70 Z"/>
+	            <ellipse class="clump" cx="100" cy="142" rx="5" ry="14"/>
+	            <path class="drop" fill-opacity="0.45" d="M78,190 A22,22 0 0 1 90,170 Q100,180 110,170 A22,22 0 0 1 122,190 A22,20 0 0 1 78,190 Z"/>
+	            <text x="100" y="250" text-anchor="middle" class="t-strong" font-size="13">2. Clump breaks in</text>
+	          </g>
+	          <line class="arrow" x1="468" y1="120" x2="492" y2="120" marker-end="url(#ah4d)"/>
+	          <g transform="translate(500,10)">
+	            <rect class="bath" x="0" y="10" width="200" height="200"/>
+	            <rect class="magnet" x="0" y="212" width="200" height="14" rx="2"/>
+	            <circle class="drop" cx="100" cy="72" r="22" fill-opacity="0.8"/>
+	            <circle class="drop" cx="100" cy="186" r="23" fill-opacity="0.45"/>
+	            <rect class="clump" x="90" y="186" width="4" height="20" rx="1"/><rect class="clump" x="98" y="180" width="4" height="27" rx="1"/><rect class="clump" x="106" y="186" width="4" height="20" rx="1"/>
+	            <text x="100" y="250" text-anchor="middle" class="t-strong" font-size="13">3. Both drops intact</text>
+	          </g>
+	        </svg>
+	        <figcaption><b>Figure 4.</b> Drop-to-drop transfer. The clump pulled out of the source drop punctures the receiver drop, which flattens briefly and then springs back to a round shape. Inside, the particles stand up as "magnetic skyscrapers". Schematic drawn for this site, after Fig. 1 of the preprint.</figcaption>
+	      </figure>
+
+	      <h3>How it works</h3>
+	      <p>The receiver drop holds almost no particles (less than 0.01&nbsp;mg per mL) and rests at the bottom of the silicone bath, just above the magnet. The particle-rich source drop is released 15&ndash;18.5&nbsp;mm higher, directly above it, and the whole bath sits on a stack of neodymium magnets with a peak field of about 220&nbsp;mT. As in Part&nbsp;1, the source drop sinks toward the magnet, stretches, and lets go of a clump. Because the two drops are lined up, the falling clump lands on top of the receiver drop, pushes its surface inward and breaks through. The receiver drop flattens for a moment, then relaxes back to a near-spherical shape, a little larger than before, with no noticeable loss of particles into the silicone.</p>
+	      <p>Camera tracking of the source drop tells the same story from the outside. Its centre speeds up as it approaches the magnet, then slows sharply the moment the clump leaves, because it has just lost most of the magnetic material that was pulling it down.</p>
+
+	      <div class="explainer">
+	        <strong>Why the drops have to be placed just right.</strong> To get into the receiver drop, the clump has to push through the same kind of surface-tension "skin" it escaped from. Two things help it. First, the receiver drop should sit as close to the magnet as possible, where the magnetic pull is strongest. Second, the clump should be released far enough above the receiver that it has time to pick up speed on the way down. If the magnetic pull alone can't beat the surface, the clump's momentum can still carry it through. A simple force balance in the preprint captures both conditions.
+	      </div>
+
+	      <h3>A drop that is different at the top and the bottom</h3>
+	      <p>Once inside the receiver drop, the clump is suddenly in thin water instead of thick silicone, and it reorganises. The particles form upright chains at the bottom of the drop, which we call <strong>magnetic skyscrapers</strong>. Switch the magnet off and the skyscrapers dissolve into a dense <strong>magnetic liquid</strong> layer sitting at the bottom of the drop, with nearly clear water above it. The receiver drop has become <em>heterogeneous</em>: its contents are no longer uniform.</p>
+	      <figure>
+	        <svg class="fig-svg" viewBox="0 0 720 210" role="img" aria-label="Three receiver drops: with the field on, particles stand as columns; with the field off, they form a dense liquid layer at the bottom; with the field tilted, the columns lean to follow the field">
+	          <defs><marker id="ah4e" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" class="arrowhead"/></marker></defs>
+	          <g transform="translate(40,20)">
+	            <circle class="drop" cx="90" cy="80" r="60" fill-opacity="0.35"/>
+	            <rect class="clump" x="68" y="98" width="7" height="38" rx="2"/><rect class="clump" x="86" y="88" width="7" height="50" rx="2"/><rect class="clump" x="104" y="98" width="7" height="38" rx="2"/>
+	            <line class="arrow" x1="170" y1="40" x2="170" y2="110" marker-end="url(#ah4e)"/>
+	            <text x="90" y="168" text-anchor="middle" class="t-strong" font-size="13">Field on</text>
+	            <text x="90" y="184" text-anchor="middle" font-size="11">skyscrapers stand up</text>
+	          </g>
+	          <g transform="translate(270,20)">
+	            <circle class="drop" cx="90" cy="80" r="60" fill-opacity="0.35"/>
+	            <path class="clump" opacity="0.8" d="M40,112 Q90,128 140,112 A60,60 0 0 1 40,112 Z"/>
+	            <text x="90" y="168" text-anchor="middle" class="t-strong" font-size="13">Field off</text>
+	            <text x="90" y="184" text-anchor="middle" font-size="11">dense magnetic liquid at the bottom</text>
+	          </g>
+	          <g transform="translate(500,20)">
+	            <circle class="drop" cx="90" cy="80" r="60" fill-opacity="0.35"/>
+	            <g transform="rotate(-25 90 120)"><rect class="clump" x="68" y="96" width="7" height="38" rx="2"/><rect class="clump" x="86" y="86" width="7" height="50" rx="2"/><rect class="clump" x="104" y="96" width="7" height="38" rx="2"/></g>
+	            <line class="arrow" x1="168" y1="40" x2="190" y2="106" marker-end="url(#ah4e)"/>
+	            <text x="90" y="168" text-anchor="middle" class="t-strong" font-size="13">Field tilted</text>
+	            <text x="90" y="184" text-anchor="middle" font-size="11">columns follow the field</text>
+	          </g>
+	        </svg>
+	        <figcaption><b>Figure 5.</b> What the transferred particles do inside the receiver drop. Schematic drawn for this site, after Fig. 3 of the preprint.</figcaption>
+	      </figure>
+	      <ul>
+	        <li><strong>On and off.</strong> Switching the field on rebuilds the skyscrapers; switching it off melts them back into the liquid layer. The same behaviour repeated over multiple on&ndash;off cycles.</li>
+	        <li><strong>Changing direction.</strong> When the field was tilted to one side or the other, the skyscrapers always lined up with it.</li>
+	        <li><strong>A moving field.</strong> When the field was swept back and forth, the magnetic liquid flowed along the inside wall of the drop and back into the middle. The drop's surface acts as a soft, flexible container wall.</li>
+	      </ul>
+	      <p>The receiver drop also comes away with the source drop's "magnetic activity": once it holds enough particles, it can be steered by a magnet itself, which it could not before. And because neither drop is permanently damaged, one source drop can in principle supply several receivers and then be reloaded by becoming a receiver itself.</p>
+
+	      <h2>What this tells us</h2>
+	      <ul>
+	        <li><strong>The surface barrier can be beaten with size, not force.</strong> Letting the particles clump first makes the magnetic pull grow faster than the surface-tension grip.</li>
+	        <li><strong>It is predictable.</strong> Particle concentration and drop size set where the release happens and how much material comes out, and a force-balance model captures the trend.</li>
+	        <li><strong>It is repeatable from one drop.</strong> The drop survives each release, so a single drop can deliver cargo to several locations.</li>
+	        <li><strong>The cargo can be handed on.</strong> A released clump can be caught by a second drop, carrying its magnetic behaviour with it, and the receiving drop becomes a two-layer system with its own magnetic dynamics.</li>
+	        <li><strong>It points to applications</strong> such as carrying particle cargo through microchannels, controlled drug release, and on-demand material deposition for printing.</li>
+	      </ul>
+
+	      <h3>Scope of the study</h3>
+	      <p>All experiments used a very viscous silicone bath, which is what keeps the drop from deforming permanently. Showing the same effect in thinner surroundings such as oil or air, which practical printing and delivery would need, is left for future work. The model also relies on two calibrated constants rather than independently measured ones. The drop-to-drop transfer work (Part&nbsp;2) is described here from its public preprint, which has not yet been peer reviewed; the transfer conditions in it are explained qualitatively.</p>
+
+	      <h2>My role</h2>
+	      <p>I designed and ran the experiments: preparing the nanoparticle dispersions and the silicone bath, building the magnet and two-camera imaging setup with its refraction correction, measuring release distances and clump volumes, and setting up the three-magnet delivery demonstration. I also wrote the first draft of the paper. The theoretical model was developed by my co-authors Ghansham Chandel and Vishal Sivasankar, under the supervision of Prof. Siddhartha Das, who conceived the problem. I presented this work at the Burgers Symposium at George Washington University in May 2025.</p>
+	      <p>For the drop-to-drop transfer study (Part&nbsp;2), I am the first author: I designed the experiments and the setup, analysed the data and wrote most of the paper, working with Sai Achyut Madhira under the supervision of Prof. Siddhartha Das.</p>
+
+	      <div class="article-refs">
+	        <p><strong>Read the paper:</strong> S. K. Subudhi, G. R. Chandel, V. S. Sivasankar and S. Das, &ldquo;Magnetic nanoparticle aggregation and complete de-encapsulation of such aggregates from a liquid drop interior,&rdquo; <em>ACS Applied Materials &amp; Interfaces</em> 16, 64253&ndash;64263 (2024). <a href="https://doi.org/10.1021/acsami.4c13657" target="_blank" rel="noopener">doi:10.1021/acsami.4c13657</a></p>
+	        <p><strong>Read the preprint (Part&nbsp;2):</strong> S. K. Subudhi, S. A. Madhira and S. Das, &ldquo;Drop-to-drop transfer of magnetic activity and the formation of heterogeneous drops,&rdquo; <em>ChemRxiv</em> (2026), version 2, not peer reviewed. <a href="https://doi.org/10.26434/chemrxiv.15000504/v2" target="_blank" rel="noopener">doi:10.26434/chemrxiv.15000504/v2</a></p>
+	        <p>Figures on this page are simplified schematics drawn for this site; the original photographs and data plots are in the published paper and the preprint.</p>
+	      </div>
+
+	    </article>
+	    <!-- previous abstract kept for reference, hidden:
 		<p style="text-align: justify">Magnetic nanoparticles (MNPs) have been extensively used for drug delivery, on-demand material deposition, etc. In this study, we demonstrate the capability to extract such MNPs on-demand from a magnetic nanoparticle-laden drop (MNLD) (i.e., a drop of a stable aqueous dispersion of MNPs), suspended inside a highly viscous polymer (poly(dimethylsiloxane) or PDMS) medium in the presence of an externally applied magnetic field. The phenomena involve the aggregation of the MNPs inside the drop and the consequent extraction of the MNP aggregate out of the drop, with the drop retaining its original shape after the MNP aggregate extraction. We define this latter phenomenon as de-encapsulation. This is the first study that, to the best of our knowledge, demonstrates such precise, controlled, and on-demand removal of the NPs from the interior of a drop (where the NPs, which were originally inside the drop, breach the drop interface and get completely separated from the drop as an aggregate) without any permanent deformation of the drop. We quantify the effect of the changes in the MNP concentration and the drop volume in determining the de-encapsulation distance, which refers to the distance between the drop and the location of the magnet at the time instant when the MNP aggregate leaves the drop. We further identify the volume of the aggregates extracted from the drop and the mechanisms causing such de-encapsulation. We propose a theory to describe the process, and our theoretical predictions capture the experimental trends well. In addition, we also demonstrate multiple, back-to-back MNP aggregate extractions from a single MNLD at different sites, indicating the possibility that the MNLD can be used as an on-demand carrier and depositor of materials. Overall, our results, in addition to demonstrating the first-of-its-kind de-encapsulation of NPs (in the form of an aggregate) from the drop interior, demonstrate a method to control the dynamics, extraction, and targeted deposition of the MNPs.</p>
 		<a href="https://pubs.acs.org/doi/abs/10.1021/acsami.4c13657">Article Link</a>
 
 		<br><br>
-		<h2></h2>
-		<p></p>
+	    end of previous abstract -->
 	  </div>
 	  <div class="col-lg-4 project-outcomes">
 		  <h4>Outcomes:</h4>
@@ -201,7 +464,11 @@
 		  <br>
 		  <a href="https://pubs.acs.org/doi/abs/10.1021/acsami.4c13657">DOI: 10.1021/acsami.4c13657</a>
 		  </li><br>
-		  <li>Research Talk in Burgers Symposium at George Washington University on May 27, 2025.</li>
+		  <li>Research Talk in Burgers Symposium at George Washington University on May 27, 2025.</li><br>
+		  <li>Preprint on drop-to-drop cargo transfer posted on ChemRxiv on Mar 2, 2026 (first author).
+		  <br>
+		  <a href="https://doi.org/10.26434/chemrxiv.15000504/v2">DOI: 10.26434/chemrxiv.15000504/v2</a>
+		  </li>
 		  </ul>
 	  </div>
 	</div>

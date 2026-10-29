@@ -22,6 +22,9 @@
    The nav sidebar and hero always use .dark-background (a fixed dark chrome panel, independent of the light/dark toggle) —
    this is a deliberate design choice, not a bug: a persistent dark anchor panel against light content is standard portfolio practice. */
 :root {
+  --bg-base: #f5f8fc; /* Un-tinted page/surface/tint colors, used by .light-background and .semi-dark-background */
+  --surface-base: #ffffff;
+  --tint-base: #10151c;
   --background-color: #f5f8fc; /* Background color for the entire website, including individual sections */
   --default-color: #445261; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #10151c; /* Color for headings, subheadings and title throughout the website */
@@ -53,6 +56,9 @@
 }
 
 [data-theme="dark"] {
+  --bg-base: #0a0e13;
+  --surface-base: #131a22;
+  --tint-base: #f3f6f9;
   --background-color: #0a0e13;
   --default-color: #aab4bf;
   --heading-color: #f3f6f9;
@@ -80,13 +86,16 @@
    .light-background and .semi-dark-background are theme-relative panel tints (via color-mix) so they adapt automatically
    whether the active theme is light or dark, instead of hardcoding a fixed color. */
 
+/* NOTE: these must not reference the property they set (e.g. --background-color: ...var(--background-color)...) —
+   a self-referencing custom property is a cycle and resolves to invalid, so the tint never applies.
+   They mix from the root-level base values (--bg-base, --surface-base, --tint-base) instead. */
 .light-background {
-  --background-color: color-mix(in srgb, var(--background-color), var(--heading-color) 4%);
-  --surface-color: color-mix(in srgb, var(--surface-color), var(--heading-color) 3%);
+  --background-color: color-mix(in srgb, var(--bg-base), var(--tint-base) 4%);
+  --surface-color: color-mix(in srgb, var(--surface-base), var(--tint-base) 3%);
 }
 
 .semi-dark-background {
-  --background-color: color-mix(in srgb, var(--background-color), var(--heading-color) 7%);
+  --background-color: color-mix(in srgb, var(--bg-base), var(--tint-base) 7%);
 }
 
 .dark-background {
@@ -629,6 +638,8 @@ section,
   background-color: var(--background-color);
   padding: 60px 30px;
   overflow: clip;
+  border-top: 1px solid #ededed;
+  border-bottom: 1px solid #ededed;
 }
 
 /*--------------------------------------------------------------
@@ -651,17 +662,6 @@ main {
   padding-bottom: 20px;
   position: relative;
   letter-spacing: -0.01em;
-}
-
-.section-title h2::before {
-  content: "// " counter(section-index, decimal-leading-zero);
-  display: block;
-  font-family: 'Google Sans Code', monospace, sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  color: var(--accent-color);
-  margin-bottom: 10px;
 }
 
 .section-title h2:after {
@@ -1536,4 +1536,158 @@ main {
 
 .project-outcomes ul{
 	font-size: 14px;
+}
+
+/*--------------------------------------------------------------
+# Project Article — blog-style write-up used on project-detail pages
+# (template shared by all projects/project-details-*.html pages)
+--------------------------------------------------------------*/
+.project-article {
+  max-width: 760px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--default-color);
+}
+
+.project-article .article-lede {
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--heading-color);
+  margin-bottom: 28px;
+}
+
+.project-article h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 44px 0 14px;
+}
+
+.project-article h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 28px 0 10px;
+}
+
+.project-article p {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.project-article ul,
+.project-article ol {
+  margin-bottom: 16px;
+  padding-left: 22px;
+}
+
+.project-article li {
+  margin-bottom: 6px;
+}
+
+/* Plain-language callout for terms a general reader may not know */
+.project-article .explainer {
+  border-left: 3px solid var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 93%);
+  padding: 14px 18px;
+  margin: 20px 0 24px;
+  font-size: 13.5px;
+}
+
+/* .project-article p sets its own 16px, so children must inherit explicitly or they ignore the callout size */
+.project-article .explainer :is(p, ul, ol, li, span, a, em, i, b, strong, small, code),
+.project-article .article-refs :is(p, ul, ol, li, span, a, em, i, b, strong, small, code) {
+  font-size: inherit;
+}
+
+.project-article .explainer strong {
+  color: var(--heading-color);
+}
+
+/* Key-number strip */
+.key-numbers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin: 8px 0 32px;
+}
+
+.key-numbers div {
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border-radius: 6px;
+  padding: 14px 16px;
+}
+
+.key-numbers .num {
+  display: block;
+  font-family: var(--heading-font);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--accent-color);
+  line-height: 1.2;
+}
+
+.key-numbers .label {
+  display: block;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--default-color);
+}
+
+/* Figures */
+.project-article figure {
+  margin: 26px 0 30px;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border-radius: 6px;
+  padding: 18px;
+}
+
+.project-article figure img,
+.project-article figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.project-article figcaption {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--default-color);
+}
+
+.project-article figcaption b {
+  color: var(--heading-color);
+}
+
+/* Theme-aware colours for inline SVG figures */
+.fig-svg text { fill: var(--default-color); font-family: var(--default-font); }
+.fig-svg .t-strong { fill: var(--heading-color); font-weight: 600; }
+.fig-svg .axis { stroke: color-mix(in srgb, var(--default-color), transparent 50%); stroke-width: 1; }
+.fig-svg .grid { stroke: color-mix(in srgb, var(--default-color), transparent 85%); stroke-width: 1; }
+.fig-svg .bar-a { fill: color-mix(in srgb, var(--default-color), transparent 55%); }
+.fig-svg .bar-b { fill: var(--accent-color); }
+.fig-svg .box { fill: var(--surface-color); stroke: color-mix(in srgb, var(--default-color), transparent 55%); stroke-width: 1.2; }
+.fig-svg .box-accent { fill: color-mix(in srgb, var(--accent-color), transparent 88%); stroke: var(--accent-color); stroke-width: 1.2; }
+.fig-svg .arrow { stroke: var(--accent-color); stroke-width: 2; fill: none; }
+.fig-svg .arrowhead { fill: var(--accent-color); }
+.fig-svg .film { fill: #8a4b2a; }
+.fig-svg .film-edge { fill: #5e3018; }
+.fig-svg .holder { fill: color-mix(in srgb, var(--default-color), transparent 70%); }
+.fig-svg .drop { fill: #d39a45; fill-opacity: 0.85; }
+.fig-svg .clump { fill: #4a2412; }
+.fig-svg .particle { fill: #6b3a1c; }
+.fig-svg .magnet { fill: color-mix(in srgb, var(--default-color), transparent 35%); }
+.fig-svg .bath { fill: color-mix(in srgb, var(--accent-color), transparent 94%); stroke: color-mix(in srgb, var(--default-color), transparent 55%); stroke-width: 1.2; }
+.fig-svg .curve-a { stroke: color-mix(in srgb, var(--default-color), transparent 30%); stroke-width: 2.5; fill: none; }
+.fig-svg .curve-b { stroke: var(--accent-color); stroke-width: 2.5; fill: none; }
+.fig-svg .path-dash { stroke: color-mix(in srgb, var(--default-color), transparent 40%); stroke-width: 1.5; stroke-dasharray: 5 4; fill: none; }
+.fig-svg .badge { fill: var(--accent-color); }
+.fig-svg .badge-text { fill: var(--accent-contrast); font-weight: 700; }
+
+.project-article .article-refs {
+  font-size: 12.5px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  padding-top: 16px;
+  margin-top: 40px;
 }

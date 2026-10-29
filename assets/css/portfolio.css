@@ -232,3 +232,10 @@
     gap: 6px;
   }
 }
+
+/* Lighter panel behind the filters + project cards (cards stay on --surface-color so they still read as raised) */
+#portfolio > .container:not(.section-title) {
+  background-color: color-mix(in srgb, var(--background-color), var(--surface-color) 60%);
+  padding: 24px;
+  border-radius: 8px;
+}

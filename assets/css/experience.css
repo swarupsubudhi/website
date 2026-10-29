@@ -70,7 +70,9 @@
 /* Wrapper — holds the centred spine */
 .tl-wrap {
   position: relative;
-  padding: 8px 0 4px;
+  padding: 24px;
+  background-color: color-mix(in srgb, var(--background-color), var(--surface-color) 60%);  /* lighter panel, same as Projects */
+  border-radius: 8px;
 }
 
 /* Centre spine (desktop) */
@@ -254,4 +256,96 @@
   .contact-form-row-2 {
     grid-template-columns: 1fr;
   }
+}
+
+/*--------------------------------------------------------------
+# Contact Section — match project-card styling
+# (8px radius, 1px subtle border, no heavy shadow, accent border on hover;
+#  controls follow the square-ish filter buttons in the Projects section)
+--------------------------------------------------------------*/
+.contact .info-wrap,
+.contact .php-email-form {
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 8px;
+  box-shadow: none;
+  transition: border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+.contact .info-wrap:hover,
+.contact .php-email-form:hover {
+  border-color: color-mix(in srgb, var(--accent-color), transparent 45%);
+  box-shadow: 0 14px 42px color-mix(in srgb, var(--accent-color), transparent 85%);
+}
+
+.contact .info-item:last-child {
+  margin-bottom: 0;
+}
+
+.contact .php-email-form input[type=text],
+.contact .php-email-form input[type=email],
+.contact .php-email-form textarea {
+  border-radius: 4px;
+  border-color: color-mix(in srgb, var(--default-color), transparent 88%);
+}
+
+.contact .php-email-form button[type=submit] {
+  border-radius: 2px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+/*--------------------------------------------------------------
+# Experience — pinned, scroll-driven timeline
+# .tl-pinned is added by assets/js/experience-scroll.js (desktop, motion allowed, timeline taller than
+# the viewport). Without it these wrappers are plain blocks and the section is a normal static layout.
+--------------------------------------------------------------*/
+.tl-pinned .tl-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 0 32px;
+}
+
+.tl-pinned .tl-sticky .section-title {
+  flex: none;
+  padding-bottom: 24px;
+}
+
+.tl-pinned .tl-viewport {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.tl-pinned .tl-wrap {
+  will-change: transform;
+}
+
+/* Crisp (unfaded) clip at the viewport edges; a firmer shadow keeps cards defined as they slide */
+.tl-pinned .tl-content {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.tl-pinned .tl-content:hover {
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--accent-color), transparent 80%);
+}
+
+/* Full-bleed timeline: break out of the section's 30px side padding and drop the .container max-width so the
+   .tl-wrap panel spans the whole content width (edge to edge, right of the sidebar). */
+#resume .tl-viewport {
+  max-width: none;
+  width: calc(100% + 60px);
+  margin-left: -30px;
+  margin-right: -30px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#resume .tl-wrap {
+  border-radius: 0;
+  padding-left: 48px;
+  padding-right: 48px;
 }

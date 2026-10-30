@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('swarupks-theme');
+        document.documentElement.setAttribute('data-theme', saved === 'dark' ? 'dark' : 'light');
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Swarup K S - Engineering</title>
+  <meta content="Overview of machine design and engineering projects by Swarup Subudhi, Mechanical Engineering PhD candidate at the University of Maryland." name="description">
+  <meta content="Swarup Subudhi, mechanical engineer, University of Maryland, reliability engineering" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets/img/swarupks-logo-web.png" rel="icon">
+  <link href="../assets/img/swarupks-logo-web.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Lexend:wght@100..900&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendors/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendors/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendors/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="../assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="../assets/img/linkedin_profile_img.jpg" alt="" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <h1 class="sitename">Swarup K S</h1>
+    </a>
+
+    <div class="social-links text-center">
+      <a href="http://linkedin.com/in/swarupks/" class="linkedin" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+	  <a href="mailto:swarupks001@gmail.com" class="envelope" title="Mail"><i class="bi bi-envelope"></i></a>
+	  <a href="https://scholar.google.com/citations?hl=en&authuser=1&user=byx4q4oAAAAJ" class="card-list" target="_blank" title="Scholar"><i class="bi bi-card-list"></i></a>
+      <a href="http://github.com/swarupsubudhi" class="github" target="_blank" title="Github"><i class="bi bi-github"></i></a>
+      <a href="http://behance.net/swarupks" class="behance" target="_blank" title="Behance"><i class="bi bi-behance"></i></a>
+    </div>
+
+    <div id="theme-switch" class="theme-switch" role="group" aria-label="Theme">
+      <button type="button" class="theme-switch-btn" data-theme-choice="light" aria-pressed="false">
+        <i class="bi bi-sun-fill"></i>Light
+      </button>
+      <button type="button" class="theme-switch-btn" data-theme-choice="dark" aria-pressed="false">
+        <i class="bi bi-moon-stars-fill"></i>Dark
+      </button>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="../index.html#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="../index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="../index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Experience</a></li>
+        <li><a href="../index.html#portfolio"><i class="bi bi-images navicon"></i> Projects</a></li>
+        <li><a href="../index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+		<li class="dropdown"><a href="../blog/blog-home.html"><i class="bi bi-menu-button navicon"></i> <span>Blog</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul>
+            <li><a href="../blog/blog-home.html#research">Research</a></li>
+            <li><a href="../blog/blog-home.html#philosophy">Philosophy</a></li>
+            <li><a href="../blog/blog-home.html#interests">Interests</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Project Details</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="../index.html">Home</a></li>
+            <li class="current">Projects</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper init-swiper">
+
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+
+              <div class="swiper-wrapper align-items-center" style="border: 1px solid rgba(255,255,255,0.1)">
+
+                <div class="swiper-slide">
+                  <img src="../assets/img/portfolio/pd-4-img-1.gif" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="../assets/img/portfolio/pd-4-img-2.jpg" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="../assets/img/portfolio/pd-4-img-3.jpg" alt="">
+                </div>
+
+                <!--<div class="swiper-slide">
+                  <img src="../assets/img/portfolio/pd-4-img-4.jpg" alt="">
+                </div>-->
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h5></h5>
+              <ul>
+                <li><strong>Category</strong>: Engineering</li>
+                <li><strong>Affiliation</strong>: NIT Rourkela, SAE, Self</li>
+		<li><strong>Sponsor</strong>: <a href="">Multiple</a></li>
+		<li><strong>PI</strong>: N/A</li>
+		<li><strong>Collab</strong>: </li>
+                <li><strong>Project date</strong>: Jul 2012 - May 2016</li>
+              </ul>
+            </div>
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+              <!--<h3>Magnetic Nanoparticle Aggregation and Complete De-encapsulation of Such Aggregates from a Liquid Drop Interior</h3>-->
+              <p></p>
+              <p>Scroll down for more details.</p>
+            </div>
+          </div>
+
+        </div>
+      <br><br>
+	<div class="row gy-4">
+	  <div class="col-lg-8 project-text-main">
+	    <!--add details of the project here-->
+	        <h2>Introduction</h2>
+		<p style="text-align: justify">I believe that I did the most stress-free engineering in my undergraduate years. 
+		I learnt a lot from my professors and peers at the university. Unfortunately, I lost most of my technical design files to a malware attack.
+		So, recently I have recreated most of those files from scratch (with new knowledge that I gained through my PhD journey). 
+		Here is a compilation of the top engineering projects that I made.</p>	
+		<br><br>
+		
+	  </div >
+	  
+	  <div class="col-lg-4 project-outcomes">
+		  <h4>Outcomes:</h4>
+		  <ul>
+		  <li>Team Green Knight ranked #2 in Design Category in Ecokart 2016, Greater Noida, IN.
+		  <br>
+		  <br>
+		  </li><br>
+		  <li>two</li>
+		  </ul>
+	  </div>
+	  <div class="col-lg-8 project-text-main">
+		<h2>P1. Electric Go-Kart Project</h2>
+		<p></p>
+		<br><br>
+		
+		<h3></h3>
+		<p></p>
+		<br><br>
+		
+		<a href="">Files Repository</a>
+	  </div>
+	  <div class="col-lg-8 project-text-main">
+		<h2>P2. IC Engine Design</h2>
+		<p></p>
+		<br><br>
+		
+		<h3></h3>
+		<p></p>
+		<br><br>
+		
+		<a href="">Files Repository</a>
+	  </div>
+	  <div class="col-lg-8 project-text-main">
+		<h2>P3. Overhead Crane Design</h2>
+		<p></p>
+		<br><br>
+		
+		<h3></h3>
+		<p></p>
+		<br><br>
+		
+		<a href="">Files Repository</a>
+	  </div>
+	</div>
+
+      </div>
+
+    </section><!-- /Portfolio Details Section -->
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendors/php-email-form/validate.js"></script>
+  <script src="../assets/vendors/aos/aos.js"></script>
+  <script src="../assets/vendors/typed.js/typed.umd.js"></script>
+  <script src="../assets/vendors/purecounter/purecounter_vanilla.js"></script>
+  <script src="../assets/vendors/waypoints/noframework.waypoints.js"></script>
+  <script src="../assets/vendors/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="../assets/vendors/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendors/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

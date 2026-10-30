@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <rect width="640" height="360" fill="#e9eef4"/>
+  <path d="M90,230 C180,150 300,290 400,200 S540,170 560,190" fill="none" stroke="#8a4b2a" stroke-width="34" stroke-linecap="round"/>
+  <g fill="#3b1d0d">
+    <circle cx="140" cy="205" r="5"/><circle cx="190" cy="196" r="5"/><circle cx="245" cy="215" r="5"/><circle cx="300" cy="236" r="5"/>
+    <circle cx="355" cy="222" r="5"/><circle cx="410" cy="196" r="5"/><circle cx="470" cy="180" r="5"/><circle cx="525" cy="182" r="5"/>
+  </g>
+  <rect x="250" y="56" width="140" height="44" rx="6" fill="#3b6ea5"/>
+  <text x="285" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff">N</text>
+  <text x="355" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff">S</text>
+  <line x1="320" y1="56" x2="320" y2="100" stroke="#ffffff" stroke-width="2"/>
+  <text x="320" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#3b6ea5">soft, bendable film + magnetic particles</text>
+</svg>

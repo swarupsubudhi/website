@@ -150,6 +150,11 @@
         filter: filter,
         sortBy: sort
       });
+      // Re-pack once web fonts and late assets settle, so card heights
+      // (and the gaps between stacked cards) are measured correctly.
+      const relayout = () => initIsotope && initIsotope.layout();
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(relayout);
+      window.addEventListener('load', relayout);
     });
 
     isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {

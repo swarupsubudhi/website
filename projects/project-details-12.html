@@ -14,9 +14,9 @@
     })();
   </script>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Swarup K S - Scientific Software</title>
-  <meta content="Scientific software built by Swarup Subudhi: nScryptConformal, which turns a laser surface scan into a contact-free conformal toolpath for the nScrypt printer, and TrakLab." name="description">
-  <meta content="Swarup Subudhi, scientific software, nScrypt, conformal printing, toolpath, laser scan, quadratic programming, Python, SciPy, TrakLab" name="keywords">
+  <title>Swarup K S - nScrypt Conformal – 3DP Utility</title>
+  <meta content="nScrypt Conformal, a 3D-printing utility by Swarup Subudhi that turns a laser surface scan into a contact-free, surface-following toolpath for the nScrypt direct-write printer." name="description">
+  <meta content="Swarup Subudhi, nScrypt, conformal printing, 3D printing, direct write, toolpath, laser scan, quadratic programming, Python, SciPy" name="keywords">
 
   <!-- Favicons -->
   <link href="../assets/img/swarupks-logo-web.png" rel="icon">
@@ -136,19 +136,19 @@
 
           <div class="col-lg-4">
             <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h5>Scientific Software Builds</h5>
+              <h5>nScrypt Conformal – 3DP Utility</h5>
               <ul>
                 <li><strong>Category</strong>: Engineering</li>
                 <li><strong>Affiliation</strong>: University of Maryland, College Park</li>
-                <li><strong>Tools</strong>: nScryptConformal, TrakLab</li>
-                <li><strong>Stack</strong>: Python (NumPy, SciPy, Matplotlib, customtkinter); MATLAB (App Designer, Image Processing and Computer Vision toolboxes)</li>
+                <li><strong>Tool</strong>: nScryptConformal v2.1</li>
+                <li><strong>Stack</strong>: Python (NumPy, SciPy, Matplotlib, customtkinter)</li>
+                <li><strong>Licence</strong>: Apache 2.0</li>
                 <li><strong>Developer</strong>: Swarup Subudhi</li>
               </ul>
             </div>
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <p>Software I wrote to solve problems in my own lab work: turning a laser scan of a part into a printer program that follows its surface, and turning lab videos into position and velocity data. Each tool will get its own interactive demo page.</p>
+              <p>A utility I wrote for the nScrypt direct-write printer: it reads a laser scan of the part and rewrites a flat print program so the nozzle follows the real surface at a constant small gap, without ever touching it.</p>
             </div>
-          </div>
 
         </div>
       <br><br>
@@ -156,16 +156,13 @@
 	  <div class="col-lg-8 project-text-main">
 	    <article class="project-article">
 
-	      <p class="article-lede">Research instruments rarely come with the software you need. When a printer can only follow flat toolpaths, or a camera records hours of video that someone has to measure by hand, the fastest route is often to write the tool yourself. This page collects the scientific software I have built, what each tool does, and how it works under the hood.</p>
+	      <p class="article-lede">A direct-write printer can lay down fine conductive lines, but only if its nozzle stays at the right height above the part. Its programs assume the part is flat; real parts are not. nScryptConformal closes that gap: it measures the surface with the printer's own laser scanner and rewrites the print program so every line follows the surface it is printed on.</p>
 
 	      <div class="key-numbers">
 	        <div><span class="num">~9,700</span><span class="label">lines of Python in nScryptConformal v2.1</span></div>
 	        <div><span class="num">4</span><span class="label">surface-following strategies, including a constrained optimisation</span></div>
 	        <div><span class="num">3</span><span class="label">scan types supported: line scans, path scans and area scans</span></div>
-	        <div><span class="num">~2,500</span><span class="label">lines of MATLAB in TrakLab v0.3</span></div>
 	      </div>
-
-	      <h2 id="nscrypt-conformal">nScryptConformal: printing that follows the surface</h2>
 
 	      <h3>The problem it solves</h3>
 	      <p>The nScrypt 3Dn is a precision direct-write printer that dispenses conductive inks through a fine nozzle held just above the part. Its print programs are written for a flat plane. Real substrates (circuit boards, coupons, moulded parts) are slightly warped or stepped, by amounts comparable to the gap itself. A program written for a flat plane will drag the nozzle through high spots and lift away from low spots, giving broken or uneven lines. Adjusting the height by hand, point by point, is slow and does not scale beyond a few lines.</p>
@@ -238,65 +235,8 @@
 	      <p>Built in Python with NumPy and SciPy for the numerics (splines, sparse linear algebra), Matplotlib for the plots and customtkinter for the interface, and released under the Apache 2.0 licence.</p>
 	      <p><a href="software/nscrypt-conformal.html">Try the nScryptConformal demo &rarr;</a> <em>(interactive animation of a sample case, coming soon)</em></p>
 
-	      <h2 id="traklab">TrakLab: measuring motion in lab videos</h2>
-
-	      <h3>The problem it solves</h3>
-	      <p>My magnetic-drop experiments are recorded on video: a drop sinks through thick silicone toward a magnet, a clump of nanoparticles breaks out of it, and in the cargo-transfer work that clump is caught by a second drop. The physics is in the numbers: where the drop's centre is in every frame, how fast it moves, exactly when and where the clump leaves. Measuring that by hand, frame by frame, across many runs is slow and hard to repeat. TrakLab turns a video into calibrated position and velocity data in a few clicks.</p>
-
-	      <figure>
-	        <svg class="fig-svg" viewBox="0 0 720 230" role="img" aria-label="Left: a video frame with the drop outlined by a detected circle, two tracked points marked and their trails drawn. Right: the resulting plots of position and velocity against time">
-	          <defs><marker id="ah12b" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" class="arrowhead"/></marker></defs>
-	          <rect class="bath" x="20" y="20" width="300" height="190" rx="4"/>
-	          <path class="path-dash" d="M170,30 L170,70"/>
-	          <circle class="drop" cx="170" cy="95" r="30"/>
-	          <circle cx="170" cy="95" r="33" fill="none" stroke="#3b6ea5" stroke-width="2.5"/>
-	          <circle cx="170" cy="95" r="3" fill="#3b6ea5"/>
-	          <ellipse class="clump" cx="170" cy="150" rx="5" ry="12"/>
-	          <path d="M170,128 L170,140" stroke="#d6453d" stroke-width="2" stroke-dasharray="3 3"/>
-	          <circle cx="170" cy="138" r="4" fill="#d6453d"/>
-	          <text x="208" y="80" font-size="11">circle detector: drop centre</text>
-	          <text x="182" y="150" font-size="11">point tracker: clump tip</text>
-	          <rect class="magnet" x="20" y="196" width="300" height="14" rx="2"/>
-	          <line class="arrow" x1="330" y1="115" x2="380" y2="115" marker-end="url(#ah12b)"/>
-	          <g transform="translate(395,20)">
-	            <rect class="box" x="0" y="0" width="305" height="190" rx="6"/>
-	            <line class="axis" x1="40" y1="20" x2="40" y2="80"/><line class="axis" x1="40" y1="80" x2="290" y2="80"/>
-	            <path class="curve-b" d="M40,28 C110,32 170,46 220,64 L290,76"/>
-	            <text x="34" y="18" font-size="10" text-anchor="end">z</text>
-	            <line class="axis" x1="40" y1="110" x2="40" y2="170"/><line class="axis" x1="40" y1="170" x2="290" y2="170"/>
-	            <path class="curve-b" d="M40,165 C110,160 180,130 215,118 C230,140 250,150 290,152"/>
-	            <path class="curve-a" stroke="#d6453d" style="stroke:#d6453d" d="M200,150 C220,140 250,128 290,116"/>
-	            <text x="34" y="108" font-size="10" text-anchor="end">v</text>
-	            <text x="165" y="186" font-size="10" text-anchor="middle">time</text>
-	            <text x="250" y="98" font-size="10" text-anchor="middle">position (mm)</text>
-	          </g>
-	        </svg>
-	        <figcaption><b>Figure 3.</b> What TrakLab does: find the drop and follow chosen points in every frame, then convert pixels to millimetres and compute positions and velocities. Schematic drawn for this site; curves are illustrative.</figcaption>
-	      </figure>
-
-	      <h3>How it works</h3>
-	      <ol>
-	        <li><strong>Load and trim.</strong> Open a video, crop to the region of interest, downscale for speed, set the pixels-per-millimetre calibration, choose to use every <em>k</em>-th frame, and mark the start and end times on a scrubbable timeline.</li>
-	        <li><strong>Cache.</strong> The selected frames are read once and kept in memory, so tracking and re-runs are fast. The cache is keyed on every setting that affects it and rebuilds itself automatically when one of them changes.</li>
-	        <li><strong>Find the drop.</strong> A circle detector (a Hough transform) locates the drop's centre and radius in each frame, with adjustable radius range, polarity and sensitivity.</li>
-	        <li><strong>Follow points.</strong> Click a feature, such as the bottom of the drop or the tip of an escaping clump, and an optical-flow point tracker follows it from frame to frame.</li>
-	        <li><strong>Watch and export.</strong> Trajectories are drawn live over the video. When the run ends, TrakLab plots position and velocity against time and exports an Excel sheet and an annotated overlay video.</li>
-	      </ol>
-
-	      <div class="explainer">
-	        <strong>How the point tracker stays honest.</strong> TrakLab uses the Kanade&ndash;Lucas&ndash;Tomasi (KLT) method: it takes a small patch of pixels around the chosen point and finds where that patch has moved in the next frame, working from a coarse, blurred image down to full detail so it can follow fast motion. Each step is also checked backwards: track the point forward one frame, then track it back. If it doesn't return to where it started, the match is unreliable and is rejected rather than silently drifting.
-	      </div>
-
-	      <h3>Extras</h3>
-	      <ul>
-	        <li><strong>Clump volume estimate:</strong> outline a dark particle clump in a frame and estimate its volume by spinning its silhouette around its axis, the same method used to measure pendant drops. The tool also reports how asymmetric the clump is, as a warning when the estimate should be treated as approximate.</li>
-	        <li><strong>Crop preview, zoom, pixel ruler and scale bar</strong>, plus a session log that can be saved with the results.</li>
-	      </ul>
-	      <p>Built as a MATLAB App Designer application (about 2,500 lines) using the Image Processing and Computer Vision toolboxes. It produced the trajectory data for my <a href="project-details-04.html#cargo-transfer">drop-to-drop cargo transfer</a> work.</p>
-	      <p><a href="software/traklab.html">Try the TrakLab demo &rarr;</a> <em>(coming soon)</em></p>
-
 	      <h2>My role</h2>
-	      <p>I designed and wrote these tools myself, to support my own experiments and printing work at the University of Maryland.</p>
+	      <p>I designed and wrote this tool myself, to support my own printing work at the University of Maryland.</p>
 
 	    </article>
 	  </div>
@@ -304,8 +244,8 @@
 		  <h4>Outcomes:</h4>
 		  <ul>
 		  <li>nScryptConformal v2.1: scan-to-toolpath conforming for the nScrypt 3Dn, with a contact-free, rate-limited trajectory optimiser.</li><br>
-		  <li>TrakLab v0.3: video-based drop and point tracking, used for the trajectory analysis in the drop-to-drop cargo transfer study.</li><br>
-		  <li>Interactive browser demos for each tool: in development.</li>
+		  <li>Batch mode: one saved preset applied to a whole folder of scans, with per-file approval.</li><br>
+		  <li>Interactive browser demo: in development.</li>
 		  </ul>
 	  </div>
 	</div>

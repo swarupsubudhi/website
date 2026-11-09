@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <rect width="640" height="360" fill="#e9eef4"/>
+  <!-- video frame / bath -->
+  <rect x="150" y="80" width="340" height="240" rx="6" fill="#dfe6ee" stroke="#8796a6" stroke-width="2"/>
+  <rect x="150" y="300" width="340" height="20" fill="#5b6675"/>
+  <!-- earlier drop positions (trail) -->
+  <circle cx="320" cy="118" r="26" fill="none" stroke="#8796a6" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <circle cx="320" cy="168" r="26" fill="none" stroke="#8796a6" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <path d="M320,118 L320,218" stroke="#3b6ea5" stroke-width="2" stroke-dasharray="6 5"/>
+  <circle cx="320" cy="118" r="3" fill="#3b6ea5"/>
+  <circle cx="320" cy="168" r="3" fill="#3b6ea5"/>
+  <!-- current drop + detected circle -->
+  <circle cx="320" cy="218" r="26" fill="#9a5a34"/>
+  <circle cx="320" cy="218" r="31" fill="none" stroke="#3b6ea5" stroke-width="3"/>
+  <circle cx="320" cy="218" r="4" fill="#3b6ea5"/>
+  <!-- escaping clump + tracked point -->
+  <path d="M320,244 L320,262" stroke="#d6453d" stroke-width="2" stroke-dasharray="3 3"/>
+  <ellipse cx="320" cy="272" rx="5" ry="11" fill="#3a2a22"/>
+  <circle cx="320" cy="262" r="5" fill="none" stroke="#d6453d" stroke-width="2.5"/>
+  <text x="320" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#3b6ea5">video → tracked trajectory</text>
+</svg>
